@@ -99,8 +99,8 @@ HOSTLDFLAGS		+= -lintl
 endif
 
 ifeq ($(embtk_buildhost_os),macos)
-HOSTCFLAGS		+= -I/opt/local/include -I$(embtk_includedir)
-HOSTLDFLAGS		+= -L/opt/local/lib -lintl
+HOSTCFLAGS		+= -I/usr/local/opt/gettext/include -I$(embtk_includedir)
+HOSTLDFLAGS		+= -L/usr/local/opt/gettext/lib -lintl
 endif
 HOSTCXXFLAGS		= $(HOSTCFLAGS)
 

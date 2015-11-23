@@ -1,0 +1,4 @@
+
+scripts/basic/.fixdep.cmd
+
+scripts/kconfig/zconf.lex.c

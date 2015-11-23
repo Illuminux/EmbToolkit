@@ -51,7 +51,7 @@ embtk_glibc_buildcflags		:= -I/opt/local/include -I/usr/local/include -Dstat64=s
 ifeq ($(embtk_buildhost_os),macos)
 embtk_glibc_buildcflags	:= $(filter-out -Dstat64=stat,$(embtk_glibc_buildcflags))
 endif
-embtk_glibc_buildldflags	:= -L/opt/local/lib -L/usr/local/lib -lintl
+embtk_glibc_buildldflags	:= -L/usr/local/opt/gettext/lib -L/usr/local/lib -lintl
 endif
 
 #
