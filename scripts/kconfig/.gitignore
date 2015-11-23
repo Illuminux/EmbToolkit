@@ -1,0 +1,21 @@
+#
+# Generated files
+#
+config*
+lex.*.c
+*.tab.c
+*.tab.h
+zconf.hash.c
+*.moc
+lkc_defs.h
+*.cmd
+*.o
+*.tmp_qtcheck
+#
+# configuration programs
+#
+conf
+mconf
+qconf
+gconf
+kxgettext

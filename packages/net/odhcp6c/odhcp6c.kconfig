@@ -1,0 +1,51 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2012 Averell KINOUANI.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         odhcp6c.kconfig
+# \brief	odhcp6c.kconfig of Embtoolkit
+# \author       Averell KINOUANI <akinouani@embtoolkit.org>
+# \date         February 2015
+################################################################################
+
+config EMBTK_HAVE_ODHCP6C
+	bool "Have odhcp6c"
+	select KEMBTK_UCLIBC_UCLIBC_HAS_NETWORK_SUPPORT if EMBTK_CLIB_UCLIBC
+	select KEMBTK_UCLIBC_UCLIBC_HAS_IPV6 if EMBTK_CLIB_UCLIBC
+	help
+	 odhcp6c is a minimal DHCPv6 and RA-client for use in embedded Linux
+	 systems especially routers.
+
+choice
+	prompt "odhcp6c version you wish"
+	depends on EMBTK_HAVE_ODHCP6C
+	help
+	 Here you can choose which version of odhcp6c you want to use.
+
+	config  EMBTK_ODHCP6C_VERSION_1_1
+		bool "odhcp6c-1.1"
+endchoice
+
+config EMBTK_ODHCP6C_VERSION_STRING
+	string
+	default "1.1"		if EMBTK_ODHCP6C_VERSION_1_1
+
+config EMBTK_ODHCP6C_NEED_PATCH
+	bool
+config EMBTK_ODHCP6C_NEED_AUTORECONF
+	bool

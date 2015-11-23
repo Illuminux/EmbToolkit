@@ -1,0 +1,49 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         initng.kconfig
+# \brief	initng.kconfig of Embtoolkit
+# \author       Averell KINOUANI <averell.kinouani@embtoolkit.org>
+# \date         July 2015
+################################################################################
+
+config EMBTK_HAVE_INITNG
+	bool "Have initng"
+	help
+		InitNG is a full replacement for the old and in many ways deprecated System V Init system.
+		It speeds up the boot process with parallel starts, allows you to monitor your running 
+		daemons and has many more features.
+choice
+	prompt "initng version you wish"
+	depends on EMBTK_HAVE_INITNG
+	help
+	 Here you can choose which version of initng you want to use.
+
+	config  EMBTK_INITNG_VERSION_0_6_10_2
+		bool "initng-0.6.10.2"
+endchoice
+
+config EMBTK_INITNG_VERSION_STRING
+	string
+	default "0.6.10.2"	if EMBTK_INITNG_VERSION_0_6_10_2
+
+config EMBTK_INITNG_NEED_PATCH
+	bool
+config EMBTK_INITNG_NEED_AUTORECONF
+	bool

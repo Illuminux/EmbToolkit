@@ -1,0 +1,137 @@
+#################################################################################
+# Embtoolkit
+# Copyright(C) 2009-2015 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         linux.kconfig
+# \brief	linux.kconfig of Embtoolkit
+# \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
+# \date         May 2009
+################################################################################
+
+choice
+	prompt "Linux kernel source"
+	help
+	 Which linux kernel to use and where to find it.
+
+	config EMBTK_LINUX_SRC_GENERIC
+		bool "Generic"
+		help
+		 To build the toolchain, use generic kernel source tree from
+		 kernel.org.
+	config EMBTK_LINUX_SRC_CUSTOM
+		bool "Custom"
+		help
+		 Use your own custom linux kernel source tree.
+endchoice
+
+if EMBTK_LINUX_SRC_GENERIC
+source "core/kconfig/linux-generic.kconfig"
+endif
+
+if EMBTK_LINUX_SRC_CUSTOM
+source "core/kconfig/linux-custom.kconfig"
+endif
+
+config EMBTK_LINUX_NEED_PATCH
+	bool
+
+config EMBTK_LINUX_CATEGORY
+	string
+	default "toolchain"
+
+#
+# linux headers virtual package
+#
+config EMBTK_LINUX_HEADERS_LONGTERM_VERSION_STRING
+	string
+	default EMBTK_LINUX_LONGTERM_VERSION_STRING
+
+config EMBTK_LINUX_HEADERS_VERSION_STRING
+	string
+	default EMBTK_LINUX_VERSION_STRING
+
+config EMBTK_LINUX_HEADERS_MAJOR_VERSION_STRING
+	string
+	default EMBTK_LINUX_MAJOR_VERSION_STRING
+
+config EMBTK_LINUX_HEADERS_NEED_PATH
+	bool
+	default EMBTK_LINUX_NEED_PATCH
+
+config EMBTK_LINUX_HEADERS_VERSION_GIT
+	bool
+
+config EMBTK_LINUX_HEADERS_GIT_SITE
+	string
+	depends on EMBTK_LINUX_VERSION_GIT
+	default EMBTK_LINUX_GIT_SITE
+
+config EMBTK_LINUX_HEADERS_GIT_BRANCH
+	string
+	depends on EMBTK_LINUX_VERSION_GIT
+	default EMBTK_LINUX_GIT_BRANCH
+
+config EMBTK_LINUX_HEADERS_GIT_REVISION
+	string
+	depends on EMBTK_LINUX_VERSION_GIT
+	default EMBTK_LINUX_GIT_REVISION
+
+config EMBTK_LINUX_HEADERS_CATEGORY
+	string
+	default EMBTK_LINUX_CATEGORY
+
+#
+# linux modules virtual package
+#
+config EMBTK_LINUX_MODULES_LONGTERM_VERSION_STRING
+	string
+	default EMBTK_LINUX_LONGTERM_VERSION_STRING
+
+config EMBTK_LINUX_MODULES_VERSION_STRING
+	string
+	default EMBTK_LINUX_VERSION_STRING
+
+config EMBTK_LINUX_MODULES_MAJOR_VERSION_STRING
+	string
+	default EMBTK_LINUX_MAJOR_VERSION_STRING
+
+config EMBTK_LINUX_MODULES_NEED_PATH
+	bool
+	default EMBTK_LINUX_NEED_PATCH
+
+config EMBTK_LINUX_MODULES_VERSION_GIT
+	bool
+
+config EMBTK_LINUX_MODULES_GIT_SITE
+	string
+	depends on EMBTK_LINUX_VERSION_GIT
+	default EMBTK_LINUX_GIT_SITE
+
+config EMBTK_LINUX_MODULES_GIT_BRANCH
+	string
+	depends on EMBTK_LINUX_VERSION_GIT
+	default EMBTK_LINUX_GIT_BRANCH
+
+config EMBTK_LINUX_MODULES_GIT_REVISION
+	string
+	depends on EMBTK_LINUX_VERSION_GIT
+	default EMBTK_LINUX_GIT_REVISION
+
+config EMBTK_LINUX_MODULES_CATEGORY
+	string
+	default EMBTK_LINUX_CATEGORY
