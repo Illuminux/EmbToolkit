@@ -65,7 +65,7 @@ All: $(EMBTK_BUILD)
 #
 # Performance hack
 #
-MAKEFLAGS += --no-builtin-rules --no-builtin-variables
+MAKEFLAGS += --no-builtin-rules --no-builtin-variables -Wno-format-security
 .SUFFIXES:
 	MAKEFLAGS += --no-builtin-rules --no-builtin-variables
 
