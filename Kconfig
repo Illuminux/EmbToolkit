@@ -32,6 +32,10 @@ config EMBTK_DEFAULT_DL
 	string
 	option env="EMBTK_DEFAULT_DL"
 
+config EMBTK_DEFAULT_INST
+	string
+	option env="EMBTK_DEFAULT_INST"
+
 config EMBTK_VERSION
 	string
 	option env="EMBTK_VERSION"
