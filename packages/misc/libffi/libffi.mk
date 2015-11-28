@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 GAYE Abdoulaye Walsimou.
+# Copyright(C) 2015 Knut Welzel.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,34 +17,23 @@
 #
 ################################################################################
 #
-# \file         misc.kconfig
-# \brief	misc.kconfig of Embtoolkit
-# \author       GAYE Abdoulaye Walsimou, <walsimou@walsimou.com>
-# \date         February 2010
+# \file         libffi.mk
+# \brief		libffi.mk of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         November 2015
 ################################################################################
 
-# expat
-source packages/misc/expat/expat.kconfig
+LIBFFI_NAME			:= libffi
+LIBFFI_VERSION		:= $(call embtk_get_pkgversion,libffi)
+LIBFFI_SITE			:= ftp://sourceware.org/pub/libffi/
+LIBFFI_PACKAGE		:= libffi-$(LIBFFI_VERSION).tar.gz
+LIBFFI_SRC_DIR		:= $(embtk_pkgb)/libffi-$(LIBFFI_VERSION)
+LIBFFI_BUILD_DIR	:= $(embtk_pkgb)/libffi-$(LIBFFI_VERSION)
 
-# glib
-source packages/misc/glib/glib.kconfig
+LIBFFI_BINS			= 
+LIBFFI_SBINS		=
+LIBFFI_INCLUDES		= ffi.h ffitarget.h
+LIBFFI_LIBS			= libffi.* libffi_pic.*
+LIBFFI_PKGCONFIGS	= libffi.pc
 
-# inttltool
-source packages/misc/intltool/intltool.kconfig
-
-# libffi
-source packages/misc/libffi/libffi.kconfig
-
-# ncurses included in main Kconfig
-
-# serd
-source packages/misc/serd/serd.kconfig
-
-# sord
-source packages/misc/sord/sord.kconfig
-
-# sratom
-source packages/misc/sratom/sratom.kconfig
-
-# tslib
-source packages/misc/tslib/tslib.kconfig
+LIBFFI_DEPS 		=

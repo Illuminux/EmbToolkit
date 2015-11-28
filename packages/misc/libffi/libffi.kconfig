@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 GAYE Abdoulaye Walsimou.
+# Copyright(C) 2015 Knut Welzel.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,34 +17,37 @@
 #
 ################################################################################
 #
-# \file         misc.kconfig
-# \brief	misc.kconfig of Embtoolkit
-# \author       GAYE Abdoulaye Walsimou, <walsimou@walsimou.com>
-# \date         February 2010
+# \file         libffi.kconfig
+# \brief		libffi.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         November 2015
 ################################################################################
 
-# expat
-source packages/misc/expat/expat.kconfig
+config EMBTK_HAVE_LIBFFI
+	bool "Have libffi"
+	help
+		 A foreign function interface is the popular name for the interface 
+		 that allows code written in one language to call code written in 
+		 another language..
+choice
+	prompt "libffi version you wish"
+	depends on EMBTK_HAVE_LIBFFI
+	help
+	 Here you can choose which version of libffi you want to use.
 
-# glib
-source packages/misc/glib/glib.kconfig
+	config  EMBTK_LIBFFI_VERSION_3_1
+		bool "libffi-3.1"
+endchoice
 
-# inttltool
-source packages/misc/intltool/intltool.kconfig
+config EMBTK_LIBFFI_VERSION_STRING
+	string
+	default "3.1"		if EMBTK_LIBFFI_VERSION_3_1
 
-# libffi
-source packages/misc/libffi/libffi.kconfig
-
-# ncurses included in main Kconfig
-
-# serd
-source packages/misc/serd/serd.kconfig
-
-# sord
-source packages/misc/sord/sord.kconfig
-
-# sratom
-source packages/misc/sratom/sratom.kconfig
-
-# tslib
-source packages/misc/tslib/tslib.kconfig
+config EMBTK_LIBFFI_NEED_PATCH
+	bool
+config EMBTK_LIBFFI_NEED_AUTORECONF
+	bool
+config EMBTK_TSLIB_PKG_IS_TARGZ
+	bool
+config EMBTK_TSLIB_PKG_IS_TARBZ2
+	bool

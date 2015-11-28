@@ -30,10 +30,13 @@ $(call embtk_include_pkg,expat)
 
 # glib
 $(call embtk_include_pkg,glib)
-$(call embtk_include_hostpkg,glib_host)
+#$(call embtk_include_hostpkg,glib_host)
 
 # intltool
 $(call embtk_include_hostpkg,intltool_host)
+
+# libffi
+$(call embtk_include_pkg,libffi)
 
 # ncurses
 $(call embtk_include_pkg,ncurses)
