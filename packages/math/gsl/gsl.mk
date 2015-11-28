@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2014 GAYE Abdoulaye Walsimou.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,16 +17,26 @@
 #
 ################################################################################
 #
-# \file         math.mk
-# \brief	math.mk of Embtoolkit
-# \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         May 2014
+# \file         gsl.mk
+# \brief		gsl.mk of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         November 2015
 ################################################################################
 
-embtk_pkgincdir := packages/math
+GSL_NAME		:= gsl
+GSL_VERSION		:= $(call embtk_get_pkgversion,gsl)
+GSL_SITE		:= http://ftp.u-tx.net/gnu/gsl
+GSL_PACKAGE		:= gsl-$(GSL_VERSION).tar.gz
+GSL_SRC_DIR		:= $(embtk_pkgb)/gsl-$(GSL_VERSION)
+GSL_BUILD_DIR	:= $(embtk_pkgb)/gsl-$(GSL_VERSION)
 
-# armadillo
-$(call embtk_include_pkg,armadillo)
+GSL_BINS		:= gsl-config gsl-histogram gsl-randist
+GSL_SBINS		:=
+GSL_INCLUDES	:= gsl/gsl*.h
+GSL_LIBS		:= libgsl.* libgslcblas.*
+GSL_PKGCONFIGS	:= gsl.pc
+GSL_CFLAGS		:=
+GSL_CPPFLAGS	:=
+GSL_CXXFLAGS	:=
 
-# gsl
-$(call embtk_include_pkg,gsl)
+GSL_DEPS		:=

@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2014 GAYE Abdoulaye Walsimou.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,16 +17,34 @@
 #
 ################################################################################
 #
-# \file         math.mk
-# \brief	math.mk of Embtoolkit
-# \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         May 2014
+# \file         gsl.kconfig
+# \brief		gsl.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         November 2015
 ################################################################################
 
-embtk_pkgincdir := packages/math
+config EMBTK_HAVE_GSL
+	bool "Have gsl"
+	help
+		The GNU Scientific Library (GSL) is a collection of routines for 
+		numerical analysis. The routines are written from scratch by the GSL 
+		team in C, and present a modern API for C programmers, while allowing 
+		wrappers to be written for very high level languages.
+choice
+	prompt "gsl version you wish"
+	depends on EMBTK_HAVE_GSL
+	help
+	 Here you can choose which version of gsl you want to use.
 
-# armadillo
-$(call embtk_include_pkg,armadillo)
+	config  EMBTK_GSL_VERSION_1_16
+		bool "gsl-1.16"
+endchoice
 
-# gsl
-$(call embtk_include_pkg,gsl)
+config EMBTK_GSL_VERSION_STRING
+	string
+	default "1.16"	if EMBTK_GSL_VERSION_1_16
+
+config EMBTK_GSL_NEED_PATCH
+	bool
+config EMBTK_GSL_NEED_AUTORECONF
+	bool
