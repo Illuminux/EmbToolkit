@@ -31,6 +31,15 @@ config EMBTK_NUMBER_BUILD_JOBS
 	int "Number of parallel build jobs"
 	default 1
 
+config EMBTK_INSTALL_DIR
+	string "Install directory"
+	default $EMBTK_DEFAULT_INST
+	help 
+	 Directory where EmbToolkit will be installed.
+	 
+	 Note:
+	 This directory has to be writable for the current user.
+
 config EMBTK_DOWNLOAD_DIR
 	string "Download directory"
 	default $EMBTK_DEFAULT_DL
