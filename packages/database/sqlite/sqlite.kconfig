@@ -39,11 +39,14 @@ choice
 
 	config  EMBTK_SQLITE_VERSION_3_8_6
 		bool "sqlite-3.8.6"
+	config  EMBTK_SQLITE_VERSION_3_8_7
+		bool "sqlite-3.8.7"
 endchoice
 
 config EMBTK_SQLITE_VERSION_STRING
 	string
 	default "3080600"	if EMBTK_SQLITE_VERSION_3_8_6
+	default "3080700"	if EMBTK_SQLITE_VERSION_3_8_7
 
 
 config EMBTK_SQLITE_NEED_PATCH

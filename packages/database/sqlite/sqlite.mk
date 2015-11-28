@@ -23,16 +23,17 @@
 # \date         October 2010
 ################################################################################
 
-SQLITE_NAME		:= sqlite
+SQLITE_NAME			:= sqlite
 SQLITE_VERSION		:= $(call embtk_get_pkgversion,sqlite)
-SQLITE_SITE		:= $(embtk_ftp/packages-mirror)
+SQLITE_SITE			:= http://sqlite.org/2014
+SQLITE_SITE_MIRROR3	:= $(embtk_ftp/packages-mirror)
 SQLITE_PACKAGE		:= sqlite-autoconf-$(SQLITE_VERSION).tar.gz
 SQLITE_SRC_DIR		:= $(embtk_pkgb)/sqlite-autoconf-$(SQLITE_VERSION)
 SQLITE_BUILD_DIR	:= $(embtk_pkgb)/sqlite-autoconf-$(SQLITE_VERSION)
 
-SQLITE_BINS		:= sqlite3
+SQLITE_BINS			:= sqlite3
 SQLITE_INCLUDES		:= sqlite3.h sqlite3ext.h
-SQLITE_LIBS		:= libsqlite3.*
+SQLITE_LIBS			:= libsqlite3.*
 SQLITE_PKGCONFIGS	:= sqlite3.pc
 
 SQLITE_CONFIGURE_OPTS	:= --enable-threadsafe --enable-readline
