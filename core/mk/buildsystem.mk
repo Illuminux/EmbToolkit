@@ -28,6 +28,22 @@ PACKAGES_BUILD		:= $(EMBTK_ROOT)/build/packages_build-$(GNU_TARGET)-$(EMBTK_MCU_
 J					:= -j$(or $(CONFIG_EMBTK_NUMBER_BUILD_JOBS),1)
 
 
+#
+# New version of above variables names. The old names are scheduled for removal
+#
+embtk_generated     := $(EMBTK_ROOT)/generated
+embtk_sysroot		:= $(embtk_generated)/sysroot-$(GNU_TARGET)-$(EMBTK_MCU_FLAG)
+embtk_tools			:= $(embtk_generated)/tools-$(GNU_TARGET)-$(EMBTK_MCU_FLAG)
+embtk_htools		:= $(embtk_generated)/host-tools-$(EMBTK_MCU_FLAG)
+embtk_toolsb		:= $(TOOLS_BUILD)
+embtk_pkgb			:= $(PACKAGES_BUILD)
+embtk_rootfs		:= $(embtk_generated)/rootfs-$(GNU_TARGET)-$(EMBTK_MCU_FLAG)
+__embtk_dldir		:= $(call embtk_abspath,$(CONFIG_EMBTK_DOWNLOAD_DIR))
+embtk_dldir			:= $(or $(__embtk_dldir),$(EMBTK_ROOT)/dl)
+embtk_srcdir		:= $(EMBTK_ROOT)/src
+embtk_includedir	:= $(embtk_srcdir)/embtk/include
+
+
 define __embtk_kconfig_buildrun
 		PKG_CONFIG_PATH=$(EMBTK_HOST_PKG_CONFIG_PATH) \
 		$(MAKE) -f scripts/Makefile.build \
@@ -40,22 +56,6 @@ define __embtk_kconfig_buildrun
 		CONFIG_SHELL=$(CONFIG_EMBTK_SHELL) \
 		quiet=quiet_ KBUILD_VERBOSE=0 $(1)
 endef
-
-
-#
-# New version of above variables names. The old names are scheduled for removal
-#
-embtk_generated     := $(EMBTK_INSTALL_DIR)
-embtk_sysroot		:= $(embtk_generated)/sysroot-$(GNU_TARGET)-$(EMBTK_MCU_FLAG)
-embtk_tools			:= $(embtk_generated)/tools-$(GNU_TARGET)-$(EMBTK_MCU_FLAG)
-embtk_htools		:= $(embtk_generated)/host-tools-$(EMBTK_MCU_FLAG)
-embtk_toolsb		:= $(TOOLS_BUILD)
-embtk_pkgb			:= $(PACKAGES_BUILD)
-embtk_rootfs		:= $(embtk_generated)/rootfs-$(GNU_TARGET)-$(EMBTK_MCU_FLAG)
-__embtk_dldir		:= $(call embtk_abspath,$(CONFIG_EMBTK_DOWNLOAD_DIR))
-embtk_dldir			:= $(or $(__embtk_dldir),$(EMBTK_ROOT)/dl)
-embtk_srcdir		:= $(EMBTK_ROOT)/src
-embtk_includedir	:= $(embtk_srcdir)/embtk/include
 
 
 define __embtk_mk_xconfig
