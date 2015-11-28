@@ -37,11 +37,15 @@ choice
 
 	config  EMBTK_LIBXML2_VERSION_2_7_7
 		bool "libxml2-2.7.7"
+	config  EMBTK_LIBXML2_VERSION_2_9_1
+		bool "libxml2-2.9.1"
 endchoice
 
 config EMBTK_LIBXML2_VERSION_STRING
 	string
 	default "2.7.7"		if EMBTK_LIBXML2_VERSION_2_7_7
+	string
+	default "2.9.1"		if EMBTK_LIBXML2_VERSION_2_9_1
 
 config EMBTK_LIBXML2_NEED_PATCH
 	bool
