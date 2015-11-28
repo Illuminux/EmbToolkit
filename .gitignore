@@ -4,3 +4,21 @@ scripts/basic/.fixdep.cmd
 scripts/kconfig/zconf.lex.c
 
 .config
+
+.config.*
+
+scripts/kconfig/zconf.tab.*
+
+.ccache/
+
+.fakeroot.*
+
+build/
+
+dl/
+
+host-tools-*/
+
+sysroot-*-*/
+
+tools-*-*/
