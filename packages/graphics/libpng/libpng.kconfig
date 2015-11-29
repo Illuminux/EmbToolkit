@@ -47,6 +47,8 @@ choice
 		bool "libpng-1.5.11"
 	config  EMBTK_LIBPNG_VERSION_1_4_11
 		bool "libpng-1.4.11"
+	config  EMBTK_LIBPNG_VERSION_1_2_50
+		bool "libpng-1.2.50"
 	config  EMBTK_LIBPNG_VERSION_1_2_49
 		bool "libpng-1.2.49"
 endchoice
@@ -55,6 +57,7 @@ config EMBTK_LIBPNG_VERSION_STRING
 	string
 	default "1.5.11"	if EMBTK_LIBPNG_VERSION_1_5_11
 	default "1.4.11"	if EMBTK_LIBPNG_VERSION_1_4_11
+	default "1.2.50"	if EMBTK_LIBPNG_VERSION_1_2_50
 	default "1.2.49"	if EMBTK_LIBPNG_VERSION_1_2_49
 
 config EMBTK_LIBPNG_NEED_PATCH
