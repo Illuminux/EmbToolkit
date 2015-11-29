@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2014 GAYE Abdoulaye Walsimou.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,26 +17,20 @@
 #
 ################################################################################
 #
-# \file         textproc.kconfig
-# \brief	text processing packages and libraries
-# \author       GAYE Abdoulaye Walsimou, <walsimou@walsimou.com>
-# \date         July 2014
+# \file         libconfig.kconfig
+# \brief		libconfig.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         November 2015
 ################################################################################
 
-# json-glib
-source packages/textproc/json-glib/json-glib.kconfig
+LIBCONFIG_NAME		:= libconfig
+LIBCONFIG_VERSION	:= $(call embtk_get_pkgversion,libconfig)
+LIBCONFIG_SITE		:= http://www.hyperrealm.com/libconfig
+LIBCONFIG_PACKAGE	:= libconfig-$(LIBCONFIG_VERSION).tar.gz
+LIBCONFIG_SRC_DIR	:= $(embtk_pkgb)/libconfig-$(LIBCONFIG_VERSION)
+LIBCONFIG_BUILD_DIR	:= $(embtk_pkgb)/libconfig-$(LIBCONFIG_VERSION)
 
-# libconfig
-source packages/textproc/libconfig/libconfig.kconfig
-
-# libsoup
-source packages/textproc/libsoup/libsoup.kconfig
-
-# libxml2
-source packages/textproc/libxml2/libxml2.kconfig
-
-# lrdf
-source packages/textproc/lrdf/lrdf.kconfig
-
-# raptor
-source packages/textproc/raptor/raptor.kconfig
+LIBCONFIG_BINS			:=
+LIBCONFIG_INCLUDES		:= libconfig.h libconfig.h++
+LIBCONFIG_LIBS			:= libconfig.* libconfig++.*
+LIBCONFIG_PKGCONFIGS	:= libconfig.pc

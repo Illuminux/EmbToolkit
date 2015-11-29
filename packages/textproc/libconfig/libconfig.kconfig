@@ -1,0 +1,50 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         libconfig.kconfig
+# \brief		libconfig.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         November 2015
+################################################################################
+
+config EMBTK_HAVE_LIBCONFIG
+	bool "Have libconfig"
+	help
+		Libconfig is a simple library for processing structured configuration 
+		files. This file format is more compact and more readable than XML. And 
+		unlike XML, it is type-aware, so it is not necessary to do string 
+		parsing in application code.
+choice
+	prompt "libconfig version you wish"
+	depends on EMBTK_HAVE_LIBCONFIG
+	help
+	 Here you can choose which version of foo you want to use.
+
+	config  EMBTK_LIBCONFIG_VERSION_1_4_9
+		bool "libconfig-1.4.9"
+endchoice
+
+config EMBTK_LIBCONFIG_VERSION_STRING
+	string
+	default "1.4.9"	if EMBTK_LIBCONFIG_VERSION_1_4_9
+
+config EMBTK_LIBCONFIG_NEED_PATCH
+	bool
+config EMBTK_LIBCONFIG_NEED_AUTORECONF
+	bool
