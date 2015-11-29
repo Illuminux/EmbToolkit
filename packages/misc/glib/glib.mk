@@ -29,7 +29,7 @@ GLIB_VERSION		:= $(call embtk_get_pkgversion,glib)
 GLIB_SITE			:= http://ftp.gnome.org/pub/gnome/sources/glib/$(GLIB_MAJOR_VERSION)
 GLIB_SITE_MIRROR3	:= ftp://ftp.embtoolkit.org/embtoolkit.org/packages-mirror
 GLIB_PATCH_SITE		:= ftp://ftp.embtoolkit.org/embtoolkit.org/glib/$(GLIB_VERSION)
-GLIB_PACKAGE		:= glib-$(GLIB_VERSION).tar.bz2
+GLIB_PACKAGE		:= glib-$(GLIB_VERSION).tar.xz
 GLIB_SRC_DIR		:= $(embtk_pkgb)/glib-$(GLIB_VERSION)
 GLIB_BUILD_DIR		:= $(embtk_pkgb)/glib-$(GLIB_VERSION)
 
@@ -57,7 +57,7 @@ GLIB_CONFIGURE_OPTS	:= --disable-fam \
 					  --disable-installed-tests
 
 #GLIB_DEPS			:= zlib_install gettext-intl_install glib_host_install
-GLIB_DEPS			:= zlib_install
+GLIB_DEPS			:= zlib_install libffi_install
 
 #
 # glib for host
