@@ -25,7 +25,8 @@
 
 LIBFFI_NAME			:= libffi
 LIBFFI_VERSION		:= $(call embtk_get_pkgversion,libffi)
-LIBFFI_SITE			:= ftp://sourceware.org/pub/libffi/
+LIBFFI_SITE			:= ftp://sourceware.org/pub/libffi
+LIBFFI_SITE_MIRROR3	:= ftp://ftp.embtoolkit.org/embtoolkit.org/packages-mirror
 LIBFFI_PACKAGE		:= libffi-$(LIBFFI_VERSION).tar.gz
 LIBFFI_SRC_DIR		:= $(embtk_pkgb)/libffi-$(LIBFFI_VERSION)
 LIBFFI_BUILD_DIR	:= $(embtk_pkgb)/libffi-$(LIBFFI_VERSION)
@@ -33,7 +34,11 @@ LIBFFI_BUILD_DIR	:= $(embtk_pkgb)/libffi-$(LIBFFI_VERSION)
 LIBFFI_BINS			= 
 LIBFFI_SBINS		=
 LIBFFI_INCLUDES		= ffi.h ffitarget.h
-LIBFFI_LIBS			= libffi.* libffi_pic.*
+LIBFFI_LIBS			= libffi.* 
 LIBFFI_PKGCONFIGS	= libffi.pc
 
-LIBFFI_DEPS 		=
+LIBFFI_CONFIGURE_ENV = 
+LIBFFI_CONFIGURE_OPTS = --srcdir=$(embtk_pkgb)/libffi-$(LIBFFI_VERSION) \
+						--enable-builddir=$(embtk_pkgb)/libffi-$(LIBFFI_VERSION)
+
+LIBFFI_DEPS =

@@ -26,9 +26,9 @@
 config EMBTK_HAVE_LIBFFI
 	bool "Have libffi"
 	help
-		 A foreign function interface is the popular name for the interface 
-		 that allows code written in one language to call code written in 
-		 another language..
+		A foreign function interface is the popular name for the interface that 
+		allows code written in one language to call code written in another 
+		language..
 choice
 	prompt "libffi version you wish"
 	depends on EMBTK_HAVE_LIBFFI
@@ -37,17 +37,18 @@ choice
 
 	config  EMBTK_LIBFFI_VERSION_3_1
 		bool "libffi-3.1"
+#		select EMBTK_LIBFFI_NEED_AUTORECONF
 endchoice
 
 config EMBTK_LIBFFI_VERSION_STRING
 	string
-	default "3.1"		if EMBTK_LIBFFI_VERSION_3_1
+	default "3.1"	if EMBTK_LIBFFI_VERSION_3_1
 
 config EMBTK_LIBFFI_NEED_PATCH
 	bool
 config EMBTK_LIBFFI_NEED_AUTORECONF
 	bool
-config EMBTK_TSLIB_PKG_IS_TARGZ
+config EMBTK_LIBFFI_PKG_IS_TARGZ
 	bool
-config EMBTK_TSLIB_PKG_IS_TARBZ2
+config EMBTK_LIBFFI_PKG_IS_TARBZ2
 	bool
