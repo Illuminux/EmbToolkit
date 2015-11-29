@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2014 GAYE Abdoulaye Walsimou.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,23 +17,23 @@
 #
 ################################################################################
 #
-# \file         textproc.kconfig
-# \brief	text processing packages and libraries
-# \author       GAYE Abdoulaye Walsimou, <walsimou@walsimou.com>
-# \date         July 2014
+# \file         libsoup.kconfig
+# \brief		libsoup.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         November 2015
 ################################################################################
 
-# json-glib
-source packages/textproc/json-glib/json-glib.kconfig
+LIBSOUP_NAME			:= libsoup
+LIBSOUP_MAJOR_VERSION	:= $(call embtk_get_pkgversion,libsoup_major)
+LIBSOUP_VERSION			:= $(call embtk_get_pkgversion,libsoup)
+LIBSOUP_SITE			:= http://ftp.gnome.org/pub/GNOME/sources/libsoup/$(LIBSOUP_MAJOR_VERSION)
+LIBSOUP_PACKAGE			:= libsoup-$(LIBSOUP_VERSION).tar.xz
+LIBSOUP_SRC_DIR			:= $(embtk_pkgb)/libsoup-$(LIBSOUP_VERSION)
+LIBSOUP_BUILD_DIR		:= $(embtk_pkgb)/libsoup-$(LIBSOUP_VERSION)
 
-# libsoup
-source packages/textproc/libsoup/libsoup.kconfig
+LIBSOUP_BINS		:=
+LIBSOUP_INCLUDES	:= soup-*.h
+LIBSOUP_LIBS		:= libsoup-*
+LIBSOUP_PKGCONFIGS	:= libsoup-*.pc
 
-# libxml2
-source packages/textproc/libxml2/libxml2.kconfig
-
-# lrdf
-source packages/textproc/lrdf/lrdf.kconfig
-
-# raptor
-source packages/textproc/raptor/raptor.kconfig
+LIBSOUP_DEPS		:= glib_install libxml2_install sqlite_install

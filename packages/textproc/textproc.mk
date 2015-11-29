@@ -28,6 +28,9 @@ embtk_pkgincdir := packages/textproc
 # json-glib
 $(call embtk_include_pkg,json-glib)
 
+# libsoup
+$(call embtk_include_pkg,libsoup)
+
 # libxml2
 $(call embtk_include_pkg,libxml2)
 
