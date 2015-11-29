@@ -23,6 +23,9 @@
 # \date         July 2014
 ################################################################################
 
+# json-glib
+source packages/textproc/json-glib/json-glib.kconfig
+
 # libxml2
 source packages/textproc/libxml2/libxml2.kconfig
 

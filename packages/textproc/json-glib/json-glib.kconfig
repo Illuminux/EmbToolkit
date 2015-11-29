@@ -1,0 +1,51 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         json-glib.kconfig
+# \brief		json-glib.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         November 2015
+################################################################################
+
+config EMBTK_HAVE_JSON-GLIB
+	bool "Have json-glib"
+	help
+		JSON-GLib is a library for parsing, generating and manipulating 
+		JavaScript Object Notation (JSON) data streams using the GLib type 
+		system. It allows manipulating JSON data types with a Document Object 
+		Model API. It also allows serializing and deserializing simple or 
+		complex GObjects to and from JSON data types.
+choice
+	prompt "json-glib version you wish"
+	depends on EMBTK_HAVE_JSON-GLIB
+	help
+	 Here you can choose which version of foo you want to use.
+
+	config  EMBTK_JSON-GLIB_VERSION_1_0_2
+		bool "json-glib-1.0.2"
+endchoice
+
+config EMBTK_JSON-GLIB_VERSION_STRING
+	string
+	default "1.0.2"	if EMBTK_JSON-GLIB_VERSION_1_0_2
+
+config EMBTK_JSON-GLIB_NEED_PATCH
+	bool
+config EMBTK_JSON-GLIB_NEED_AUTORECONF
+	bool

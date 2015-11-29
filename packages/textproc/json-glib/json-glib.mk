@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2014 GAYE Abdoulaye Walsimou.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,22 +17,22 @@
 #
 ################################################################################
 #
-# \file         textproc.kconfig
-# \brief	text processing packages and libraries
-# \author       GAYE Abdoulaye Walsimou, <walsimou@walsimou.com>
-# \date         July 2014
+# \file         json-glib.kconfig
+# \brief		json-glib.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         November 2015
 ################################################################################
 
-embtk_pkgincdir := packages/textproc
+JSON-GLIB_NAME		:= json-glib
+JSON-GLIB_VERSION	:= $(call embtk_get_pkgversion,json-glib)
+JSON-GLIB_SITE		:= ftp.gnome.org/pub/gnome/sources/json-glib/1.0
+JSON-GLIB_PACKAGE	:= json-glib-$(JSON-GLIB_VERSION).tar.xz
+JSON-GLIB_SRC_DIR	:= $(embtk_pkgb)/json-glib-$(JSON-GLIB_VERSION)
+JSON-GLIB_BUILD_DIR	:= $(embtk_pkgb)/json-glib-$(JSON-GLIB_VERSION)
 
-# json-glib
-$(call embtk_include_pkg,json-glib)
+JSON-GLIB_BINS		:=
+JSON-GLIB_INCLUDES	:= json-glib/json-*.h
+JSON-GLIB_LIBS		:= libjson-glib-1.0.*
+JSON-GLIB_PKGCONFIGS	:= json-glib-1.0.pc
 
-# libxml2
-$(call embtk_include_pkg,libxml2)
-
-# lrdf
-$(call embtk_include_pkg,lrdf)
-
-# raptor
-$(call embtk_include_pkg,raptor)
+JSON-GLIB_DEPS		:= glib_install
