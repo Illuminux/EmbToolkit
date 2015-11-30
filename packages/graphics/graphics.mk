@@ -23,63 +23,50 @@
 # \date         February 2010
 ################################################################################
 
+embtk_pkgincdir := packages/graphics
+
 #atk
-include packages/graphics/atk/atk.mk
-ROOTFS_COMPONENTS-$(CONFIG_EMBTK_HAVE_ATK) += atk_install
+$(call embtk_include_pkg,atk)
 
 #Cairo
-include packages/graphics/cairo/cairo.mk
-ROOTFS_COMPONENTS-$(CONFIG_EMBTK_HAVE_CAIRO) += cairo_install
+$(call embtk_include_pkg,cairo)
 
 #DirectFB
-include packages/graphics/directfb/directfb.mk
-ROOTFS_COMPONENTS-$(CONFIG_EMBTK_HAVE_DIRECTFB) += directfb_install
+$(call embtk_include_pkg,directfb)
 
 #fontconfig
-include packages/graphics/fontconfig/fontconfig.mk
-ROOTFS_COMPONENTS-$(CONFIG_EMBTK_HAVE_FONTCONFIG) += fontconfig_install
+$(call embtk_include_pkg,fontconfig)
 
 #FreeFont
-include packages/graphics/freefont/freefont.mk
-ROOTFS_COMPONENTS-$(CONFIG_EMBTK_HAVE_FREEFONT_TTF) += freefont_ttf_install
+$(call embtk_include_pkg,freefont_ttf)
 
 #FreeType
-include packages/graphics/freetype/freetype.mk
-ROOTFS_COMPONENTS-$(CONFIG_EMBTK_HAVE_FREETYPE) += freetype_install
+$(call embtk_include_pkg,freetype)
 
 #gdk-pixbuf
-include packages/graphics/gdk-pixbuf/gdk-pixbuf.mk
-ROOTFS_COMPONENTS-$(CONFIG_EMBTK_HAVE_GDKPIXBUF) += gdkpixbuf_install
-HOSTTOOLS_COMPONENTS-$(CONFIG_EMBTK_HOST_HAVE_GDKPIXBUF) += gdkpixbuf_host_install
+$(call embtk_include_pkg,gdkpixbuf)
 
 #gtk+
-include packages/graphics/gtk/gtk.mk
-ROOTFS_COMPONENTS-$(CONFIG_EMBTK_HAVE_GTK) += gtk_install
+$(call embtk_include_pkg,gtk)
 
 #imlib2
-include packages/graphics/imlib2/imlib2.mk
-ROOTFS_COMPONENTS-$(CONFIG_EMBTK_HAVE_IMLIB2) += imlib2_install
+$(call embtk_include_pkg,imlib2)
 
 #libjpeg
-include packages/graphics/libjpeg/libjpeg.mk
-ROOTFS_COMPONENTS-$(CONFIG_EMBTK_HAVE_LIBJPEG) += libjpeg_install
-HOSTTOOLS_COMPONENTS-$(CONFIG_EMBTK_HOST_HAVE_LIBJPEG) += libjpeg_host_install
+$(call embtk_include_pkg,libjpeg)
+
+#libjpeg-turbo
+$(call embtk_include_pkg,libjpeg-turbo)
 
 #libpng
-include packages/graphics/libpng/libpng.mk
-ROOTFS_COMPONENTS-$(CONFIG_EMBTK_HAVE_LIBPNG) += libpng_install
-HOSTTOOLS_COMPONENTS-$(CONFIG_EMBTK_HOST_HAVE_LIBPNG) += libpng_host_install
+$(call embtk_include_pkg,libpng)
 
 #libtiff
-include packages/graphics/libtiff/libtiff.mk
-ROOTFS_COMPONENTS-$(CONFIG_EMBTK_HAVE_LIBTIFF) += libtiff_install
-HOSTTOOLS_COMPONENTS-$(CONFIG_EMBTK_HOST_HAVE_LIBTIFF) += libtiff_host_install
+$(call embtk_include_pkg,libtiff)
 
 #Pango
-include packages/graphics/pango/pango.mk
-ROOTFS_COMPONENTS-$(CONFIG_EMBTK_HAVE_PANGO) += pango_install
+$(call embtk_include_pkg,pango)
 
 #pixman
-include packages/graphics/pixman/pixman.mk
-ROOTFS_COMPONENTS-$(CONFIG_EMBTK_HAVE_PIXMAN) += pixman_install
+$(call embtk_include_pkg,pixman)
 

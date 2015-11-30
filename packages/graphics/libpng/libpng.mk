@@ -23,36 +23,36 @@
 # \date         October 2009
 ################################################################################
 
-LIBPNG_NAME		:= libpng
+LIBPNG_NAME			:= libpng
 LIBPNG_VERSION		:= $(call embtk_get_pkgversion,libpng)
-LIBPNG_SITE		:= http://download.sourceforge.net/libpng
+LIBPNG_SITE			:= http://download.sourceforge.net/libpng
 LIBPNG_PACKAGE		:= libpng-$(LIBPNG_VERSION).tar.xz
 LIBPNG_SRC_DIR		:= $(embtk_pkgb)/libpng-$(LIBPNG_VERSION)
 LIBPNG_BUILD_DIR	:= $(embtk_pkgb)/libpng-$(LIBPNG_VERSION)
 
-LIBPNG_BINS		= libpng*
+LIBPNG_BINS			= libpng*
 LIBPNG_SBINS		=
 LIBPNG_INCLUDES		= libpng* png*
-LIBPNG_LIBS		= libpng*
+LIBPNG_LIBS			= libpng*
 LIBPNG_PKGCONFIGS	= libpng*
 
-LIBPNG_CONFIGURE_OPTS	:= --with-libpng-compat=no
-LIBPNG_DEPS		:= zlib_install
+#LIBPNG_CONFIGURE_OPTS	:= --with-libpng-compat=no
+LIBPNG_DEPS				:= zlib_install
 
 #
 # libpng for host development machine
 #
 
-LIBPNG_HOST_NAME		:= $(LIBPNG_NAME)
-LIBPNG_HOST_VERSION		:= $(LIBPNG_VERSION)
-LIBPNG_HOST_SITE		:= $(LIBPNG_SITE)
-LIBPNG_HOST_PACKAGE		:= $(LIBPNG_PACKAGE)
-LIBPNG_HOST_SITE_MIRROR1	:= $(LIBPNG_SITE_MIRROR1)
-LIBPNG_HOST_SITE_MIRROR2	:= $(LIBPNG_SITE_MIRROR2)
-LIBPNG_HOST_SITE_MIRROR3	:= $(LIBPNG_SITE_MIRROR3)
-LIBPNG_HOST_SRC_DIR		:= $(embtk_toolsb)/libpng-$(LIBPNG_VERSION)
-LIBPNG_HOST_BUILD_DIR		:= $(embtk_toolsb)/libpng-$(LIBPNG_VERSION)
+#LIBPNG_HOST_NAME		:= $(LIBPNG_NAME)
+#LIBPNG_HOST_VERSION		:= $(LIBPNG_VERSION)
+#LIBPNG_HOST_SITE		:= $(LIBPNG_SITE)
+#LIBPNG_HOST_PACKAGE		:= $(LIBPNG_PACKAGE)
+#LIBPNG_HOST_SITE_MIRROR1	:= $(LIBPNG_SITE_MIRROR1)
+#LIBPNG_HOST_SITE_MIRROR2	:= $(LIBPNG_SITE_MIRROR2)
+#LIBPNG_HOST_SITE_MIRROR3	:= $(LIBPNG_SITE_MIRROR3)
+#LIBPNG_HOST_SRC_DIR		:= $(embtk_toolsb)/libpng-$(LIBPNG_VERSION)
+#LIBPNG_HOST_BUILD_DIR		:= $(embtk_toolsb)/libpng-$(LIBPNG_VERSION)
 
-LIBPNG_HOST_CONFIGURE_OPTS	:= --with-libpng-compat=no
-LIBPNG_HOST_DEPS		:= zlib_host_install
+#LIBPNG_HOST_CONFIGURE_OPTS	:= --with-libpng-compat=no
+#LIBPNG_HOST_DEPS		:= zlib_host_install
 
