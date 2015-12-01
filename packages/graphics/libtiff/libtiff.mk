@@ -23,13 +23,13 @@
 # \date         December 2009
 ################################################################################
 
-LIBTIFF_NAME		:= libtiff
-LIBTIFF_VERSION		:= $(call embtk_get_pkgversion,libtiff)
-LIBTIFF_SITE		:= ftp://ftp.remotesensing.org/pub/libtiff
+LIBTIFF_NAME			:= libtiff
+LIBTIFF_VERSION			:= $(call embtk_get_pkgversion,libtiff)
+LIBTIFF_SITE			:= ftp://ftp.remotesensing.org/pub/libtiff
 LIBTIFF_SITE_MIRROR3	:= ftp://ftp.embtoolkit.org/embtoolkit.org/packages-mirror
-LIBTIFF_PACKAGE		:= tiff-$(LIBTIFF_VERSION).tar.gz
-LIBTIFF_SRC_DIR		:= $(embtk_pkgb)/tiff-$(LIBTIFF_VERSION)
-LIBTIFF_BUILD_DIR	:= $(embtk_pkgb)/tiff-$(LIBTIFF_VERSION)
+LIBTIFF_PACKAGE			:= tiff-$(LIBTIFF_VERSION).tar.gz
+LIBTIFF_SRC_DIR			:= $(embtk_pkgb)/tiff-$(LIBTIFF_VERSION)
+LIBTIFF_BUILD_DIR		:= $(embtk_pkgb)/tiff-$(LIBTIFF_VERSION)
 
 LIBTIFF_BINS =	vbmp2tiff fax2tiff pal2rgb  ras2tiff rgb2ycbcr tiff2bw tiff2ps	\
 		tiffcmp tiffcrop tiffdump tiffmedian tiffsplit fax2ps gif2tiff	\
@@ -41,19 +41,3 @@ LIBTIFF_LIBS		= libtiff*
 LIBTIFF_PKGCONFIGS	=
 
 LIBTIFF_CONFIGURE_OPTS	:= --disable-cxx --program-prefix=""
-
-#
-# libtiff for host development machine
-#
-LIBTIFF_HOST_NAME		:= $(LIBTIFF_NAME)
-LIBTIFF_HOST_VERSION		:= $(LIBTIFF_VERSION)
-LIBTIFF_HOST_SITE		:= $(LIBTIFF_SITE)
-LIBTIFF_HOST_SITE_MIRROR1	:= $(LIBTIFF_SITE_MIRROR1)
-LIBTIFF_HOST_SITE_MIRROR2	:= $(LIBTIFF_SITE_MIRROR2)
-LIBTIFF_HOST_SITE_MIRROR3	:= $(LIBTIFF_SITE_MIRROR3)
-LIBTIFF_HOST_PACKAGE		:= $(LIBTIFF_PACKAGE)
-LIBTIFF_HOST_SRC_DIR		:= $(embtk_toolsb)/tiff-$(LIBTIFF_VERSION)
-LIBTIFF_HOST_BUILD_DIR		:= $(embtk_toolsb)/tiff-$(LIBTIFF_VERSION)
-
-LIBTIFF_HOST_CONFIGURE_OPTS	:= --disable-cxx --program-prefix=""
-

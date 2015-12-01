@@ -23,11 +23,6 @@
 # \date         December 2009
 ################################################################################
 
-config EMBTK_HOST_HAVE_LIBTIFF
-	bool
-	help
-		libtiff for host development machine.
-
 config EMBTK_HAVE_LIBTIFF
 	bool "Have libtiff"
 	help
@@ -44,12 +39,15 @@ choice
 	help
 		Here you can choose which version of libtiff you want to use.
 
+	config  EMBTK_LIBTIFF_VERSION_4_0_3
+		bool "libtiff-4.0.3"
 	config  EMBTK_LIBTIFF_VERSION_3_9_2
 		bool "libtiff-3.9.2"
 endchoice
 
 config EMBTK_LIBTIFF_VERSION_STRING
 	string
+	default "4.0.3"		if EMBTK_LIBTIFF_VERSION_4_0_3
 	default "3.9.2"		if EMBTK_LIBTIFF_VERSION_3_9_2
 
 config EMBTK_LIBTIFF_NEED_PATCH
@@ -61,13 +59,4 @@ config EMBTK_LIBTIFF_NEED_AUTORECONF
 config EMBTK_LIBTIFF_PKG_IS_TARGZ
 	bool
 config EMBTK_LIBTIFF_PKG_IS_TARBZ2
-	bool
-
-config EMBTK_LIBTIFF_HOST_NEED_PATCH
-	bool
-config EMBTK_LIBTIFF_HOST_NEED_AUTORECONF
-	bool
-config EMBTK_LIBTIFF_HOST_PKG_IS_TARGZ
-	bool
-config EMBTK_LIBTIFF_HOST_PKG_IS_TARBZ2
 	bool
