@@ -210,6 +210,10 @@ __embtk_decompress_pkg =							\
 			tar -C $(dir $(__embtk_pkg_srcdir)) -xf			\
 						$(__embtk_pkg_package_f)	\
 			;;							\
+		*.zip)								\
+			unzip $(__embtk_pkg_package_f) -d 				\
+						$(dir $(__embtk_pkg_srcdir)) 	\
+			;;							\
 		*)								\
 			$(call __embtk_decompress_pkg_exitfailure,$(1))		\
 			;;							\
