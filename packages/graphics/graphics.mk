@@ -52,6 +52,9 @@ $(call embtk_include_pkg,gtk)
 #imlib2
 $(call embtk_include_pkg,imlib2)
 
+#libjasper
+$(call embtk_include_pkg,libjasper)
+
 #libjpeg
 $(call embtk_include_pkg,libjpeg)
 

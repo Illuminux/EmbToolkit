@@ -1,0 +1,57 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2009-2011 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         libjasper.kconfig
+# \brief		libjasper.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         November 2015
+################################################################################
+
+config EMBTK_HAVE_LIBJASPER
+	bool "Have libjasper"
+	help
+		JasPer is a collection of software (i.e., a library and application 
+		programs) for the coding and manipulation of images. This software can 
+		handle image data in a variety of formats. One such format supported by 
+		JasPer is the JPEG-2000 format defined in ISO/IEC 15444-1:2000.
+
+choice
+	prompt "libjasper version you wish"
+	depends on EMBTK_HAVE_LIBJASPER
+	help
+		Here you can choose which version of libjasper you want to use.
+
+	config  EMBTK_LIBJASPER_VERSION_1_900_1
+		bool "libjasper-1.900.1"
+endchoice
+
+config	EMBTK_LIBJASPER_VERSION_STRING
+	string
+	default "1.900.1"	if EMBTK_LIBJASPER_VERSION_1_900_1
+
+config EMBTK_LIBJASPER_NEED_PATCH
+	bool
+config EMBTK_LIBJASPER_NEED_AUTORECONF
+	bool
+config EMBTK_LIBJASPER_PKG_IS_TARGZ
+	bool
+config EMBTK_LIBJASPER_PKG_IS_TARBZ2
+	bool
+config EMBTK_LIBJASPER_PKG_IS_ZIP
+	bool

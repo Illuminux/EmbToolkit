@@ -31,6 +31,7 @@ source packages/graphics/freetype/freetype.kconfig
 source packages/graphics/gdk-pixbuf/gdk-pixbuf.kconfig
 source packages/graphics/gtk/gtk.kconfig
 source packages/graphics/imlib2/imlib2.kconfig
+source packages/graphics/libjasper/libjasper.kconfig
 source packages/graphics/libjpeg/libjpeg.kconfig
 source packages/graphics/libjpeg-turbo/libjpeg-turbo.kconfig
 source packages/graphics/libpng/libpng.kconfig
