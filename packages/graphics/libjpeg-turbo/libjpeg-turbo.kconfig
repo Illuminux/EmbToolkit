@@ -1,0 +1,55 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2009-2011 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         libjpeg-turbo.kconfig
+# \brief		libjpeg-turbo.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         November 2015
+################################################################################
+
+config EMBTK_HAVE_LIBJPEG-TURBO
+	bool "Have libjpeg-turbo"
+	help
+		libjpeg-turbo is a JPEG image codec that uses SIMD instructions (MMX, 
+		SSE2, NEON) to accelerate baseline JPEG compression and decompression 
+		on x86, x86-64, and ARM systems. On such systems, libjpeg-turbo is 
+		generally 2-4x as fast as libjpeg, all else being equal. On other types 
+		of systems, libjpeg-turbo can still outperform libjpeg by a significant 
+		amount, by virtue of its highly-optimized Huffman coding routines. In 
+		many cases, the performance of libjpeg-turbo rivals that of proprietary 
+		high-speed JPEG codecs.
+
+choice
+	prompt "libjpeg-turbo version you wish"
+	depends on EMBTK_HAVE_LIBJPEG-TURBO
+	help
+		Here you can choose which version of libjpeg-turbo you want to use.
+
+	config  EMBTK_LIBJPEG-TURBO_VERSION_1_3_1
+		bool "libjpeg-turbo-1.3.1"
+endchoice
+
+config	EMBTK_LIBJPEG-TURBO_VERSION_STRING
+	string
+	default "1.3.1"		if EMBTK_LIBJPEG-TURBO_VERSION_1_3_1
+
+config EMBTK_LIBJPEG-TURBO_NEED_PATCH
+	bool
+config EMBTK_LIBJPEG-TURBO_NEED_AUTORECONF
+	bool
