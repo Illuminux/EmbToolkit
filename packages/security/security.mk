@@ -30,3 +30,6 @@ $(call embtk_include_pkg,dropbear)
 
 # LibreSSL
 $(call embtk_include_pkg,libressl)
+
+# openssl
+$(call embtk_include_pkg,openssl)
