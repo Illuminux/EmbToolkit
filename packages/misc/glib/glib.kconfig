@@ -59,7 +59,9 @@ choice
 	 Here you can choose which version of GLib you want to use.
 
  	config  EMBTK_GLIB_VERSION_2_42_1
- 		bool "GLib-2.42.1"
+ 		bool "GLib-2.42.1 (jessie)"
+	config  EMBTK_GLIB_VERSION_2_33_12
+		bool "GLib-2.33.12 (wheezy)"
 	config  EMBTK_GLIB_VERSION_2_26_1
 		bool "GLib-2.26.1"
 	config  EMBTK_GLIB_VERSION_2_24_2
@@ -71,6 +73,7 @@ endchoice
 config EMBTK_GLIB_MAJOR_VERSION_STRING
 	string
 	default "2.42"		if EMBTK_GLIB_VERSION_2_42_1
+	default "2.33"		if EMBTK_GLIB_VERSION_2_33_12
 	default "2.26"		if EMBTK_GLIB_VERSION_2_26_1
 	default "2.24"		if EMBTK_GLIB_VERSION_2_24_2
 	default "2.24"		if EMBTK_GLIB_VERSION_2_24_1
@@ -78,6 +81,7 @@ config EMBTK_GLIB_MAJOR_VERSION_STRING
 config EMBTK_GLIB_VERSION_STRING
 	string
 	default "2.42.1"	if EMBTK_GLIB_VERSION_2_42_1
+	default "2.33.12"	if EMBTK_GLIB_VERSION_2_33_12
 	default "2.26.1"	if EMBTK_GLIB_VERSION_2_26_1
 	default "2.24.2"	if EMBTK_GLIB_VERSION_2_24_2
 	default "2.24.1"	if EMBTK_GLIB_VERSION_2_24_1

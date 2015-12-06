@@ -26,6 +26,7 @@
 config EMBTK_HAVE_FREETYPE
 	bool "Have FreeType"
 	select EMBTK_HAVE_ZLIB
+	select EMBTK_HAVE_LIBPNG
 	help
 	 FreeType 2 is a software font engine that is designed to be small,
 	 efficient, highly customizable, and portable while capable of producing
@@ -44,6 +45,10 @@ choice
 	help
 		Here you can choose which version of freetype you want to use.
 
+	config  EMBTK_FREETYPE_VERSION_2_5_2
+		bool "FreeType-2.5.2 (jessie)"
+	config  EMBTK_FREETYPE_VERSION_2_4_9
+		bool "FreeType-2.4.9"
 	config  EMBTK_FREETYPE_VERSION_2_4_6
 		bool "FreeType-2.4.6"
 	config  EMBTK_FREETYPE_VERSION_2_4_4
@@ -64,10 +69,13 @@ choice
 		bool "FreeType-2.3.10"
 	config  EMBTK_FREETYPE_VERSION_2_3_9
 		bool "FreeType-2.3.9"
+	select EMBTK_FREETYPE_NEED_AUTORECONF
 endchoice
 
 config EMBTK_FREETYPE_VERSION_STRING
 	string
+	default "2.5.2"		if EMBTK_FREETYPE_VERSION_2_5_2
+	default "2.4.9"		if EMBTK_FREETYPE_VERSION_2_4_9
 	default "2.4.6"		if EMBTK_FREETYPE_VERSION_2_4_6
 	default "2.4.4"		if EMBTK_FREETYPE_VERSION_2_4_4
 	default "2.4.3"		if EMBTK_FREETYPE_VERSION_2_4_3

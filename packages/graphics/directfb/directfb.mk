@@ -26,8 +26,9 @@
 DIRECTFB_NAME		:= directfb
 DIRECTFB_VERSION	:= $(call embtk_get_pkgversion,directfb)
 DIRECTFB_BRANCH		:= $(call embtk_get_pkgversion,directfb_branch)
-DIRECTFB_SITE		:= http://www.directfb.org/downloads/Core/$(DIRECTFB_BRANCH)
-DIRECTFB_PACKAGE	:= DirectFB-$(DIRECTFB_VERSION).tar.gz
+#DIRECTFB_SITE		:= http://www.directfb.org/downloads/Core/$(DIRECTFB_BRANCH)
+DIRECTFB_SITE		:= http://http.debian.net/debian/pool/main/d/directfb
+DIRECTFB_PACKAGE	:= directfb_$(DIRECTFB_VERSION).0.orig.tar.gz
 DIRECTFB_SRC_DIR	:= $(embtk_pkgb)/DirectFB-$(DIRECTFB_VERSION)
 DIRECTFB_BUILD_DIR	:= $(embtk_pkgb)/DirectFB-$(DIRECTFB_VERSION)
 
@@ -40,7 +41,8 @@ DIRECTFB_LIBS		= directfb* libdavinci_c64x* libdirect* libdirectfb*	\
 			libfusion*
 DIRECTFB_INCLUDES	= directfb*
 
-DIRECTFB_CONFIGURE_OPTS	:= --program-suffix="" --disable-x11
+DIRECTFB_CONFIGURE_OPTS	:= --program-suffix="" --disable-x11 --disable-osx \
+						   --disable-png
 
 #Graphics
 CONFIG_DIRECTFB_GRAPHICS-y := --with-gfxdrivers="

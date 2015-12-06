@@ -42,11 +42,19 @@ choice
 	help
 		Here you can choose which version of libsigsegv you want to use.
 
+	config  EMBTK_LIBSIGSEGV_VERSION_2_10
+		bool "libsigsegv-2.10 (jessie)"
+	config  EMBTK_LIBSIGSEGV_VERSION_2_10
+		bool "libsigsegv-2.9 (wheezy)"
 	config  EMBTK_LIBSIGSEGV_VERSION_2_6
 		bool "libsigsegv-2.6"
 endchoice
 
 config EMBTK_LIBSIGSEGV_VERSION_STRING
+	string
+	default "2.10"	if EMBTK_LIBSIGSEGV_VERSION_2_10
+	string
+	default "2.9"	if EMBTK_LIBSIGSEGV_VERSION_2_9
 	string
 	default "2.6"	if EMBTK_LIBSIGSEGV_VERSION_2_6
 

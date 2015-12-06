@@ -64,12 +64,18 @@ choice
 	help
 		Here you can choose which version of lzo you want to use.
 
+	config  EMBTK_LZO_VERSION_2_08
+		bool "lzo-2.08 (jessie)"
+	config  EMBTK_LZO_VERSION_2_06
+		bool "lzo-2.06 (wheezy)"
 	config  EMBTK_LZO_VERSION_2_03
 		bool "lzo-2.03"
 endchoice
 
 config EMBTK_LZO_VERSION_STRING
 	string
+	default "2.08"	if EMBTK_LZO_VERSION_2_08
+	default "2.06"	if EMBTK_LZO_VERSION_2_06
 	default "2.03"	if EMBTK_LZO_VERSION_2_03
 
 config EMBTK_LZO_NEED_PATCH

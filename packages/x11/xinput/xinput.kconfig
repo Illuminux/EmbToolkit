@@ -38,16 +38,16 @@ choice
 	help
 	 Here you can choose which version of xinput you want to use.
 
-	config  EMBTK_XINPUT_VERSION_1_5_3
-		bool "xinput-1.5.3"
-	config  EMBTK_XINPUT_VERSION_1_5_2
-		bool "xinput-1.5.2"
+	config  EMBTK_XINPUT_VERSION_1_6_1
+		bool "xinput-1.6.1 (jessie)"
+	config  EMBTK_XINPUT_VERSION_1_6_0
+		bool "xinput-1.6.0 (wheezy)"
 endchoice
 
 config EMBTK_XINPUT_VERSION_STRING
 	string
-	default "1.5.3"		if EMBTK_XINPUT_VERSION_1_5_3
-	default "1.5.2"		if EMBTK_XINPUT_VERSION_1_5_2
+	default "1.6.1"		if EMBTK_XINPUT_VERSION_1_6_1
+	default "1.6.0"		if EMBTK_XINPUT_VERSION_1_6_0
 
 config EMBTK_XINPUT_NEED_PATCH
 	bool

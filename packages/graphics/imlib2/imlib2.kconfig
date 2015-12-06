@@ -37,13 +37,16 @@ choice
 	help
 	 Here you can choose which version of imlib2 you want to use.
 
-	config  EMBTK_IMLIB2_VERSION_1_4_4
-		bool "imlib2-1.4.4"
+	config  EMBTK_IMLIB2_VERSION_1_4_6
+		bool "imlib2-1.4.6 (jessie)"
+	config  EMBTK_IMLIB2_VERSION_1_4_5
+		bool "imlib2-1.4.5 (wheezy)"
 endchoice
 
 config EMBTK_IMLIB2_VERSION_STRING
 	string
-	default "1.4.4"	if EMBTK_IMLIB2_VERSION_1_4_4
+	default "1.4.6"	if EMBTK_IMLIB2_VERSION_1_4_6
+	default "1.4.5"	if EMBTK_IMLIB2_VERSION_1_4_5
 
 config EMBTK_IMLIB2_NEED_PATCH
 	bool

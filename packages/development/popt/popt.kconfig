@@ -47,7 +47,7 @@ choice
 	 Here you can choose which version of popt you want to use.
 
 	config  EMBTK_POPT_VERSION_1_16
-		bool "popt-1.16"
+		bool "popt-1.16 (jessie/wheezy)"
 endchoice
 
 config EMBTK_POPT_VERSION_STRING

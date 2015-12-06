@@ -38,14 +38,18 @@ choice
 	help
 	 Here you can choose which version of libtirpc you want to use.
 
+	config  EMBTK_LIBTIRPC_VERSION_0_2_5
+		bool "libtirpc-0.2.5 (jessie)"
+		select EMBTK_LIBTIRPC_NEED_AUTORECONF
 	config  EMBTK_LIBTIRPC_VERSION_0_2_2
-		bool "libtirpc-0.2.2"
+		bool "libtirpc-0.2.2 (wheezy)"
 		select EMBTK_LIBTIRPC_NEED_PATCH
 		select EMBTK_LIBTIRPC_NEED_AUTORECONF
 endchoice
 
 config EMBTK_LIBTIRPC_VERSION_STRING
 	string
+	default "0.2.5"		if EMBTK_LIBTIRPC_VERSION_0_2_5
 	default "0.2.2"		if EMBTK_LIBTIRPC_VERSION_0_2_2
 
 config EMBTK_LIBTIRPC_NEED_PATCH

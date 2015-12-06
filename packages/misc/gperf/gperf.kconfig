@@ -44,12 +44,15 @@ choice
 		Here you can choose which version of gperf you want to use.
 
 	config  EMBTK_GPERF_VERSION_3_0_4
-		bool "gperf-3.0.4"
+		bool "gperf-3.0.4 (jessie)"
+	config  EMBTK_GPERF_VERSION_3_0_3
+		bool "gperf-3.0.3 (wheezy)"
 endchoice
 
 config EMBTK_GPERF_VERSION_STRING
 	string
 	default "3.0.4"		if EMBTK_GPERF_VERSION_3_0_4
+	default "3.0.3"		if EMBTK_GPERF_VERSION_3_0_3
 
 config EMBTK_GPERF_NEED_PATCH
 	bool

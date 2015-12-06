@@ -33,16 +33,16 @@ choice
 	help
 	 Here you can choose which version of inputproto you want to use.
 
-	config  EMBTK_INPUTPROTO_VERSION_2_0_1
-		bool "inputproto-2.0.1"
-	config  EMBTK_INPUTPROTO_VERSION_2_0
-		bool "inputproto-2.0"
+	config  EMBTK_INPUTPROTO_VERSION_2_3_1
+		bool "inputproto-2.3.1 (jessie)"
+	config  EMBTK_INPUTPROTO_VERSION_2_2
+		bool "inputproto-2.2 (wheezy)"
 endchoice
 
 config EMBTK_INPUTPROTO_VERSION_STRING
 	string
-	default "2.0.1"		if EMBTK_INPUTPROTO_VERSION_2_0_1
-	default "2.0"		if EMBTK_INPUTPROTO_VERSION_2_0
+	default "2.3.1"		if EMBTK_INPUTPROTO_VERSION_2_3_1
+	default "2.2"		if EMBTK_INPUTPROTO_VERSION_2_2
 
 config EMBTK_INPUTPROTO_NEED_PATCH
 	bool

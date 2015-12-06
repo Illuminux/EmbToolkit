@@ -42,7 +42,7 @@ choice
 		Here you can choose which version of libjpeg you want to use.
 
 	config  EMBTK_LIBJPEG_VERSION_V8
-		bool "libjpeg-8"
+		bool "libjpeg-8 (wheezy)"
 	config  EMBTK_LIBJPEG_VERSION_V7
 		bool "libjpeg-7"
 endchoice

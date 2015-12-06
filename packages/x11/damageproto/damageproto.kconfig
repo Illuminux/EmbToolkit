@@ -34,15 +34,12 @@ choice
 		use.
 
 	config  EMBTK_DAMAGEPROTO_VERSION_1_2_1
-		bool "damageproto-1.2.1"
-	config  EMBTK_DAMAGEPROTO_VERSION_1_2_0
-		bool "damageproto-1.2.0"
+		bool "damageproto-1.2.1 (wheezy/jessie)"
 endchoice
 
 config EMBTK_DAMAGEPROTO_VERSION_STRING
 	string
 	default "1.2.1"	if EMBTK_DAMAGEPROTO_VERSION_1_2_1
-	default "1.2.0"	if EMBTK_DAMAGEPROTO_VERSION_1_2_0
 
 config EMBTK_DAMAGEPROTO_NEED_PATCH
 	bool

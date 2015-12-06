@@ -38,12 +38,15 @@ choice
 	 alsa-lib version to use
 
 	config EMBTK_ALSA-LIB_VERSION_1_0_28
-		bool "alsa-lib-1.0.28"
+		bool "alsa-lib-1.0.28 (jessie)"
+	config EMBTK_ALSA-LIB_VERSION_1_0_25
+		bool "alsa-lib-1.0.25 (wheezy)"
 endchoice
 
 config EMBTK_ALSA-LIB_VERSION_STRING
 	string
 	default "1.0.28"	if EMBTK_ALSA-LIB_VERSION_1_0_28
+	default "1.0.25"	if EMBTK_ALSA-LIB_VERSION_1_0_25
 
 config EMBTK_ALSA-LIB_NEED_PATCH
 	bool

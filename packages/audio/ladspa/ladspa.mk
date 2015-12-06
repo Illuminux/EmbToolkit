@@ -23,10 +23,13 @@
 # \date         Jul 2014
 ################################################################################
 
-LADSPA_NAME		:= ladspa
+LADSPA_NAME			:= ladspa
 LADSPA_VERSION		:= $(call embtk_get_pkgversion,ladspa)
-LADSPA_SITE		:= http://www.ladspa.org/download
-LADSPA_PACKAGE		:= ladspa_sdk_$(LADSPA_VERSION).tgz
+# server is down
+#LADSPA_SITE			:= http://www.ladspa.org/download
+#LADSPA_PACKAGE		:= ladspa_sdk_$(LADSPA_VERSION).tgz
+LADSPA_SITE			:= http://http.debian.net/debian/pool/main/l/ladspa-sdk
+LADSPA_PACKAGE		:= ladspa-sdk_$(LADSPA_VERSION).orig.tar.gz
 LADSPA_SRC_DIR		:= $(embtk_pkgb)/ladspa_sdk
 LADSPA_BUILD_DIR	:= $(embtk_pkgb)/ladspa_sdk
 

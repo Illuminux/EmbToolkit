@@ -34,15 +34,12 @@ choice
 	 Here you can choose which version of renderproto you want to use.
 
 	config  EMBTK_RENDERPROTO_VERSION_0_11_1
-		bool "renderproto-0.11.1"
-	config  EMBTK_RENDERPROTO_VERSION_0_11
-		bool "renderproto-0.11"
+		bool "renderproto-0.11.1 (wheezy/jessie)"
 endchoice
 
 config EMBTK_RENDERPROTO_VERSION_STRING
 	string
 	default "0.11.1"		if EMBTK_RENDERPROTO_VERSION_0_11_1
-	default "0.11"			if EMBTK_RENDERPROTO_VERSION_0_11
 
 config EMBTK_RENDERPROTO_NEED_PATCH
 	bool

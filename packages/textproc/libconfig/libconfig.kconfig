@@ -37,12 +37,15 @@ choice
 	 Here you can choose which version of foo you want to use.
 
 	config  EMBTK_LIBCONFIG_VERSION_1_4_9
-		bool "libconfig-1.4.9"
+		bool "libconfig-1.4.9 (jessie)"
+	config  EMBTK_LIBCONFIG_VERSION_1_4_8
+		bool "libconfig-1.4.8 (wheezy)"
 endchoice
 
 config EMBTK_LIBCONFIG_VERSION_STRING
 	string
 	default "1.4.9"	if EMBTK_LIBCONFIG_VERSION_1_4_9
+	default "1.4.8"	if EMBTK_LIBCONFIG_VERSION_1_4_8
 
 config EMBTK_LIBCONFIG_NEED_PATCH
 	bool

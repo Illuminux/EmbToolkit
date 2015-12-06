@@ -36,19 +36,16 @@ choice
 	help
 	 Here you can choose which version of libxcb you want to use.
 
-	config  EMBTK_LIBXCB_VERSION_1_7
-		bool "libxcb-1.7"
-	config  EMBTK_LIBXCB_VERSION_1_6
-		bool "libxcb-1.6"
-	config  EMBTK_LIBXCB_VERSION_1_5
-		bool "libxcb-1.5"
+	config  EMBTK_LIBXCB_VERSION_1_10
+		bool "libxcb-1.10 (jessie)"
+	config  EMBTK_LIBXCB_VERSION_1_8_1
+		bool "libxcb-1.8.1 (wheezy)"
 endchoice
 
 config EMBTK_LIBXCB_VERSION_STRING
 	string
-	default "1.7"	if EMBTK_LIBXCB_VERSION_1_7
-	default "1.6"	if EMBTK_LIBXCB_VERSION_1_6
-	default "1.5"	if EMBTK_LIBXCB_VERSION_1_5
+	default "1.10"	if EMBTK_LIBXCB_VERSION_1_10
+	default "1.8.1"	if EMBTK_LIBXCB_VERSION_1_8_1
 
 config EMBTK_LIBXCB_NEED_PATCH
 	bool

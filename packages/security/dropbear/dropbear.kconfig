@@ -38,13 +38,16 @@ choice
 	help
 	 Here you can choose which version of dropbear you want to use.
 
-	config  EMBTK_DROPBEAR_VERSION_2014_63
-		bool "dropbear-2014.63"
+	config  EMBTK_DROPBEAR_VERSION_2014_65
+		bool "dropbear-2014.65 (jessie)"
+	config  EMBTK_DROPBEAR_VERSION_2012_55
+		bool "dropbear-2012.55 (wheezy)"
 endchoice
 
 config EMBTK_DROPBEAR_VERSION_STRING
 	string
-	default "2014.63"	if EMBTK_DROPBEAR_VERSION_2014_63
+	default "2014.65"	if EMBTK_DROPBEAR_VERSION_2014_65
+	default "2012.55"	if EMBTK_DROPBEAR_VERSION_2012_55
 
 config EMBTK_DROPBEAR_NEED_PATCH
 	bool

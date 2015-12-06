@@ -32,13 +32,16 @@ choice
 	help
 	 Here you can choose which version of xcbproto you want to use.
 
-	config  EMBTK_XCBPROTO_VERSION_1_6
-		bool "xcbproto-1.6"
+	config  EMBTK_XCBPROTO_VERSION_1_10
+		bool "xcbproto-1.10 (jessie)"
+	config  EMBTK_XCBPROTO_VERSION_1_7_1
+		bool "xcbproto-1.7.1 (wheezy)"
 endchoice
 
 config EMBTK_XCBPROTO_VERSION_STRING
 	string
-	default "1.6"	if EMBTK_XCBPROTO_VERSION_1_6
+	default "1.10"	if EMBTK_XCBPROTO_VERSION_1_10
+	default "1.7.1"	if EMBTK_XCBPROTO_VERSION_1_7_1
 
 config EMBTK_XCBPROTO_NEED_PATCH
 	bool

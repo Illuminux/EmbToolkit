@@ -44,7 +44,9 @@ choice
 	 Here you can choose which version of boost you want to use.
 
 	config  EMBTK_BOOST_VERSION_1_55_0
-		bool "boost-1.55.0"
+		bool "boost-1.55.0 (jessie)"
+	config  EMBTK_BOOST_VERSION_1_49_0
+		bool "boost-1.49.0 (wheezy)"
 endchoice
 
 if EMBTK_HAVE_BOOST
@@ -63,6 +65,7 @@ endif
 config EMBTK_BOOST_VERSION_STRING
 	string
 	default "1_55_0"	if EMBTK_BOOST_VERSION_1_55_0
+	default "1_49_0"	if EMBTK_BOOST_VERSION_1_49_0
 
 config EMBTK_BOOST_NEED_PATCH
 	bool

@@ -40,8 +40,12 @@ choice
 	help
 	 lv2 version to use
 
+	config EMBTK_LV2_VERSION_1_10_0
+		bool "lv2-1.10.0 (jessie)"
 	config EMBTK_LV2_VERSION_1_8_0
 		bool "lv2-1.8.0"
+	config EMBTK_LV2_VERSION_1_0_0
+		bool "lv2-1.0.0 (wheezy)"
 endchoice
 
 config EMBTK_LV2_USE_WAF
@@ -50,7 +54,9 @@ config EMBTK_LV2_USE_WAF
 
 config EMBTK_LV2_VERSION_STRING
 	string
-	default "1.8.0"	if EMBTK_LV2_VERSION_1_8_0
+	default "1.10.0"	if EMBTK_LV2_VERSION_1_10_0
+	default "1.8.0"		if EMBTK_LV2_VERSION_1_8_0
+	default "1.0.0"		if EMBTK_LV2_VERSION_1_0_0
 
 config EMBTK_LV2_NEED_PATCH
 	bool

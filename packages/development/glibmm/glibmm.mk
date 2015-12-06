@@ -23,17 +23,17 @@
 # \date         Jun 2014
 ################################################################################
 
-GLIBMM_NAME		:= glibmm
+GLIBMM_NAME				:= glibmm
 GLIBMM_MAJOR_VERSION	:= $(call embtk_get_pkgversion,glibmm_major)
-GLIBMM_VERSION		:= $(call embtk_get_pkgversion,glibmm)
-GLIBMM_SITE		:= http://ftp.gnome.org/pub/gnome/sources/glibmm/$(GLIBMM_MAJOR_VERSION)
-GLIBMM_PACKAGE		:= glibmm-$(GLIBMM_VERSION).tar.bz2
-GLIBMM_SRC_DIR		:= $(embtk_pkgb)/glibmm-$(GLIBMM_VERSION)
-GLIBMM_BUILD_DIR	:= $(embtk_pkgb)/glibmm-$(GLIBMM_VERSION)
+GLIBMM_VERSION			:= $(call embtk_get_pkgversion,glibmm)
+GLIBMM_SITE				:= http://ftp.gnome.org/pub/gnome/sources/glibmm/$(GLIBMM_MAJOR_VERSION)
+GLIBMM_PACKAGE			:= glibmm-$(GLIBMM_VERSION).tar.xz
+GLIBMM_SRC_DIR			:= $(embtk_pkgb)/glibmm-$(GLIBMM_VERSION)
+GLIBMM_BUILD_DIR		:= $(embtk_pkgb)/glibmm-$(GLIBMM_VERSION)
 
 GLIBMM_INCLUDES		:= glibmm-* giomm*
-GLIBMM_LIBS		:= glibmm-* libglibmm* libgiomm*
-GLIBMM_PKGCONFIGS       := glibmm*.pc giomm*.pc
+GLIBMM_LIBS			:= glibmm-* libglibmm* libgiomm*
+GLIBMM_PKGCONFIGS	:= glibmm*.pc giomm*.pc
 GLIBMM_SHARE		:= glibmm* doc/glibmm* devhelp/books/glibmm* aclocal/glibmm*
 
-GLIBMM_DEPS		:= glib_install libsigcpp_install
+GLIBMM_DEPS			:= glib_install libsigcpp_install

@@ -44,7 +44,7 @@ choice
 	 Here you can choose which version of librsync you want to use.
 
 	config  EMBTK_LIBRSYNC_VERSION_0_9_7
-		bool "librsync-0.9.7"
+		bool "librsync-0.9.7 (wheezy/jessie)"
 		select EMBTK_LIBRSYNC_NEED_PATCH
 endchoice
 

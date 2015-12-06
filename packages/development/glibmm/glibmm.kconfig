@@ -39,17 +39,23 @@ choice
 	help
 	 Here you can choose which version of glibmm you want to use.
 
-	config  EMBTK_GLIBMM_VERSION_2_24_2
-		bool "glibmm-2.24.2"
+	config  EMBTK_GLIBMM_VERSION_2_42_0
+		bool "glibmm-2.42.0 (jessie)"
+	config  EMBTK_GLIBMM_VERSION_2_32_1
+		bool "glibmm-2.32.1 (wheezy)"
 endchoice
 
 config EMBTK_GLIBMM_MAJOR_VERSION_STRING
 	string
-	default "2.24"		if EMBTK_GLIBMM_VERSION_2_24_2
+	default "2.42"		if EMBTK_GLIBMM_VERSION_2_42_0
+	string
+	default "2.32"		if EMBTK_GLIBMM_VERSION_2_32_1
 
 config EMBTK_GLIBMM_VERSION_STRING
 	string
-	default "2.24.2"	if EMBTK_GLIBMM_VERSION_2_24_2
+	default "2.42.0"	if EMBTK_GLIBMM_VERSION_2_42_0
+	string
+	default "2.32.1"	if EMBTK_GLIBMM_VERSION_2_32_1
 
 config EMBTK_GLIBMM_NEED_PATCH
 	bool

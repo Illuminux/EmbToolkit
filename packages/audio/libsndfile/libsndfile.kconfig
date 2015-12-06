@@ -37,7 +37,7 @@ choice
 	 libsndfile version to use
 
 	config EMBTK_LIBSNDFILE_VERSION_1_0_25
-		bool "libsndfile-1.0.25"
+		bool "libsndfile-1.0.25 (wheezy/jessie)"
 endchoice
 
 config EMBTK_LIBSNDFILE_VERSION_STRING

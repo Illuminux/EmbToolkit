@@ -33,16 +33,16 @@ choice
 	help
 		Here you can choose which version of fontsproto you want to use.
 
-	config  EMBTK_FONTSPROTO_VERSION_2_1_1
-		bool "fontsproto-2.1.1"
-	config  EMBTK_FONTSPROTO_VERSION_2_1_0
-		bool "fontsproto-2.1.0"
+	config  EMBTK_FONTSPROTO_VERSION_2_1_3
+		bool "fontsproto-2.1.3 (jessie)"
+	config  EMBTK_FONTSPROTO_VERSION_2_1_2
+		bool "fontsproto-2.1.2 (wheezy)"
 endchoice
 
 config EMBTK_FONTSPROTO_VERSION_STRING
 	string
-	default "2.1.1"	if EMBTK_FONTSPROTO_VERSION_2_1_1
-	default "2.1.0"	if EMBTK_FONTSPROTO_VERSION_2_1_0
+	default "2.1.3"	if EMBTK_FONTSPROTO_VERSION_2_1_3
+	default "2.1.2"	if EMBTK_FONTSPROTO_VERSION_2_1_2
 
 config EMBTK_FONTSPROTO_NEED_PATCH
 	bool

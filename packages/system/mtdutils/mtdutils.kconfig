@@ -43,7 +43,7 @@ choice
 	 Version of mtd-utils to use.
 
 	config EMBTK_MTDUTILS_VERSION_1_5_1
-		bool "mtd-utils-1.5.1"
+		bool "mtd-utils-1.5.1 (wheezy/jessie)"
 		select EMBTK_MTDUTILS_NEED_PATCH
 endchoice
 

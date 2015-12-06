@@ -37,13 +37,16 @@ choice
 	help
 	 Here you can choose which version of libpcap you want to use.
 
-	config  EMBTK_LIBPCAP_VERSION_1_7_4
-		bool "libpcap-1.7.4"
+	config  EMBTK_LIBPCAP_VERSION_1_6_2
+		bool "libpcap-1.6.2 (jessie)"
+	config  EMBTK_LIBPCAP_VERSION_1_3_0
+		bool "libpcap-1.3.0 (wheezy)"
 endchoice
 
 config EMBTK_LIBPCAP_VERSION_STRING
 	string
-	default "1.7.4"		if EMBTK_LIBPCAP_VERSION_1_7_4
+	default "1.6.2"		if EMBTK_LIBPCAP_VERSION_1_6_2
+	default "1.3.0"		if EMBTK_LIBPCAP_VERSION_1_3_0
 
 config EMBTK_LIBPCAP_NEED_PATCH
 	bool

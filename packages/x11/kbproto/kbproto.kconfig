@@ -33,16 +33,13 @@ choice
 	help
 	 Here you can choose which version of kbproto you want to use.
 
-	config  EMBTK_KBPROTO_VERSION_1_0_5
-		bool "kbproto-1.0.5"
-	config  EMBTK_KBPROTO_VERSION_1_0_4
-		bool "kbproto-1.0.4"
+	config  EMBTK_KBPROTO_VERSION_1_0_6
+		bool "kbproto-1.0.6 (wheezy(jessie)"
 endchoice
 
 config EMBTK_KBPROTO_VERSION_STRING
 	string
-	default "1.0.5"		if EMBTK_KBPROTO_VERSION_1_0_5
-	default "1.0.4"		if EMBTK_KBPROTO_VERSION_1_0_4
+	default "1.0.6"		if EMBTK_KBPROTO_VERSION_1_0_6
 
 config EMBTK_KBPROTO_NEED_PATCH
 	bool

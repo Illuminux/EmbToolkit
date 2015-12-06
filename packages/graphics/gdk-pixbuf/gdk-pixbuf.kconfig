@@ -46,18 +46,25 @@ choice
 	help
 		Here you can choose which version of gdk-pixbuf you want to use.
 
-	config  EMBTK_GDKPIXBUF_VERSION_2_22_1
-		bool "gdk-pixbuf-2.22.1"
-		select EMBTK_GLIB_VERSION_2_26_X_AND_GREATER
+	config  EMBTK_GDKPIXBUF_VERSION_2_31_1
+		bool "gdk-pixbuf-2.31.1 (jessie)"
+		select EMBTK_GLIB_VERSION_2_37_X_AND_GREATER
+	config  EMBTK_GDKPIXBUF_VERSION_2_26_1
+		bool "gdk-pixbuf-2.26.1"
+		select EMBTK_GLIB_VERSION_2_31_X_AND_GREATER
 endchoice
 
 config EMBTK_GDKPIXBUF_MAJOR_VERSION_STRING
 	string
-	default "2.22"	if EMBTK_GDKPIXBUF_VERSION_2_22_1
+	default "2.31"	if EMBTK_GDKPIXBUF_VERSION_2_31_1
+	string
+	default "2.26"	if EMBTK_GDKPIXBUF_VERSION_2_26_1
 
 config EMBTK_GDKPIXBUF_VERSION_STRING
 	string
-	default "2.22.1"	if EMBTK_GDKPIXBUF_VERSION_2_22_1
+	default "2.31.1"	if EMBTK_GDKPIXBUF_VERSION_2_31_1
+	string
+	default "2.26.1"	if EMBTK_GDKPIXBUF_VERSION_2_26_1
 
 config EMBTK_GDKPIXBUF_NEED_PATCH
 	bool

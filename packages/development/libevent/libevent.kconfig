@@ -37,16 +37,19 @@ choice
 	help
 	 Here you can choose which version of libevent you want to use.
 
-	config  EMBTK_LIBEVENT_VERSION_2_0_STABLE
-		bool "libevent-2.0.21-stable"
-	config  EMBTK_LIBEVENT_VERSION_1_4_STABLE
+	config  EMBTK_LIBEVENT_VERSION_2_0_21_STABLE
+		bool "libevent-2.0.21-stable (jessie)"
+	config  EMBTK_LIBEVENT_VERSION_2_0_19_STABLE
+		bool "libevent-2.0.19-stable (wheezy)"
+	config  EMBTK_LIBEVENT_VERSION_1_4_13_STABLE
 		bool "libevent-1.4.13-stable"
 endchoice
 
 config EMBTK_LIBEVENT_VERSION_STRING
 	string
-	default "2.0.21-stable"		if EMBTK_LIBEVENT_VERSION_2_0_STABLE
-	default "1.4.14b-stable"	if EMBTK_LIBEVENT_VERSION_1_4_STABLE
+	default "2.0.21-stable"		if EMBTK_LIBEVENT_VERSION_2_0_21_STABLE
+	default "2.0.19-stable"		if EMBTK_LIBEVENT_VERSION_2_0_19_STABLE
+	default "1.4.14b-stable"	if EMBTK_LIBEVENT_VERSION_1_4_13_STABLE
 
 config EMBTK_LIBEVENT_NEED_PATCH
 	bool

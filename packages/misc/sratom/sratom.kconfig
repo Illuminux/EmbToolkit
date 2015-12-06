@@ -38,8 +38,10 @@ choice
 	help
 	 sratom version to use
 
-	config EMBTK_SRATOM_VERSION_0_4_4
-		bool "sratom-0.4.4"
+	config EMBTK_SRATOM_VERSION_0_4_6
+		bool "sratom-0.4.6 (jessie)"
+	config EMBTK_SRATOM_VERSION_0_2_0
+		bool "sratom-0.2.0 (wheezy)"
 endchoice
 
 config EMBTK_SRATOM_USE_WAF
@@ -48,7 +50,8 @@ config EMBTK_SRATOM_USE_WAF
 
 config EMBTK_SRATOM_VERSION_STRING
 	string
-	default "0.4.4"	if EMBTK_SRATOM_VERSION_0_4_4
+	default "0.4.6"	if EMBTK_SRATOM_VERSION_0_4_6
+	default "0.2.0"	if EMBTK_SRATOM_VERSION_0_2_0
 
 config EMBTK_SRATOM_NEED_PATCH
 	bool

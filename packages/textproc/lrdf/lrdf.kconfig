@@ -37,7 +37,7 @@ choice
 	 Here you can choose which version of lrdf you want to use.
 
 	config  EMBTK_LRDF_VERSION_0_4_0
-		bool "lrdf-0.4.0"
+		bool "lrdf-0.4.0 (wheezy/jessie)"
 endchoice
 
 config EMBTK_LRDF_VERSION_STRING

@@ -38,7 +38,7 @@ choice
 	 libsamplerate version to use
 
 	config EMBTK_LIBSAMPLERATE_VERSION_0_1_8
-		bool "libsamplerate-0.1.8"
+		bool "libsamplerate-0.1.8 (wheezy/jessie)"
 endchoice
 
 config EMBTK_LIBSAMPLERATE_VERSION_STRING

@@ -35,16 +35,16 @@ choice
 	help
 	 Here you can choose which version of libxrender you want to use.
 
-	config  EMBTK_LIBXRENDER_VERSION_0_9_6
-		bool "libXrender-0.9.6"
-	config  EMBTK_LIBXRENDER_VERSION_0_9_5
-		bool "libXrender-0.9.5"
+	config  EMBTK_LIBXRENDER_VERSION_0_9_8
+		bool "libXrender-0.9.8 (jessie)"
+	config  EMBTK_LIBXRENDER_VERSION_0_9_7
+		bool "libXrender-0.9.7 (wheezy)"
 endchoice
 
 config EMBTK_LIBXRENDER_VERSION_STRING
 	string
-	default "0.9.6"	if EMBTK_LIBXRENDER_VERSION_0_9_6
-	default "0.9.5"	if EMBTK_LIBXRENDER_VERSION_0_9_5
+	default "0.9.8"	if EMBTK_LIBXRENDER_VERSION_0_9_8
+	default "0.9.7"	if EMBTK_LIBXRENDER_VERSION_0_9_7
 
 config EMBTK_LIBXRENDER_NEED_PATCH
 	bool

@@ -39,7 +39,7 @@ choice
 	 Here you can choose which version of raptor you want to use.
 
 	config  EMBTK_RAPTOR_VERSION_1_4_21
-		bool "raptor-1.4.21"
+		bool "raptor-1.4.21 (wheezy/jessie)"
 endchoice
 
 config EMBTK_RAPTOR_VERSION_STRING

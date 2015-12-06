@@ -38,12 +38,15 @@ choice
 	help
 	 armadillo version to use
 
+	config EMBTK_ARMADILLO_VERSION_4_450_2
+		bool "armadillo-4.450.2 (jessie)"
 	config EMBTK_ARMADILLO_VERSION_4_300_2
 		bool "armadillo-4.300.2"
 endchoice
 
 config EMBTK_ARMADILLO_VERSION_STRING
 	string
+	default "4.450.2"       if EMBTK_ARMADILLO_VERSION_4_450_2
 	default "4.300.2"       if EMBTK_ARMADILLO_VERSION_4_300_2
 
 config EMBTK_ARMADILLO_NEED_PATCH

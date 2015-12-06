@@ -34,7 +34,7 @@ choice
 	 Here you can choose which version of libpthreadstubs you want to use.
 
 	config  EMBTK_LIBPTHREADSTUBS_VERSION_0_3
-		bool "libpthreadstubs-0.3"
+		bool "libpthreadstubs-0.3 (wheezy/jessie)"
 endchoice
 
 config EMBTK_LIBPTHREADSTUBS_VERSION_STRING

@@ -35,17 +35,16 @@ choice
 	help
 	 Here you can choose which version of libxml2 you want to use.
 
-	config  EMBTK_LIBXML2_VERSION_2_7_7
-		bool "libxml2-2.7.7"
 	config  EMBTK_LIBXML2_VERSION_2_9_1
-		bool "libxml2-2.9.1"
+		bool "libxml2-2.9.1 (jessie)"
+	config  EMBTK_LIBXML2_VERSION_2_8_0
+		bool "libxml2-2.8.0 (wheezy)"
 endchoice
 
 config EMBTK_LIBXML2_VERSION_STRING
 	string
-	default "2.7.7"		if EMBTK_LIBXML2_VERSION_2_7_7
-	string
 	default "2.9.1"		if EMBTK_LIBXML2_VERSION_2_9_1
+	default "2.8.0"		if EMBTK_LIBXML2_VERSION_2_8_0
 
 config EMBTK_LIBXML2_NEED_PATCH
 	bool

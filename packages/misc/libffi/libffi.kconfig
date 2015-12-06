@@ -36,13 +36,16 @@ choice
 	 Here you can choose which version of libffi you want to use.
 
 	config  EMBTK_LIBFFI_VERSION_3_1
-		bool "libffi-3.1"
+		bool "libffi-3.1 (jessie)"
+	config  EMBTK_LIBFFI_VERSION_3_0_10
+		bool "libffi-3.0.10 (wheezy)"
 #		select EMBTK_LIBFFI_NEED_AUTORECONF
 endchoice
 
 config EMBTK_LIBFFI_VERSION_STRING
 	string
-	default "3.1"	if EMBTK_LIBFFI_VERSION_3_1
+	default "3.1"		if EMBTK_LIBFFI_VERSION_3_1
+	default "3.0.10"	if EMBTK_LIBFFI_VERSION_3_0_10
 
 config EMBTK_LIBFFI_NEED_PATCH
 	bool

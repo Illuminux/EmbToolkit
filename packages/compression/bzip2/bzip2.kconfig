@@ -40,7 +40,7 @@ choice
 	 bzip2 version to use
 
 	config EMBTK_BZIP2_VERSION_1_0_6
-		bool "bzip2-1.0.6"
+		bool "bzip2-1.0.6 (wheezy/jessie)"
 		select EMBTK_BZIP2_NEED_PATCH
 endchoice
 

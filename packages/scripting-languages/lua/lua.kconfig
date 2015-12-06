@@ -47,7 +47,7 @@ choice
 	 Here you can choose which version of lua you want to use.
 
 	config  EMBTK_LUA_VERSION_5_1_5
-		bool "lua-5.1.5"
+		bool "lua-5.1.5 (wheezy/jessie)"
 endchoice
 
 config EMBTK_LUA_VERSION_STRING

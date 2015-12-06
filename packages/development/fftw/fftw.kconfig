@@ -39,11 +39,14 @@ choice
 
 	config EMBTK_FFTW_VERSION_3_3_4
 		bool "fftw-3.3.4"
+	config EMBTK_FFTW_VERSION_2_1_5
+		bool "fftw-2.1.5 (jessie/wheezy)"
 endchoice
 
 config EMBTK_FFTW_VERSION_STRING
     string
     default "3.3.4"	if EMBTK_FFTW_VERSION_3_3_4
+    default "2.1.5"	if EMBTK_FFTW_VERSION_2_1_5
 
 config EMBTK_FFTW_NEED_PATCH
     bool

@@ -42,12 +42,16 @@ choice
 	 Here you can choose which version of libunwind you want to use.
 
 	config  EMBTK_LIBUNWIND_VERSION_1_1
-		bool "libunwind-1.1"
+		bool "libunwind-1.1 (jessie)"
+	config  EMBTK_LIBUNWIND_VERSION_0_9
+		bool "libunwind-0.99 (wheezy)"
 endchoice
 
 config EMBTK_LIBUNWIND_VERSION_STRING
 	string
 	default "1.1"		if EMBTK_LIBUNWIND_VERSION_1_1
+	string
+	default "0.99"		if EMBTK_LIBUNWIND_VERSION_0_9
 
 config EMBTK_LIBUNWIND_NEED_PATCH
 	bool

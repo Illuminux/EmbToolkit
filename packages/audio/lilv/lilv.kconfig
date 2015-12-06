@@ -42,8 +42,12 @@ choice
 	help
 	 lilv version to use
 
+	config EMBTK_LILV_VERSION_0_20_0
+		bool "lilv-0.20.0 (jessie)"
 	config EMBTK_LILV_VERSION_0_18_0
 		bool "lilv-0.18.0"
+	config EMBTK_LILV_VERSION_0_14_2
+		bool "lilv-0.14.2 (wheezy)"
 endchoice
 
 config EMBTK_LILV_USE_WAF
@@ -52,7 +56,9 @@ config EMBTK_LILV_USE_WAF
 
 config EMBTK_LILV_VERSION_STRING
 	string
+	default "0.20.0"	if EMBTK_LILV_VERSION_0_20_0
 	default "0.18.0"	if EMBTK_LILV_VERSION_0_18_0
+	default "0.14.2"	if EMBTK_LILV_VERSION_0_14_2
 
 config EMBTK_LILV_NEED_PATCH
 	bool

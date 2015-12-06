@@ -34,7 +34,7 @@ choice
 	 Here you can choose which version of tslib you want to use.
 
 	config  EMBTK_TSLIB_VERSION_1_0
-		bool "tslib-1.0"
+		bool "tslib-1.0 (wheezy)"
 		select EMBTK_TSLIB_NEED_PATCH
 		select EMBTK_TSLIB_NEED_AUTORECONF
 endchoice

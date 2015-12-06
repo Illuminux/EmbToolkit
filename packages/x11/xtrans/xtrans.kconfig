@@ -33,16 +33,16 @@ choice
 	help
 		Here you can choose which version of xtrans you want to use.
 
-	config  EMBTK_XTRANS_VERSION_1_2_6
-		bool "xtrans-1.2.6"
-	config  EMBTK_XTRANS_VERSION_1_2_5
-		bool "xtrans-1.2.5"
+	config  EMBTK_XTRANS_VERSION_1_3_4
+		bool "xtrans-1.3.4 (jessie)"
+	config  EMBTK_XTRANS_VERSION_1_2_7
+		bool "xtrans-1.2.7 (wheezy)"
 endchoice
 
 config EMBTK_XTRANS_VERSION_STRING
 	string
-	default "1.2.6"		if EMBTK_XTRANS_VERSION_1_2_6
-	default "1.2.5"		if EMBTK_XTRANS_VERSION_1_2_5
+	default "1.3.4"		if EMBTK_XTRANS_VERSION_1_3_4
+	default "1.2.7"		if EMBTK_XTRANS_VERSION_1_2_7
 
 config EMBTK_XTRANS_NEED_PATCH
 	bool

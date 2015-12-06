@@ -37,16 +37,13 @@ choice
 	help
 	 Here you can choose which version of xcmiscproto you want to use.
 
-	config  EMBTK_XCMISCPROTO_VERSION_1_2_1
-		bool "xcmiscproto-1.2.1"
-	config  EMBTK_XCMISCPROTO_VERSION_1_2_0
-		bool "xcmiscproto-1.2.0"
+	config  EMBTK_XCMISCPROTO_VERSION_1_2_2
+		bool "xcmiscproto-1.2.2 (wheezy/jessie)"
 endchoice
 
 config EMBTK_XCMISCPROTO_VERSION_STRING
 	string
-	default "1.2.1"		if EMBTK_XCMISCPROTO_VERSION_1_2_1
-	default "1.2.0"		if EMBTK_XCMISCPROTO_VERSION_1_2_0
+	default "1.2.2"		if EMBTK_XCMISCPROTO_VERSION_1_2_2
 
 config EMBTK_XCMISCPROTO_NEED_PATCH
 	bool

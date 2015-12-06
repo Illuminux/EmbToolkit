@@ -25,7 +25,7 @@
 #
 # FreeFont: TrueType
 #
-config EMBTK_HAVE_FREEFONT_TTF
+config EMBTK_HAVE_FREEFONT
 	bool "Have GNU FreeFont: TrueType format"
 	select EMBTK_HAVE_FREETYPE
 	help
@@ -35,23 +35,23 @@ config EMBTK_HAVE_FREEFONT_TTF
 		modern operating systems.
 choice
 	prompt "FreeFont version you wish: TrueType format"
-	depends on EMBTK_HAVE_FREEFONT_TTF
+	depends on EMBTK_HAVE_FREEFONT
 	help
 	 Here you can choose which version of FreeFont you want to use.
 
-	config  EMBTK_FREEFONT_TTF_VERSION_20100919
-		bool "freefont-ttf-20100919"
+	config  EMBTK_FREEFONT_VERSION_20120503
+		bool "freefont-ttf-20120503 (wheezy/jessie)"
 endchoice
 
-config EMBTK_FREEFONT_TTF_VERSION_STRING
+config EMBTK_FREEFONT_VERSION_STRING
 	string
-	default "20100919"	if EMBTK_FREEFONT_TTF_VERSION_20100919
+	default "20120503"	if EMBTK_FREEFONT_VERSION_20120503
 
-config EMBTK_FREEFONT_TTF_NEED_PATCH
+config EMBTK_FREEFONT_NEED_PATCH
 	bool
-config EMBTK_FREEFONT_TTF_NEED_AUTORECONF
+config EMBTK_FREEFONT_NEED_AUTORECONF
 	bool
-config EMBTK_FREEFONT_TTF_PKG_IS_TARGZ
+config EMBTK_FREEFONT_PKG_IS_TARGZ
 	bool
-config EMBTK_FREEFONT_TTF_PKG_IS_TARBZ2
+config EMBTK_FREEFONT_PKG_IS_TARBZ2
 	bool

@@ -50,6 +50,10 @@ choice
 	help
 		Here you can choose which version of Pango you want to use.
 
+	config  EMBTK_PANGO_VERSION_1_36_8
+		bool "Pango-1.36.8 (jessie)"
+	config  EMBTK_PANGO_VERSION_1_30_0
+		bool "Pango-1.30.0 (wheezy)"
 	config  EMBTK_PANGO_VERSION_1_28_1
 		bool "Pango-1.28.1"
 	config  EMBTK_PANGO_VERSION_1_26_2
@@ -58,11 +62,15 @@ endchoice
 
 config EMBTK_PANGO_MAJOR_VERSION_STRING
 	string
+	default "1.36"	if EMBTK_PANGO_VERSION_1_36_8
+	default "1.30"	if EMBTK_PANGO_VERSION_1_30_0
 	default "1.28"	if EMBTK_PANGO_VERSION_1_28_1
 	default "1.26"	if EMBTK_PANGO_VERSION_1_26_2
 
 config EMBTK_PANGO_VERSION_STRING
 	string
+	default "1.36.8"	if EMBTK_PANGO_VERSION_1_36_8
+	default "1.30.0"	if EMBTK_PANGO_VERSION_1_30_0
 	default "1.28.1"	if EMBTK_PANGO_VERSION_1_28_1
 	default "1.26.2"	if EMBTK_PANGO_VERSION_1_26_2
 

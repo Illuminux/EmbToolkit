@@ -23,13 +23,13 @@
 # \date         May 2012
 ################################################################################
 
-LIBBSD_NAME		:= libbsd
+LIBBSD_NAME			:= libbsd
 LIBBSD_VERSION		:= $(call embtk_get_pkgversion,libbsd)
-LIBBSD_SITE		:= http://libbsd.freedesktop.org/releases
-LIBBSD_PACKAGE		:= libbsd-$(LIBBSD_VERSION).tar.gz
+LIBBSD_SITE			:= http://libbsd.freedesktop.org/releases
+LIBBSD_PACKAGE		:= libbsd-$(LIBBSD_VERSION).tar.$(if $(LIBBSD_VERSION) == "0.7.0",xz,gz)
 LIBBSD_SRC_DIR		:= $(embtk_pkgb)/libbsd-$(LIBBSD_VERSION)
 LIBBSD_BUILD_DIR	:= $(embtk_pkgb)/libbsd-$(LIBBSD_VERSION)
 
 LIBBSD_INCLUDES		:= bsd
-LIBBSD_LIBS		:= libbsd*
+LIBBSD_LIBS			:= libbsd*
 LIBBSD_PKGCONFIGS	:= libbsd*.pc

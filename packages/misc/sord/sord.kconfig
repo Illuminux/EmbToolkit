@@ -35,8 +35,10 @@ choice
 	help
 	 sord version to use
 
-	config EMBTK_SORD_VERSION_0_12_0
-		bool "sord-0.12.0"
+	config EMBTK_SORD_VERSION_0_12_2
+		bool "sord-0.12.2 (jessie)"
+	config EMBTK_SORD_VERSION_0_8_0
+		bool "sord-0.8.0 (wheezy)"
 endchoice
 
 config EMBTK_SORD_USE_WAF
@@ -45,7 +47,8 @@ config EMBTK_SORD_USE_WAF
 
 config EMBTK_SORD_VERSION_STRING
 	string
-	default "0.12.0"	if EMBTK_SORD_VERSION_0_12_0
+	default "0.12.2"	if EMBTK_SORD_VERSION_0_12_2
+	default "0.8.0"	if EMBTK_SORD_VERSION_0_8_0
 
 config EMBTK_SORD_NEED_PATCH
 	bool

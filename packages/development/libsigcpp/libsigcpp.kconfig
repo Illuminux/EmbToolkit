@@ -38,17 +38,29 @@ choice
 	help
 	 Here you can choose which version of libsigc++ you want to use.
 
+	config  EMBTK_LIBSIGCPP_VERSION_2_4_0
+		bool "libsigc++-2.4.0 (jessie)"
 	config  EMBTK_LIBSIGCPP_VERSION_2_3_1
 		bool "libsigc++-2.3.1"
+	config  EMBTK_LIBSIGCPP_VERSION_2_2_10
+		bool "libsigc++-2.2.10 (wheezy)"
 endchoice
 
 config EMBTK_LIBSIGCPP_MAJOR_VERSION_STRING
 	string
+	default "2.4"		if EMBTK_LIBSIGCPP_VERSION_2_4_0
+	string
 	default "2.3"		if EMBTK_LIBSIGCPP_VERSION_2_3_1
+	string
+	default "2.2"		if EMBTK_LIBSIGCPP_VERSION_2_2_10
 
 config EMBTK_LIBSIGCPP_VERSION_STRING
 	string
+	default "2.4.0"		if EMBTK_LIBSIGCPP_VERSION_2_4_0
+	string
 	default "2.3.1"		if EMBTK_LIBSIGCPP_VERSION_2_3_1
+	string
+	default "2.2.10"	if EMBTK_LIBSIGCPP_VERSION_2_2_10
 
 config EMBTK_LIBSIGCPP_NEED_PATCH
 	bool

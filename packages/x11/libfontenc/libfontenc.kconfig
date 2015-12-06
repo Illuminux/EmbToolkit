@@ -34,16 +34,16 @@ choice
 	help
 		Here you can choose which version of libfontenc you want to use.
 
-	config  EMBTK_LIBFONTENC_VERSION_1_1_0
-		bool "libfontenc-1.1.0"
-	config  EMBTK_LIBFONTENC_VERSION_1_0_5
-		bool "libfontenc-1.0.5"
+	config  EMBTK_LIBFONTENC_VERSION_1_1_2
+		bool "libfontenc-1.1.2 (jessie)"
+	config  EMBTK_LIBFONTENC_VERSION_1_1_1
+		bool "libfontenc-1.1.1 (wheezy)"
 endchoice
 
 config EMBTK_LIBFONTENC_VERSION_STRING
 	string
-	default "1.1.0"	if EMBTK_LIBFONTENC_VERSION_1_1_0
-	default "1.0.5"	if EMBTK_LIBFONTENC_VERSION_1_0_5
+	default "1.1.2"	if EMBTK_LIBFONTENC_VERSION_1_1_2
+	default "1.1.1"	if EMBTK_LIBFONTENC_VERSION_1_1_1
 
 config EMBTK_LIBFONTENC_NEED_PATCH
 	bool

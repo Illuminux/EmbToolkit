@@ -35,13 +35,13 @@ choice
 	help
 	 Here you can choose which version of libxkbfile you want to use.
 
-	config  EMBTK_LIBXKBFILE_VERSION_1_0_6
-		bool "libxkbfile-1.0.6"
+	config  EMBTK_LIBXKBFILE_VERSION_1_0_8
+		bool "libxkbfile-1.0.8 (wheezy/jessie)"
 endchoice
 
 config EMBTK_LIBXKBFILE_VERSION_STRING
 	string
-	default "1.0.6"	if EMBTK_LIBXKBFILE_VERSION_1_0_6
+	default "1.0.8"	if EMBTK_LIBXKBFILE_VERSION_1_0_8
 
 config EMBTK_LIBXKBFILE_NEED_PATCH
 	bool

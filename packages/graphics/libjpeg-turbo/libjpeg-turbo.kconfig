@@ -42,7 +42,7 @@ choice
 		Here you can choose which version of libjpeg-turbo you want to use.
 
 	config  EMBTK_LIBJPEG-TURBO_VERSION_1_3_1
-		bool "libjpeg-turbo-1.3.1"
+		bool "libjpeg-turbo-1.3.1 (jessie)"
 endchoice
 
 config	EMBTK_LIBJPEG-TURBO_VERSION_STRING

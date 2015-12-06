@@ -37,12 +37,15 @@ choice
 	 Here you can choose which version of gsl you want to use.
 
 	config  EMBTK_GSL_VERSION_1_16
-		bool "gsl-1.16"
+		bool "gsl-1.16 (jessie)"
+	config  EMBTK_GSL_VERSION_1_15
+		bool "gsl-1.15 (wheezy)"
 endchoice
 
 config EMBTK_GSL_VERSION_STRING
 	string
 	default "1.16"	if EMBTK_GSL_VERSION_1_16
+	default "1.15"	if EMBTK_GSL_VERSION_1_15
 
 config EMBTK_GSL_NEED_PATCH
 	bool

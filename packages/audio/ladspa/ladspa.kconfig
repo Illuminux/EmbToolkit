@@ -36,7 +36,7 @@ choice
 	 ladspa version to use
 
 	config EMBTK_LADSPA_VERSION_1_13
-		bool "ladspa-1.13"
+		bool "ladspa-1.13 (wheezy/jessie)"
 endchoice
 
 config EMBTK_LADSPA_VERSION_STRING

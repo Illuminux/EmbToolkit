@@ -35,13 +35,16 @@ choice
 	help
 	 Here you can choose which version of libXfixes you want to use.
 
-	config  EMBTK_LIBXFIXES_VERSION_4_0_5
-		bool "libXfixes-4.0.5"
+	config  EMBTK_LIBXFIXES_VERSION_5_0_1
+		bool "libXfixes-5.0.1 (jessie)"
+	config  EMBTK_LIBXFIXES_VERSION_5_0
+		bool "libXfixes-5.0 (wheezy)"
 endchoice
 
 config EMBTK_LIBXFIXES_VERSION_STRING
 	string
-	default "4.0.5"		if EMBTK_LIBXFIXES_VERSION_4_0_5
+	default "5.0.1"		if EMBTK_LIBXFIXES_VERSION_5_0_1
+	default "5.0"		if EMBTK_LIBXFIXES_VERSION_5_0
 
 config EMBTK_LIBXFIXES_NEED_PATCH
 	bool

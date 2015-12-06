@@ -47,15 +47,21 @@ choice
 	help
 	 Here you can choose which version of libnih you want to use.
 
+	config  EMBTK_LIBNIH_VERSION_1_0_3
+		bool "libnih-1.0.3 (jessie/wheezy)"
 	config  EMBTK_LIBNIH_VERSION_1_0_2
 		bool "libnih-1.0.2"
 endchoice
 
 config EMBTK_LIBNIH_MAJOR_VERSION_STRING
 	string
+	default "1.0"		if EMBTK_LIBNIH_VERSION_1_0_3
+	string
 	default "1.0"		if EMBTK_LIBNIH_VERSION_1_0_2
 
 config EMBTK_LIBNIH_VERSION_STRING
+	string
+	default "1.0.3"		if EMBTK_LIBNIH_VERSION_1_0_3
 	string
 	default "1.0.2"		if EMBTK_LIBNIH_VERSION_1_0_2
 

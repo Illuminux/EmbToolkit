@@ -44,11 +44,19 @@ choice
 	help
 	 icu version to use
 
+	config EMBTK_ICU_VERSION_52_1
+		bool "icu-52.1 (jessie)"
+	config EMBTK_ICU_VERSION_4_8_1_1
+		bool "icu-4.8.1.1 (wheezy)"
 	config EMBTK_ICU_VERSION_53_1
 		bool "icu-53.1"
 endchoice
 
 config EMBTK_ICU_VERSION_STRING
+	string
+	default "52.1"		if EMBTK_ICU_VERSION_52_1
+	string
+	default "4.8.1.1"	if EMBTK_ICU_VERSION_4_8_1_1
 	string
 	default "53.1"		if EMBTK_ICU_VERSION_53_1
 

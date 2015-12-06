@@ -36,16 +36,20 @@ choice
 	 Here you can choose which version of foo you want to use.
 
 	config  EMBTK_LIBSOUP_VERSION_2_48_0
-		bool "libsoup-2.48.0"
+		bool "libsoup-2.48.0 (jessie)"
+	config  EMBTK_LIBSOUP_VERSION_2_38_1
+		bool "libsoup-2.38.1 (wheezy)"
 endchoice
 
 config EMBTK_LIBSOUP_MAJOR_VERSION_STRING
 	string
 	default "2.48"		if EMBTK_LIBSOUP_VERSION_2_48_0
+	default "2.38"		if EMBTK_LIBSOUP_VERSION_2_38_1
 	
 config EMBTK_LIBSOUP_VERSION_STRING
 	string
 	default "2.48.0"	if EMBTK_LIBSOUP_VERSION_2_48_0
+	default "2.38.1"	if EMBTK_LIBSOUP_VERSION_2_38_1
 
 config EMBTK_LIBSOUP_NEED_PATCH
 	bool

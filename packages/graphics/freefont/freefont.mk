@@ -23,31 +23,31 @@
 # \date         January 2010
 ################################################################################
 
-FREEFONT_TTF_NAME	:= freefont-ttf
-FREEFONT_TTF_SITE	:= http://ftp.gnu.org/gnu/freefont
-FREEFONT_TTF_VERSION	:= $(call embtk_get_pkgversion,freefont_ttf)
-FREEFONT_TTF_PACKAGE	:= freefont-ttf-$(FREEFONT_TTF_VERSION).tar.gz
-FREEFONT_TTF_SRC_DIR	:= $(embtk_pkgb)/freefont-$(FREEFONT_TTF_VERSION)
-FREEFONT_TTF_BUILD_DIR	:= $(embtk_pkgb)/freefont-$(FREEFONT_TTF_VERSION)
+FREEFONT_NAME	:= freefont-ttf
+FREEFONT_SITE	:= http://ftp.gnu.org/gnu/freefont
+FREEFONT_VERSION	:= $(call embtk_get_pkgversion,freefont_ttf)
+FREEFONT_PACKAGE	:= freefont-ttf-$(FREEFONT_VERSION).tar.gz
+FREEFONT_SRC_DIR	:= $(embtk_pkgb)/freefont-$(FREEFONT_VERSION)
+FREEFONT_BUILD_DIR	:= $(embtk_pkgb)/freefont-$(FREEFONT_VERSION)
 
-FREEFONT_TTF_DEPS := freetype_install
-FREEFONT_TTF_DEPS += download_freefont_ttf
-FREEFONT_TTF_DEPS += $(FREEFONT_TTF_BUILD_DIR)/.decompressed
+FREEFONT_DEPS := freetype_install
+FREEFONT_DEPS += download_freefont_ttf
+FREEFONT_DEPS += $(FREEFONT_BUILD_DIR)/.decompressed
 
-freefont_ttf_install: $(FREEFONT_TTF_BUILD_DIR)/.installed
+freefont_ttf_install: $(FREEFONT_BUILD_DIR)/.installed
 	$(call embtk_pinfo,"Successfully installed GNU FreeFont: TrueType")
 
-$(FREEFONT_TTF_BUILD_DIR)/.installed: $(FREEFONT_TTF_DEPS)
-	$(call embtk_pinfo,"Installing freefont-$(FREEFONT_TTF_VERSION) in your root filesystem...")
+$(FREEFONT_BUILD_DIR)/.installed: $(FREEFONT_DEPS)
+	$(call embtk_pinfo,"Installing freefont-$(FREEFONT_VERSION) in your root filesystem...")
 	$(Q)mkdir -p $(embtk_rootfs)
 	$(Q)mkdir -p $(embtk_rootfs)/usr
 	$(Q)mkdir -p $(embtk_rootfs)/usr/share
 	$(Q)mkdir -p $(embtk_rootfs)/usr/share/fonts
 	$(Q)mkdir -p $(embtk_rootfs)/usr/share/fonts/truetype
 	$(Q)mkdir -p $(embtk_rootfs)/usr/share/fonts/truetype/freefont
-	$(Q)cp $(FREEFONT_TTF_BUILD_DIR)/*.ttf					\
+	$(Q)cp $(FREEFONT_BUILD_DIR)/*.ttf					\
 				$(embtk_rootfs)/usr/share/fonts/truetype/freefont/
 
-$(FREEFONT_TTF_BUILD_DIR)/.decompressed:
+$(FREEFONT_BUILD_DIR)/.decompressed:
 	$(call embtk_decompress_pkg,freefont_ttf)
 

@@ -41,16 +41,16 @@ choice
 	help
 	 Here you can choose which version of libxft you want to use.
 
-	config  EMBTK_LIBXFT_VERSION_2_2_0
-		bool "libXft-2.2.0"
-	config  EMBTK_LIBXFT_VERSION_2_1_14
-		bool "libXft-2.1.14"
+	config  EMBTK_LIBXFT_VERSION_2_3_2
+		bool "libXft-2.3.2 (jessie)"
+	config  EMBTK_LIBXFT_VERSION_2_3_1
+		bool "libXft-2.3.1 (wheezy)"
 endchoice
 
 config EMBTK_LIBXFT_VERSION_STRING
 	string
-	default "2.2.0"		if EMBTK_LIBXFT_VERSION_2_2_0
-	default "2.1.14"	if EMBTK_LIBXFT_VERSION_2_1_14
+	default "2.3.2"		if EMBTK_LIBXFT_VERSION_2_3_2
+	default "2.3.1"		if EMBTK_LIBXFT_VERSION_2_3_1
 
 config EMBTK_LIBXFT_NEED_PATCH
 	bool

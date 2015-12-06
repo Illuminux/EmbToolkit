@@ -38,7 +38,7 @@ $(call embtk_include_pkg,directfb)
 $(call embtk_include_pkg,fontconfig)
 
 #FreeFont
-$(call embtk_include_pkg,freefont_ttf)
+#$(call embtk_include_pkg,freefont_ttf)
 
 #FreeType
 $(call embtk_include_pkg,freetype)

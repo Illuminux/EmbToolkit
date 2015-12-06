@@ -38,7 +38,7 @@ choice
 		Here you can choose which version of libjasper you want to use.
 
 	config  EMBTK_LIBJASPER_VERSION_1_900_1
-		bool "libjasper-1.900.1"
+		bool "libjasper-1.900.1 (wheezy/jessie)"
 endchoice
 
 config	EMBTK_LIBJASPER_VERSION_STRING

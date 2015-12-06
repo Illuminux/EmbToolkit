@@ -36,12 +36,15 @@ choice
 	 Here you can choose which version of dnsmasq you want to use.
 
 	config  EMBTK_DNSMASQ_VERSION_2_72
-		bool "dnsmasq-2.72"
+		bool "dnsmasq-2.72 (jessie)"
+	config  EMBTK_DNSMASQ_VERSION_2_62
+		bool "dnsmasq-2.62 (wheezy)"
 endchoice
 
 config EMBTK_DNSMASQ_VERSION_STRING
 	string
 	default "2.72"		if EMBTK_DNSMASQ_VERSION_2_72
+	default "2.62"		if EMBTK_DNSMASQ_VERSION_2_62
 
 config EMBTK_DNSMASQ_NEED_PATCH
 	bool

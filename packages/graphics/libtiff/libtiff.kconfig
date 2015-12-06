@@ -40,7 +40,9 @@ choice
 		Here you can choose which version of libtiff you want to use.
 
 	config  EMBTK_LIBTIFF_VERSION_4_0_3
-		bool "libtiff-4.0.3"
+		bool "libtiff-4.0.3 (jessie)"
+	config  EMBTK_LIBTIFF_VERSION_4_0_2
+		bool "libtiff-4.0.2 (wheezy)"
 	config  EMBTK_LIBTIFF_VERSION_3_9_2
 		bool "libtiff-3.9.2"
 endchoice
@@ -48,6 +50,7 @@ endchoice
 config EMBTK_LIBTIFF_VERSION_STRING
 	string
 	default "4.0.3"		if EMBTK_LIBTIFF_VERSION_4_0_3
+	default "4.0.2"		if EMBTK_LIBTIFF_VERSION_4_0_2
 	default "3.9.2"		if EMBTK_LIBTIFF_VERSION_3_9_2
 
 config EMBTK_LIBTIFF_NEED_PATCH

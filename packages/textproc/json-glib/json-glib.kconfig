@@ -38,12 +38,15 @@ choice
 	 Here you can choose which version of foo you want to use.
 
 	config  EMBTK_JSON-GLIB_VERSION_1_0_2
-		bool "json-glib-1.0.2"
+		bool "json-glib-1.0.2 (jessie)"
+	config  EMBTK_JSON-GLIB_VERSION_0_14_2
+		bool "json-glib-0.14.2 (wheezy)"
 endchoice
 
 config EMBTK_JSON-GLIB_VERSION_STRING
 	string
-	default "1.0.2"	if EMBTK_JSON-GLIB_VERSION_1_0_2
+	default "1.0.2"		if EMBTK_JSON-GLIB_VERSION_1_0_2
+	default "0.14.2"	if EMBTK_JSON-GLIB_VERSION_0_14_2
 
 config EMBTK_JSON-GLIB_NEED_PATCH
 	bool

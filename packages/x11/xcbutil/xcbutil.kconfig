@@ -35,13 +35,13 @@ choice
 	help
 		Here you can choose which version of xcb-util you want to use.
 
-	config  EMBTK_XCBUTIL_VERSION_0_3_6
-		bool "xcb-util-0.3.6"
+	config  EMBTK_XCBUTIL_VERSION_0_3_8
+		bool "xcb-util-0.3.8 (wheezy/jessie)"
 endchoice
 
 config EMBTK_XCBUTIL_VERSION_STRING
 	string
-	default "0.3.6"	if EMBTK_XCBUTIL_VERSION_0_3_6
+	default "0.3.8"	if EMBTK_XCBUTIL_VERSION_0_3_8
 
 config EMBTK_XCBUTIL_NEED_PATCH
 	bool

@@ -27,7 +27,7 @@ CAIRO_NAME		:= cairo
 CAIRO_VERSION		:= $(call embtk_get_pkgversion,cairo)
 CAIRO_SITE		:= http://www.cairographics.org/releases
 CAIRO_SITE_MIRROR3	:= ftp://ftp.embtoolkit.org/embtoolkit.org/packages-mirror
-CAIRO_PACKAGE		:= cairo-$(CAIRO_VERSION).tar.gz
+CAIRO_PACKAGE		:= cairo-$(CAIRO_VERSION).tar.xz
 CAIRO_SRC_DIR		:= $(embtk_pkgb)/cairo-$(CAIRO_VERSION)
 CAIRO_BUILD_DIR		:= $(embtk_pkgb)/cairo-$(CAIRO_VERSION)
 

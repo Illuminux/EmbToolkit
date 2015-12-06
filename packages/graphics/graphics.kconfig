@@ -39,5 +39,5 @@ source packages/graphics/pango/pango.kconfig
 source packages/graphics/pixman/pixman.kconfig
 source packages/graphics/libtiff/libtiff.kconfig
 comment "Include fonts in the target root filesystem"
-source packages/graphics/freefont/freefont.kconfig
+#source packages/graphics/freefont/freefont.kconfig
 

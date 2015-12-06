@@ -34,16 +34,16 @@ choice
 	help
 	 Here you can choose which version of libxau you want to use.
 
-	config  EMBTK_LIBXAU_VERSION_1_0_6
-		bool "libxau-1.0.6"
-	config  EMBTK_LIBXAU_VERSION_1_0_5
-		bool "libxau-1.0.5"
+	config  EMBTK_LIBXAU_VERSION_1_0_8
+		bool "libxau-1.0.8 (jessie)"
+	config  EMBTK_LIBXAU_VERSION_1_0_7
+		bool "libxau-1.0.7 (wheezy)"
 endchoice
 
 config EMBTK_LIBXAU_VERSION_STRING
 	string
-	default "1.0.6"		if EMBTK_LIBXAU_VERSION_1_0_6
-	default "1.0.5"		if EMBTK_LIBXAU_VERSION_1_0_5
+	default "1.0.8"		if EMBTK_LIBXAU_VERSION_1_0_8
+	default "1.0.7"		if EMBTK_LIBXAU_VERSION_1_0_7
 
 config EMBTK_LIBXAU_NEED_PATCH
 	bool

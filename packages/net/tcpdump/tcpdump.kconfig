@@ -36,13 +36,16 @@ choice
 	help
 	 Here you can choose which version of tcpdump you want to use.
 
-	config  EMBTK_TCPDUMP_VERSION_4_7_4
-		bool "tcpdump-4.7.4"
+	config  EMBTK_TCPDUMP_VERSION_4_6_2
+		bool "tcpdump-4.6.2 (jessie)"
+	config  EMBTK_TCPDUMP_VERSION_4_3_0
+		bool "tcpdump-4.3.0 (wheezy)"
 endchoice
 
 config EMBTK_TCPDUMP_VERSION_STRING
 	string
-	default "4.7.4"		if EMBTK_TCPDUMP_VERSION_4_7_4
+	default "4.6.2"		if EMBTK_TCPDUMP_VERSION_4_6_2
+	default "4.3.0"		if EMBTK_TCPDUMP_VERSION_4_3_0
 
 config EMBTK_TCPDUMP_NEED_PATCH
 	bool
