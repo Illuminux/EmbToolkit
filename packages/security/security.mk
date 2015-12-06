@@ -28,6 +28,9 @@ embtk_pkgincdir := packages/security
 # Dropbear
 $(call embtk_include_pkg,dropbear)
 
+# libgcrypt
+$(call embtk_include_pkg,libgcrypt)
+
 # LibreSSL
 $(call embtk_include_pkg,libressl)
 

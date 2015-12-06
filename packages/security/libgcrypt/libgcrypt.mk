@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 GAYE Abdoulaye Walsimou.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,20 +17,22 @@
 #
 ################################################################################
 #
-# \file         security.kconfig
-# \brief	security.kconfig of Embtoolkit
-# \author       GAYE Abdoulaye Walsimou, <walsimou@walsimou.com>
-# \date         February 2010
+# \file         libgcrypt.mk
+# \brief		libgcrypt.mk of Embtoolkit
+# \author       Knut Welzel <knut.welzel@t-online.de>
+# \date         December 2015
 ################################################################################
 
-# Dropbear
-source packages/security/dropbear/dropbear.kconfig
+LIBGCRYPT_NAME		:= libgcrypt
+LIBGCRYPT_VERSION	:= $(call embtk_get_pkgversion,libgcrypt)
+LIBGCRYPT_SITE		:= ftp://ftp.gnupg.org/gcrypt/libgcrypt
+LIBGCRYPT_PACKAGE	:= libgcrypt-$(LIBGCRYPT_VERSION).tar.gz
+LIBGCRYPT_SRC_DIR	:= $(embtk_pkgb)/libgcrypt-$(LIBGCRYPT_VERSION)
+LIBGCRYPT_BUILD_DIR	:= $(embtk_pkgb)/libgcrypt-$(LIBGCRYPT_VERSION)
 
-# libgcrypt
-source packages/security/libgcrypt/libgcrypt.kconfig
+LIBGCRYPT_BINS		:= dumpsexp hmac256 libgcrypt-config mpicalc
+LIBGCRYPT_INCLUDES	:= gcrypt.h gcrypt-module.h
+LIBGCRYPT_LIBS		:= libgcrypt.*
+LIBGCRYPT_PKGCONFIGS	:=
 
-# LibreSSL
-source packages/security/libressl/libressl.kconfig
-
-# openssl
-source packages/security/openssl/openssl.kconfig
+LIBGCRYPT_CONFIGURE_OPTS 	:= --with-gpg-error-prefix="$(embtk_sysroot)/usr" 

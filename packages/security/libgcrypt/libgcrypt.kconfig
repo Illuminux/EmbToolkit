@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 GAYE Abdoulaye Walsimou.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,20 +17,34 @@
 #
 ################################################################################
 #
-# \file         security.kconfig
-# \brief	security.kconfig of Embtoolkit
-# \author       GAYE Abdoulaye Walsimou, <walsimou@walsimou.com>
-# \date         February 2010
+# \file         libgcrypt.kconfig
+# \brief		libgcrypt.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@t-online.de>
+# \date         December 2015
 ################################################################################
 
-# Dropbear
-source packages/security/dropbear/dropbear.kconfig
+config EMBTK_HAVE_LIBGCRYPT
+	bool "Have libgcrypt"
+	help
+		libgcrypt description
+choice
+	prompt "libgcrypt version you wish"
+	depends on EMBTK_HAVE_LIBGCRYPT
+	help
+	 Here you can choose which version of libgcrypt you want to use.
 
-# libgcrypt
-source packages/security/libgcrypt/libgcrypt.kconfig
+	config  EMBTK_LIBGCRYPT_VERSION_1_6_3
+		bool "libgcrypt-1.6.3 (jessie)"
+	config  EMBTK_LIBGCRYPT_VERSION_1_5_0
+		bool "libgcrypt-1.5.0 (wheezy)"
+endchoice
 
-# LibreSSL
-source packages/security/libressl/libressl.kconfig
+config EMBTK_LIBGCRYPT_VERSION_STRING
+	string
+	default "1.6.3"	if EMBTK_LIBGCRYPT_VERSION_1_6_3
+	default "1.5.0"	if EMBTK_LIBGCRYPT_VERSION_1_5_0
 
-# openssl
-source packages/security/openssl/openssl.kconfig
+config EMBTK_LIBGCRYPT_NEED_PATCH
+	bool
+config EMBTK_LIBGCRYPT_NEED_AUTORECONF
+	bool
