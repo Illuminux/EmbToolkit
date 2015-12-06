@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 Abdoulaye Walsimou GAYE.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,20 +17,23 @@
 #
 ################################################################################
 #
-# \file         system.mk
-# \brief	system.mk of Embtoolkit
+# \file         libgpg-error.mk
+# \brief		libgpg-error.mk of Embtoolkit
 # \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         July 2010
+# \date         December 2009
 ################################################################################
 
-# DBUS
-source packages/system/dbus/dbus.kconfig
+LIBGPG-ERROR_NAME		:= libgpg-error
+LIBGPG-ERROR_VERSION	:= $(call embtk_get_pkgversion,libgpg-error)
+LIBGPG-ERROR_SITE		:= ftp://ftp.gnupg.org/GnuPG/libgpg-error
+LIBGPG-ERROR_PACKAGE	:= libgpg-error-$(LIBGPG-ERROR_VERSION).tar.gz
+LIBGPG-ERROR_SRC_DIR	:= $(embtk_pkgb)/libgpg-error-$(LIBGPG-ERROR_VERSION)
+LIBGPG-ERROR_BUILD_DIR	:= $(embtk_pkgb)/libgpg-error-$(LIBGPG-ERROR_VERSION)
 
-# libgpg-error
-source packages/system/libgpg-error/libgpg-error.kconfig
+LIBGPG-ERROR_BINS		:= gpg-error gpg-error-config
+LIBGPG-ERROR_INCLUDES	:= gpg-error.h
+LIBGPG-ERROR_LIBS		:= libgpg-error.*
+LIBGPG-ERROR_PKGCONFIGS	:=
 
-# OpenRC
-source packages/system/openrc/openrc.kconfig
+LIBGPG-ERROR_CONFIGURE_OPTS	:= --disable-nls
 
-# InitNG
-source packages/system/initng/initng.kconfig

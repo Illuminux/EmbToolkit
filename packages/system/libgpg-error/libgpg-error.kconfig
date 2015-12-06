@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 Abdoulaye Walsimou GAYE.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,20 +17,34 @@
 #
 ################################################################################
 #
-# \file         system.mk
-# \brief	system.mk of Embtoolkit
+# \file         libgpg-error.kconfig
+# \brief		libgpg-error.kconfig of Embtoolkit
 # \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         July 2010
+# \date         December 2009
 ################################################################################
 
-# DBUS
-source packages/system/dbus/dbus.kconfig
+config EMBTK_HAVE_LIBGPG-ERROR
+	bool "Have libgpg-error"
+	help
+		libgpg-error description
+choice
+	prompt "libgpg-error version you wish"
+	depends on EMBTK_HAVE_LIBGPG-ERROR
+	help
+	 Here you can choose which version of libgpg-error you want to use.
 
-# libgpg-error
-source packages/system/libgpg-error/libgpg-error.kconfig
+	config  EMBTK_LIBGPG-ERROR_VERSION_1_17
+		bool "libgpg-error-1.17 (jessie)"
+	config  EMBTK_LIBGPG-ERROR_VERSION_1_10
+		bool "libgpg-error-1.10 (wheezy)"
+endchoice
 
-# OpenRC
-source packages/system/openrc/openrc.kconfig
+config EMBTK_LIBGPG-ERROR_VERSION_STRING
+	string
+	default "1.17"	if EMBTK_LIBGPG-ERROR_VERSION_1_17
+	default "1.10"	if EMBTK_LIBGPG-ERROR_VERSION_1_10
 
-# InitNG
-source packages/system/initng/initng.kconfig
+config EMBTK_LIBGPG-ERROR_NEED_PATCH
+	bool
+config EMBTK_LIBGPG-ERROR_NEED_AUTORECONF
+	bool
