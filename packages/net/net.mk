@@ -25,6 +25,9 @@
 
 embtk_pkgincdir := packages/net
 
+# curl
+$(call embtk_include_pkg,curl)
+
 # fcgi
 $(call embtk_include_pkg,fcgi)
 

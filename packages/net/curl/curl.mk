@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2012-2014 Abdoulaye Walsimou GAYE.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,42 +17,22 @@
 #
 ################################################################################
 #
-# \file         net.kconfig
-# \brief	net.kconfig of Embtoolkit
-# \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         May 2012
+# \file         curl.mk
+# \brief		curl.mk of Embtoolkit
+# \author       Knut Welzel <knut.welzel@t-online.de>
+# \date         December 2015
 ################################################################################
 
-# curl
-source packages/net/curl/curl.kconfig
+CURL_NAME			:= curl
+CURL_VERSION		:= $(call embtk_get_pkgversion,curl)
+CURL_SITE			:= http://curl.haxx.se/download
+CURL_PACKAGE		:= curl-$(CURL_VERSION).tar.gz
+CURL_SRC_DIR		:= $(embtk_pkgb)/curl-$(CURL_VERSION)
+CURL_BUILD_DIR		:= $(embtk_pkgb)/curl-$(CURL_VERSION)
 
-# fcgi
-source packages/net/fcgi/fcgi.kconfig
+CURL_BINS			:= curl
+CURL_INCLUDES		:= curl/*
+CURL_LIBS			:= libcurl.*
+CURL_PKGCONFIGS		:= libcurl.pc
 
-# Iptables
-source packages/net/iptables/iptables.kconfig
-
-# LIBNL
-source packages/net/libnl/libnl.kconfig
-
-# libpcap
-source packages/net/libpcap/libpcap.kconfig
-
-# librsync
-source packages/net/librsync/librsync.kconfig
-
-# libtirpc
-source packages/net/libtirpc/libtirpc.kconfig
-
-# tcpdump
-source packages/net/tcpdump/tcpdump.kconfig
-
-# radvd
-source packages/net/radvd/radvd.kconfig
-
-# dnsmasq
-source packages/net/dnsmasq/dnsmasq.kconfig
-
-# odhcp6c
-source packages/net/odhcp6c/odhcp6c.kconfig
-
+CURL_DEPS		:= zlib_install openssl_install libssh_install

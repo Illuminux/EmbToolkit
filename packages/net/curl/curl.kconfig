@@ -1,0 +1,54 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         curl.kconfig
+# \brief		curl.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@t-online.de>
+# \date         December 2015
+################################################################################
+
+config EMBTK_HAVE_CURL
+	bool "Have curl"
+	help
+		curl is a command line tool for transferring data with URL syntax, 
+		supporting DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, 
+		LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET 
+		and TFTP.
+		
+choice
+	prompt "curl version you wish"
+	depends on EMBTK_HAVE_CURL
+	help
+	 Here you can choose which version of curl you want to use.
+
+	config  EMBTK_CURL_VERSION_7_38_0
+		bool "curl-7.38.0 (jessie)"
+	config  EMBTK_CURL_VERSION_7_26_0
+		bool "curl-7.26.0 (wheezy)"
+endchoice
+
+config EMBTK_CURL_VERSION_STRING
+	string
+	default "7.38.0"	if EMBTK_CURL_VERSION_7_38_0
+	default "7.26.0"	if EMBTK_CURL_VERSION_7_26_0
+
+config EMBTK_CURL_NEED_PATCH
+	bool
+config EMBTK_CURL_NEED_AUTORECONF
+	bool
