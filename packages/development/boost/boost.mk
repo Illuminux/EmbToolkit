@@ -23,15 +23,15 @@
 # \date         May 2014
 ################################################################################
 
-BOOST_NAME		:= boost
+BOOST_NAME			:= boost
 BOOST_VERSION		:= $(call embtk_get_pkgversion,boost)
-BOOST_SITE		:= http://downloads.sourceforge.net/project/boost/boost/$(subst _,.,$(BOOST_VERSION))
+BOOST_SITE			:= http://downloads.sourceforge.net/project/boost/boost/$(subst _,.,$(BOOST_VERSION))
 BOOST_PACKAGE		:= boost_$(BOOST_VERSION).tar.bz2
 BOOST_SRC_DIR		:= $(embtk_pkgb)/boost_$(BOOST_VERSION)
 BOOST_BUILD_DIR		:= $(embtk_pkgb)/boost_$(BOOST_VERSION)
 
 BOOST_INCLUDES		:= boost
-BOOST_LIBS		:= libboost_*
+BOOST_LIBS			:= libboost_*
 BOOST_CFLAGS		:= $(TARGET_CXXFLAGS)
 BOOST_CPPFLAGS		:=
 BOOST_CXXFLAGS		:= $(TARGET_CXXFLAGS)
@@ -45,6 +45,8 @@ BOOST_MAKE_OPTS		:= $(if $(CONFIG_EMBTK_BOOST_WITH_ATOMIC),,--without-atomic)
 BOOST_MAKE_OPTS		+= $(if $(CONFIG_EMBTK_BOOST_WITH_COROUTINE),,--without-coroutine)
 BOOST_MAKE_OPTS		+= $(if $(CONFIG_EMBTK_BOOST_WITH_LOG),,--without-log)
 BOOST_MAKE_OPTS		+= --without-python
+# TODO: disable context is needed for building on OS X
+BOOST_MAKE_OPTS		+= --without-context
 BOOST_MAKE_OPTS		+= -q variant=release
 BOOST_MAKE_OPTS		+= link=shared runtime-link=shared
 BOOST_MAKE_OPTS		+= threading=multi toolset=gcc
