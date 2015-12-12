@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 Abdoulaye Walsimou GAYE.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,25 +17,26 @@
 #
 ################################################################################
 #
-# \file         security.mk
-# \brief	security.mk of Embtoolkit
-# \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         February 2010
+# \file         libssh.mk
+# \brief		libssh.mk of Embtoolkit
+# \author       Knut Welzel <knut.welzel@t-online.de>
+# \date         December 2015
 ################################################################################
 
-embtk_pkgincdir := packages/security
+LIBSSH_NAME			:= libssh
+LIBSSH_VERSION		:= $(call embtk_get_pkgversion,libssh)
+LIBSSH_SITE			:= http://libssh2.org/download
+LIBSSH_PACKAGE		:= libssh2-$(LIBSSH_VERSION).tar.gz
+LIBSSH_SRC_DIR		:= $(embtk_pkgb)/libssh2-$(LIBSSH_VERSION)
+LIBSSH_BUILD_DIR	:= $(embtk_pkgb)/libssh2-$(LIBSSH_VERSION)
 
-# Dropbear
-$(call embtk_include_pkg,dropbear)
+LIBSSH_BINS			:=
+LIBSSH_INCLUDES		:= libssh2.h libssh2_publickey.h libssh2_sftp.h
+LIBSSH_LIBS			:= libssh2.*
+LIBSSH_PKGCONFIGS	:= libssh2.pc
 
-# libgcrypt
-$(call embtk_include_pkg,libgcrypt)
+LIBSSH_CONFIGURE_OPTS	:= --enable-debug \
+						   --disable-largefile \
+						   --disable-examples-build
 
-# LibreSSL
-$(call embtk_include_pkg,libressl)
-
-# libssh
-$(call embtk_include_pkg,libssh)
-
-# openssl
-$(call embtk_include_pkg,openssl)
+LIBSSH_DEPS		:= libgcrypt_install zlib_install 

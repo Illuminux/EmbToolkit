@@ -32,5 +32,8 @@ source packages/security/libgcrypt/libgcrypt.kconfig
 # LibreSSL
 source packages/security/libressl/libressl.kconfig
 
+# libssh
+source packages/security/libssh/libssh.kconfig
+
 # openssl
 source packages/security/openssl/openssl.kconfig
