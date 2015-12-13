@@ -1,0 +1,47 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         libtheora.kconfig
+# \brief		libtheora.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@t-online.de>
+# \date         December 2015
+################################################################################
+
+config EMBTK_HAVE_LIBTHEORA
+	bool "Have libtheora"
+	help
+		libtheora description
+choice
+	prompt "libtheora version you wish"
+	depends on EMBTK_HAVE_LIBTHEORA
+	help
+	 Here you can choose which version of libtheora you want to use.
+
+	config  EMBTK_LIBTHEORA_VERSION_1_1_1
+		bool "libtheora-1.1.1 (wheezy/jessie)"
+endchoice
+
+config EMBTK_LIBTHEORA_VERSION_STRING
+	string
+	default "1.1.1"	if EMBTK_LIBTHEORA_VERSION_1_1_1
+
+config EMBTK_LIBTHEORA_NEED_PATCH
+	bool
+config EMBTK_LIBTHEORA_NEED_AUTORECONF
+	bool

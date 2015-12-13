@@ -73,6 +73,9 @@ $(call embtk_include_pkg,libtiff)
 #Pango
 $(call embtk_include_pkg,pango)
 
+#libtheora
+$(call embtk_include_pkg,libtheora)
+
 #pixman
 $(call embtk_include_pkg,pixman)
 

@@ -38,6 +38,7 @@ source packages/graphics/liblcms2/liblcms2.kconfig
 source packages/graphics/libpng/libpng.kconfig
 source packages/graphics/pango/pango.kconfig
 source packages/graphics/pixman/pixman.kconfig
+source packages/graphics/libtheora/libtheora.kconfig
 source packages/graphics/libtiff/libtiff.kconfig
 comment "Include fonts in the target root filesystem"
 #source packages/graphics/freefont/freefont.kconfig
