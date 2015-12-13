@@ -36,50 +36,31 @@ OPENSSL_INCLUDES	:= openssl/*
 OPENSSL_LIBS		:= libcrypto.* libssl.* openssl-1.0.0/* 
 OPENSSL_PKGCONFIGS	:= libcrypto.pc libssl.pc openssl.pc
 
-OPENSSL_CONFIGURE_ENV	:=
 OPENSSL_CONFIGURE_OPTS	:= linux-generic32 \
-						   --openssldir=$(embtk_sysroot)/usr \
 						   zlib-dynamic \
 						   shared \
-						   no-sse2
-						   
-OPENSSL_MAKE_ENV		:=
-OPENSSL_MAKE_OPTS		:=
-OPENSSL_MAKE_DIRS		:=
-OPENSSL_CONFIGURE_DIR	:= # relative path in foo source where to find the configure script
-
+						   no-sse2 \
+						   --prefix=$(embtk_sysroot)/usr \
+						   --openssldir=$(embtk_sysroot)/usr
 
 define embtk_install_openssl
-	$(call embtk_makeinstall_pkg,openssl)
+	cd $(OPENSSL_BUILD_DIR); \
+	make \
+	CROSS_COMPILE=$(CROSS_COMPILE) \
+	ARCH="arm"
+	cd $(OPENSSL_BUILD_DIR); \
+	make install
 endef
 
 define embtk_configure_openssl
-	$(Q)cd $(OPENSSL_BUILD_DIR); \
-	PROCESSOR=arm \
+	cd $(OPENSSL_BUILD_DIR); \
 	CROSS_COMPILE=$(CROSS_COMPILE) \
-	CFLAGS="-I$(embtk_sysroot)/usr/include" \
-	CXXFLAGS="$(TARGET_CFLAGS)" \
-	LDFLAGS="-L$(embtk_sysroot)/$(LIBDIR) -L$(embtk_sysroot)/usr/$(LIBDIR)"	\
-	CPPFLAGS="-I$(embtk_sysroot)/usr/include" \
-	PKG_CONFIG=$(PKGCONFIG_BIN) \
-	PKG_CONFIG_PATH=$(EMBTK_PKG_CONFIG_PATH) \
-	$(CONFIG_EMBTK_SHELL) $(OPENSSL_SRC_DIR)/Configure $(OPENSSL_CONFIGURE_OPTS)
-	$(Q)touch $(OPENSSL_BUILD_DIR)/.configured
+	$(OPENSSL_SRC_DIR)/Configure $(OPENSSL_CONFIGURE_OPTS)
+	touch $(OPENSSL_BUILD_DIR)/.configured
 endef
 
 define embtk_beforeinstall_openssl
 	$(embtk_configure_openssl)
 endef
 
-
-
-
-
-
-OPENSSL_DEPS		:=
-
-#
-# if not empty, force build system to not remove this package workspace after
-# successful build even if it is globally configured to do so.
-#
-OPENSSL_KEEP_SRC_DIR	:=
+OPENSSL_DEPS := zlib_install 

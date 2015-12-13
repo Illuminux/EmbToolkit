@@ -48,8 +48,6 @@ LIBX11_CONFIGURE_OPTS := --disable-composecache \
 						 --disable-loadable-xcursor \
 						 --without-util
 
-#						 --with-locale-lib-dir=${UV_sysroot_dir}/lib"
-
 LIBX11_DEPS	= utilmacros_install inputproto_install kbproto_install		\
 		xextproto_install xproto_install libxcb_install xtrans_install
 

@@ -35,4 +35,6 @@ LIBGCRYPT_INCLUDES	:= gcrypt.h gcrypt-module.h
 LIBGCRYPT_LIBS		:= libgcrypt.*
 LIBGCRYPT_PKGCONFIGS	:=
 
-LIBGCRYPT_CONFIGURE_OPTS 	:= --with-gpg-error-prefix="$(embtk_sysroot)/usr" 
+LIBGCRYPT_CONFIGURE_OPTS 	:= --with-gpg-error-prefix="$(embtk_sysroot)/usr"
+
+LIBGCRYPT_DEPS := libgpg-error_install

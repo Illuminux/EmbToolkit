@@ -47,14 +47,15 @@ FONTCONFIG_CONFIGURE_ENV	+= FREETYPE_CFLAGS=`$(PKGCONFIG_BIN) freetype2 --cflags
 FONTCONFIG_CONFIGURE_ENV	+= FREETYPE_LIBS=`$(PKGCONFIG_BIN) freetype2 --libs`
 
 FONTCONFIG_CONFIGURE_OPTS	:= --with-arch=$(STRICT_GNU_TARGET)	\
-				--disable-docs --program-prefix=""
+							   --disable-docs \
+							   --program-prefix=""
 
 FONTCONFIG_MAKE_OPTS		= LIBXML2_CFLAGS="$(LIBXML2_CFLAGS-y)"
 FONTCONFIG_MAKE_OPTS		+= LIBXML2_LIBS="$(LIBXML2_LIBS-y)"
 FONTCONFIG_MAKE_OPTS		+= FREETYPE_CFLAGS="$(FREETYPE_CFLAGS-y)"
 FONTCONFIG_MAKE_OPTS		+= FREETYPE_LIBS="$(FREETYPE_LIBS-y)"
 
-FONTCONFIG_DEPS			:= libxml2_install freetype_install
+FONTCONFIG_DEPS			:= libxml2_install freetype_install expat_install
 
 define embtk_postinstall_fontconfig
 	$(Q)-cp -R $(embtk_sysroot)/usr/etc/fonts $(embtk_rootfs)/etc/

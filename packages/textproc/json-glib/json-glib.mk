@@ -35,4 +35,4 @@ JSON-GLIB_INCLUDES	:= json-glib/json-*.h
 JSON-GLIB_LIBS		:= libjson-glib-1.0.*
 JSON-GLIB_PKGCONFIGS	:= json-glib-1.0.pc
 
-JSON-GLIB_DEPS		:= glib_install
+JSON-GLIB_DEPS		:= glib_install libxml2_install 

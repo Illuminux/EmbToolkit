@@ -42,3 +42,5 @@ FREETYPE_MAKE_OPTS	:= `chmod +x $(FREETYPE_BUILD_DIR)/builds/unix/libtool`
 
 FREETYPE_CONFIGURE_ENV	:= LIBPNG_CFLAGS=`$(PKGCONFIG_BIN) libpng --cflags`
 FREETYPE_CONFIGURE_ENV	+= LIBPNG_LDFLAGS=`$(PKGCONFIG_BIN) libpng --libs`
+
+# TODO: Fix wrong includedir in freetype2.pc
