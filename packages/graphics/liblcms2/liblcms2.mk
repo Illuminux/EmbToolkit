@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2011 Abdoulaye Walsimou GAYE.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,62 +17,20 @@
 #
 ################################################################################
 #
-# \file         graphics.mk
-# \brief	graphics.mk of Embtoolkit
+# \file         liblcms2.mk
+# \brief	liblcms2.mk of Embtoolkit
 # \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         February 2010
+# \date         December 2009
 ################################################################################
 
-embtk_pkgincdir := packages/graphics
+LIBLCMS2_NAME			:= liblcms2
+LIBLCMS2_VERSION		:= $(call embtk_get_pkgversion,liblcms2)
+LIBLCMS2_SITE			:= http://download.sourceforge.net/lcms
+LIBLCMS2_PACKAGE		:= lcms2-$(LIBLCMS2_VERSION).tar.gz
+LIBLCMS2_SRC_DIR		:= $(embtk_pkgb)/lcms2-$(LIBLCMS2_VERSION)
+LIBLCMS2_BUILD_DIR		:= $(embtk_pkgb)/lcms2-$(LIBLCMS2_VERSION)
 
-#atk
-$(call embtk_include_pkg,atk)
-
-#Cairo
-$(call embtk_include_pkg,cairo)
-
-#DirectFB
-$(call embtk_include_pkg,directfb)
-
-#fontconfig
-$(call embtk_include_pkg,fontconfig)
-
-#FreeFont
-#$(call embtk_include_pkg,freefont_ttf)
-
-#FreeType
-$(call embtk_include_pkg,freetype)
-
-#gdk-pixbuf
-$(call embtk_include_pkg,gdkpixbuf)
-
-#gtk+
-$(call embtk_include_pkg,gtk)
-
-#imlib2
-$(call embtk_include_pkg,imlib2)
-
-#libjasper
-$(call embtk_include_pkg,libjasper)
-
-#libjpeg
-$(call embtk_include_pkg,libjpeg)
-
-#libjpeg-turbo
-$(call embtk_include_pkg,libjpeg-turbo)
-
-# liblcms2
-$(call embtk_include_pkg,liblcms2)
-
-#libpng
-$(call embtk_include_pkg,libpng)
-
-#libtiff
-$(call embtk_include_pkg,libtiff)
-
-#Pango
-$(call embtk_include_pkg,pango)
-
-#pixman
-$(call embtk_include_pkg,pixman)
-
+LIBLCMS2_BINS			:= jpgicc linkicc psicc tificc transicc
+LIBLCMS2_INCLUDES		:= lcms2.h lcms2_plugin.h
+LIBLCMS2_LIBS			:= liblcms2.*
+LIBLCMS2_PKGCONFIGS		:= lcms2.pc
