@@ -30,10 +30,11 @@ OPENSSL_PACKAGE		:= openssl-$(OPENSSL_VERSION).tar.gz
 OPENSSL_SRC_DIR		:= $(embtk_pkgb)/openssl-$(OPENSSL_VERSION)
 OPENSSL_BUILD_DIR	:= $(embtk_pkgb)/openssl-$(OPENSSL_VERSION)
 
-OPENSSL_BINS		:=
+OPENSSL_BINS		:= openssl c_rehash
 OPENSSL_SBINS		:=
+OPENSSL_ETC			:= ssl/*
 OPENSSL_INCLUDES	:= openssl/*
-OPENSSL_LIBS		:= libcrypto.* libssl.* openssl-1.0.0/* 
+OPENSSL_LIBS		:= libcrypto.* libssl.* openssl-1.0.0/* ssl/*
 OPENSSL_PKGCONFIGS	:= libcrypto.pc libssl.pc openssl.pc
 
 OPENSSL_CONFIGURE_OPTS	:= linux-generic32 \
@@ -42,14 +43,12 @@ OPENSSL_CONFIGURE_OPTS	:= linux-generic32 \
 						   no-sse2 \
 						   --prefix=$(embtk_sysroot)/usr \
 						   --openssldir=$(embtk_sysroot)/usr
+OPENSSL_MAKE_ENV	:=
+OPENSSL_MAKE_OPTS	:= CROSS_COMPILE=$(CROSS_COMPILE) \
+					   ARCH="arm"
 
 define embtk_install_openssl
-	cd $(OPENSSL_BUILD_DIR); \
-	make \
-	CROSS_COMPILE=$(CROSS_COMPILE) \
-	ARCH="arm"
-	cd $(OPENSSL_BUILD_DIR); \
-	make install
+	exit
 endef
 
 define embtk_configure_openssl
@@ -61,6 +60,10 @@ endef
 
 define embtk_beforeinstall_openssl
 	$(embtk_configure_openssl)
+	cd $(OPENSSL_BUILD_DIR); \
+	make $(OPENSSL_MAKE_OPTS)
+	cd $(OPENSSL_BUILD_DIR); \
+	make install_sw
 endef
 
 OPENSSL_DEPS := zlib_install 
