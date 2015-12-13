@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2014 GAYE Abdoulaye Walsimou.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,38 +17,22 @@
 #
 ################################################################################
 #
-# \file         audio.kconfig
-# \brief	audio.kconfig of Embtoolkit
-# \author       GAYE Abdoulaye Walsimou, <walsimou@walsimou.com>
-# \date         May 2014
+# \file         ogg.mk
+# \brief		ogg.mk of Embtoolkit
+# \author       Knut Welzel <knut.welzel@t-online.de>
+# \date         December 2015
 ################################################################################
 
-# alsa-lib
-source packages/audio/alsa-lib/alsa-lib.kconfig
+OGG_NAME			:= ogg
+OGG_VERSION			:= $(call embtk_get_pkgversion,ogg)
+OGG_SITE			:= http://downloads.xiph.org/releases/ogg
+OGG_PACKAGE			:= libogg-$(OGG_VERSION).tar.gz
+OGG_SRC_DIR			:= $(embtk_pkgb)/libogg-$(OGG_VERSION)
+OGG_BUILD_DIR		:= $(embtk_pkgb)/libogg-$(OGG_VERSION)
 
-# ladspa
-source packages/audio/ladspa/ladspa.kconfig
+OGG_BINS			:= ogg
+OGG_INCLUDES		:= ogg/*
+OGG_LIBS			:= libogg.*
+OGG_PKGCONFIGS		:= ogg.pc
 
-# lame
-source packages/audio/lame/lame.kconfig
-
-# libsndfile
-source packages/audio/libsndfile/libsndfile.kconfig
-
-# libsamplerate
-source packages/audio/libsamplerate/libsamplerate.kconfig
-
-# lilv
-source packages/audio/lilv/lilv.kconfig
-
-# lv2
-source packages/audio/lv2/lv2.kconfig
-
-# jack2
-source packages/audio/jack2/jack2.kconfig
-
-# ogg
-source packages/audio/ogg/ogg.kconfig
-
-# libvorbis
-source packages/audio/libvorbis/libvorbis.kconfig
+OGG_CONFIGURE_OPTS	:= 

@@ -31,6 +31,9 @@ $(call embtk_include_pkg,alsa-lib)
 # ladspa
 $(call embtk_include_pkg,ladspa)
 
+# lame
+$(call embtk_include_pkg,lame)
+
 # libsndfile
 $(call embtk_include_pkg,libsndfile)
 
@@ -45,3 +48,9 @@ $(call embtk_include_pkg,lv2)
 
 # jack2
 $(call embtk_include_pkg,jack2)
+
+# ogg
+$(call embtk_include_pkg,ogg)
+
+# libvorbis
+$(call embtk_include_pkg,libvorbis)

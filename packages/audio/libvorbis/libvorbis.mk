@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2014 GAYE Abdoulaye Walsimou.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,38 +17,26 @@
 #
 ################################################################################
 #
-# \file         audio.kconfig
-# \brief	audio.kconfig of Embtoolkit
-# \author       GAYE Abdoulaye Walsimou, <walsimou@walsimou.com>
-# \date         May 2014
+# \file         libvorbis.mk
+# \brief		libvorbis.mk of Embtoolkit
+# \author       Knut Welzel <knut.welzel@t-online.de>
+# \date         December 2015
 ################################################################################
 
-# alsa-lib
-source packages/audio/alsa-lib/alsa-lib.kconfig
+LIBVORBIS_NAME			:= libvorbis
+LIBVORBIS_VERSION		:= $(call embtk_get_pkgversion,libvorbis)
+LIBVORBIS_SITE			:= http://downloads.xiph.org/releases/vorbis
+LIBVORBIS_PACKAGE		:= libvorbis-$(LIBVORBIS_VERSION).tar.gz
+LIBVORBIS_SRC_DIR		:= $(embtk_pkgb)/libvorbis-$(LIBVORBIS_VERSION)
+LIBVORBIS_BUILD_DIR		:= $(embtk_pkgb)/libvorbis-$(LIBVORBIS_VERSION)
 
-# ladspa
-source packages/audio/ladspa/ladspa.kconfig
+LIBVORBIS_BINS			:= libvorbis
+LIBVORBIS_INCLUDES		:= libvorbis/*
+LIBVORBIS_LIBS			:= liblibvorbis.* libvorbisenc.* libvorbisfile.*
+LIBVORBIS_PKGCONFIGS	:= libvorbis.pc vorbisenc.pc vorbisfile.pc
 
-# lame
-source packages/audio/lame/lame.kconfig
-
-# libsndfile
-source packages/audio/libsndfile/libsndfile.kconfig
-
-# libsamplerate
-source packages/audio/libsamplerate/libsamplerate.kconfig
-
-# lilv
-source packages/audio/lilv/lilv.kconfig
-
-# lv2
-source packages/audio/lv2/lv2.kconfig
-
-# jack2
-source packages/audio/jack2/jack2.kconfig
-
-# ogg
-source packages/audio/ogg/ogg.kconfig
-
-# libvorbis
-source packages/audio/libvorbis/libvorbis.kconfig
+LIBVORBIS_CONFIGURE_OPTS := --disable-docs \
+							--disable-example \
+							--disable-oggtest
+							
+LIBVORBIS_DEPS	:= ogg_install 

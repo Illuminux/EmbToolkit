@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2014 GAYE Abdoulaye Walsimou.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,38 +17,35 @@
 #
 ################################################################################
 #
-# \file         audio.kconfig
-# \brief	audio.kconfig of Embtoolkit
-# \author       GAYE Abdoulaye Walsimou, <walsimou@walsimou.com>
-# \date         May 2014
+# \file         lame.kconfig
+# \brief		lame.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@t-online.de>
+# \date         December 2015
 ################################################################################
 
-# alsa-lib
-source packages/audio/alsa-lib/alsa-lib.kconfig
+config EMBTK_HAVE_LAME
+	bool "Have lame"
+	help
+		lame description
+choice
+	prompt "lame version you wish"
+	depends on EMBTK_HAVE_LAME
+	help
+	 Here you can choose which version of lame you want to use.
 
-# ladspa
-source packages/audio/ladspa/ladspa.kconfig
+	config  EMBTK_LAME_VERSION_3_99_5
+		bool "lame-3.99.5 (wheezy/jessie)"
+endchoice
 
-# lame
-source packages/audio/lame/lame.kconfig
+config EMBTK_LAME_MAJOR_VERSION_STRING
+	string
+	default "3.99"		if EMBTK_LAME_VERSION_3_99_5
 
-# libsndfile
-source packages/audio/libsndfile/libsndfile.kconfig
+config EMBTK_LAME_VERSION_STRING
+	string
+	default "3.99.5"	if EMBTK_LAME_VERSION_3_99_5
 
-# libsamplerate
-source packages/audio/libsamplerate/libsamplerate.kconfig
-
-# lilv
-source packages/audio/lilv/lilv.kconfig
-
-# lv2
-source packages/audio/lv2/lv2.kconfig
-
-# jack2
-source packages/audio/jack2/jack2.kconfig
-
-# ogg
-source packages/audio/ogg/ogg.kconfig
-
-# libvorbis
-source packages/audio/libvorbis/libvorbis.kconfig
+config EMBTK_LAME_NEED_PATCH
+	bool
+config EMBTK_LAME_NEED_AUTORECONF
+	bool
