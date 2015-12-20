@@ -80,6 +80,9 @@ $(call embtk_include_pkg,libusb)
 # libuuid
 $(call embtk_include_pkg,e2fsprogs-libuuid)
 
+# libmodbus
+$(call embtk_include_pkg,libmodbus)
+
 # openblas
 $(call embtk_include_pkg,openblas)
 

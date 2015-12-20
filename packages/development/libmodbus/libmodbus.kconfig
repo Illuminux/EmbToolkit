@@ -1,0 +1,52 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         libmodbus.kconfig
+# \brief		libmodbus.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         December 2015
+################################################################################
+
+config EMBTK_HAVE_LIBMODBUS
+	bool "Have libmodbus"
+	help
+		A Modbus library written in C, to send/receive data with a device which 
+		respects the Modbus protocol. This library can use a serial port or an 
+		Ethernet connection.
+choice
+	prompt "libmodbus version you wish"
+	depends on EMBTK_HAVE_LIBMODBUS
+	help
+	 Here you can choose which version of libmodbus you want to use.
+
+	config  EMBTK_LIBMODBUS_VERSION_3_0_6
+		bool "libmodbus-3.0.6 (jessie)"
+	config  EMBTK_LIBMODBUS_VERSION_3_0_3
+		bool "libmodbus-3.0.3 (wheezy)"
+endchoice
+
+config EMBTK_LIBMODBUS_VERSION_STRING
+	string
+	default "3.0.6"	if EMBTK_LIBMODBUS_VERSION_3_0_6
+	default "3.0.3"	if EMBTK_LIBMODBUS_VERSION_3_0_3
+
+config EMBTK_LIBMODBUS_NEED_PATCH
+	bool
+config EMBTK_LIBMODBUS_NEED_AUTORECONF
+	bool
