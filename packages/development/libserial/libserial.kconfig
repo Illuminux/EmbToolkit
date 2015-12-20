@@ -1,0 +1,51 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         libserial.kconfig
+# \brief		libserial.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@t-online.de>
+# \date         December 2015
+################################################################################
+
+config EMBTK_HAVE_LIBSERIAL
+	bool "Have libserial"
+	select EMBTK_HAVE_BOOST
+	help
+		A collection of C++ classes which allow the serial port on POSIX systems 
+		to be accessed like an iostream object. Special functions are provided 
+		for setting various parameters of the serial port such as the baud rate, 
+		character size, flow control and other.
+choice
+	prompt "libserial version you wish"
+	depends on EMBTK_HAVE_LIBSERIAL
+	help
+	 Here you can choose which version of libserial you want to use.
+
+	config  EMBTK_LIBSERIAL_VERSION_0_6_0rc2
+		bool "libserial_0_6_0rc2"
+endchoice
+
+config EMBTK_LIBSERIAL_VERSION_STRING
+	string
+	default "0_6_0rc2"	if EMBTK_LIBSERIAL_VERSION_0_6_0rc2
+
+config EMBTK_LIBSERIAL_NEED_PATCH
+	bool
+config EMBTK_LIBSERIAL_NEED_AUTORECONF
+	bool

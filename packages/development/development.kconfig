@@ -80,6 +80,9 @@ source packages/development/e2fsprogs-libuuid/e2fsprogs-libuuid.kconfig
 # libmodbus
 source packages/development/libmodbus/libmodbus.kconfig
 
+# libserial
+source packages/development/libserial/libserial.kconfig
+
 # openblas
 source packages/development/openblas/openblas.kconfig
 
