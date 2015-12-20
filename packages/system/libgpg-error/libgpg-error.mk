@@ -36,4 +36,3 @@ LIBGPG-ERROR_LIBS		:= libgpg-error.*
 LIBGPG-ERROR_PKGCONFIGS	:=
 
 LIBGPG-ERROR_CONFIGURE_OPTS	:= --disable-nls
-

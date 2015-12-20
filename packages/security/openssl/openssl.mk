@@ -48,7 +48,11 @@ OPENSSL_MAKE_OPTS	:= CROSS_COMPILE=$(CROSS_COMPILE) \
 					   ARCH="arm"
 
 define embtk_install_openssl
-	exit
+	$(embtk_configure_openssl)
+	cd $(OPENSSL_BUILD_DIR); \
+	$(MAKE) $(OPENSSL_MAKE_OPTS)
+	cd $(OPENSSL_BUILD_DIR); \
+	$(MAKE) install_sw
 endef
 
 define embtk_configure_openssl
@@ -56,14 +60,6 @@ define embtk_configure_openssl
 	CROSS_COMPILE=$(CROSS_COMPILE) \
 	$(OPENSSL_SRC_DIR)/Configure $(OPENSSL_CONFIGURE_OPTS)
 	touch $(OPENSSL_BUILD_DIR)/.configured
-endef
-
-define embtk_beforeinstall_openssl
-	$(embtk_configure_openssl)
-	cd $(OPENSSL_BUILD_DIR); \
-	make $(OPENSSL_MAKE_OPTS)
-	cd $(OPENSSL_BUILD_DIR); \
-	make install_sw
 endef
 
 OPENSSL_DEPS := zlib_install 
