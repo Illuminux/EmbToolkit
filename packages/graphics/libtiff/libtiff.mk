@@ -41,3 +41,5 @@ LIBTIFF_LIBS		= libtiff*
 LIBTIFF_PKGCONFIGS	=
 
 LIBTIFF_CONFIGURE_OPTS	:= --disable-cxx --program-prefix=""
+
+LIBTIFF_DEPS		:= zlib_install xz_install

@@ -23,17 +23,11 @@
 # \date         December 2009
 ################################################################################
 
-config EMBTK_HOST_HAVE_GLIB
-	bool
-	select EMBTK_HOST_HAVE_GETTEXT
-	help
-		Have glib for host development machine.
-
 config EMBTK_HAVE_GLIB
 	bool "Have GLib"
-	select EMBTK_HOST_HAVE_GLIB
 	select EMBTK_HAVE_GETTEXT-INTL
 	select EMBTK_HAVE_ZLIB
+	select EMBTK_HAVE_LIBFFI
 	select KEMBTK_UCLIBC_DO_C99_MATH if EMBTK_CLIB_UCLIBC
 	select KEMBTK_EGLIBC_OPTION_EGLIBC_INET if EMBTK_CLIB_EGLIBC
 	select KEMBTK_UCLIBC_UCLIBC_HAS_NETWORK_SUPPORT if EMBTK_CLIB_UCLIBC

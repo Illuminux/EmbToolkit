@@ -25,6 +25,8 @@
 
 config EMBTK_HAVE_LIBTHEORA
 	bool "Have libtheora"
+	select EMBTK_HAVE_OGG
+	select EMBTK_HAVE_CAIRO
 	help
 		libtheora description
 choice

@@ -37,3 +37,5 @@ LAME_LIBS			:= libmp3lame.*
 LAME_CONFIGURE_OPTS	:= --disable-largefile \
 					   --disable-gtktest \
 					   --disable-frontend
+
+LAME_DEPS := 	ncurses_install

@@ -25,6 +25,8 @@
 
 config EMBTK_HAVE_JSON-GLIB
 	bool "Have json-glib"
+	select EMBTK_HAVE_GLIB
+	select EMBTK_HAVE_LIBXML2
 	help
 		JSON-GLib is a library for parsing, generating and manipulating 
 		JavaScript Object Notation (JSON) data streams using the GLib type 

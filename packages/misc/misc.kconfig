@@ -32,6 +32,9 @@ source packages/misc/glib/glib.kconfig
 # inttltool
 source packages/misc/intltool/intltool.kconfig
 
+# libical
+source packages/misc/libical/libical.kconfig
+
 # libffi
 source packages/misc/libffi/libffi.kconfig
 

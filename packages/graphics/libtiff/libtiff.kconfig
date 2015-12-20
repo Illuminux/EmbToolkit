@@ -25,6 +25,9 @@
 
 config EMBTK_HAVE_LIBTIFF
 	bool "Have libtiff"
+	select EMBTK_HAVE_ZLIB
+	select EMBTK_HAVE_XZ
+	select EMBTK_HAVE_LIBJPEG-TURBO
 	help
 		libtiff provides support for the Tag Image File Format (TIFF), a
 		widely used format for storing image data.

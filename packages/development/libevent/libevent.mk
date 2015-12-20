@@ -34,3 +34,4 @@ LIBEVENT_BINS		= event_rpcgen.py
 LIBEVENT_SBINS		=
 LIBEVENT_INCLUDES	= evdns.h event-config.h event.h evhttp.h evrpc.h evutil.h
 LIBEVENT_LIBS		= libevent*
+

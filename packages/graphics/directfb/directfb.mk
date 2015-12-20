@@ -98,7 +98,7 @@ DIRECTFB_CONFIGURE_OPTS	+= $(CONFIG_DIRECTFB_GRAPHICS-y)
 DIRECTFB_CONFIGURE_OPTS	+= $(CONFIG_DIRECTFB_INPUTS-y)
 
 # directfb deps
-DIRECTFB_DEPS	:= libpng_install freetype_install libjpeg_install
+DIRECTFB_DEPS	:= libpng_install freetype_install libjpeg-turbo_install
 DIRECTFB_DEPS	+= $(if $(CONFIG_EMBTK_DIRECTFB_INPUT_TSLIB),tslib_install)
 
 define embtk_postinstallonce_directfb

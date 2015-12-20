@@ -40,7 +40,7 @@ CAIRO_PKGCONFIGS	= cairo*.pc
 CAIRO_CONFIG_OPTS-y	:=
 CAIRO_CONFIG_OPTS-n	:=
 CAIRO_DEPS		:= pixman_install libpng_install freetype_install	\
-			fontconfig_install
+				fontconfig_install zlib_install 
 
 ifeq ($(CONFIG_EMBTK_HAVE_CAIRO_WITH_DIRECTFB),y)
 CAIRO_DEPS += directfb_install

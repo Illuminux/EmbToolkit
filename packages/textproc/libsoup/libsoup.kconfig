@@ -25,6 +25,9 @@
 
 config EMBTK_HAVE_LIBSOUP
 	bool "Have libsoup"
+	select EMBTK_HAVE_GLIB
+	select EMBTK_HAVE_LIBXML2
+	select EMBTK_HAVE_SQLITE
 	help
 		libsoup is an HTTP client/server library for GNOME. It uses GObjects 
 		and the glib main loop, to integrate well with GNOME applications, and 

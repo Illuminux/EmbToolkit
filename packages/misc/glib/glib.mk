@@ -56,25 +56,4 @@ GLIB_CONFIGURE_OPTS	:= --disable-fam \
 					  --disable-always-build-tests \
 					  --disable-installed-tests
 
-#GLIB_DEPS			:= zlib_install gettext-intl_install glib_host_install
 GLIB_DEPS			:= zlib_install libffi_install
-
-#
-# glib for host
-#
-GLIB_HOST_NAME			:= $(GLIB_NAME)
-GLIB_HOST_MAJOR_VERSION	:= $(GLIB_MAJOR_VERSION)
-GLIB_HOST_VERSION		:= $(GLIB_VERSION)
-GLIB_HOST_SITE			:= $(GLIB_SITE)
-GLIB_HOST_SITE_MIRROR1	:= $(GLIB_SITE_MIRROR1)
-GLIB_HOST_SITE_MIRROR2	:= $(GLIB_SITE_MIRROR2)
-GLIB_HOST_SITE_MIRROR3	:= $(GLIB_SITE_MIRROR3)
-GLIB_HOST_PATCH_SITE	:= $(GLIB_PATCH_SITE)
-GLIB_HOST_PACKAGE		:= $(GLIB_PACKAGE)
-GLIB_HOST_SRC_DIR		:= $(embtk_toolsb)/glib-$(GLIB_VERSION)
-GLIB_HOST_BUILD_DIR		:= $(embtk_toolsb)/glib-$(GLIB_VERSION)
-
-GLIB_HOST_SET_RPATH			:= y
-GLIB_HOST_CONFIGURE_OPTS	:= --disable-fam
-GLIB_HOST_DEPS				:= gettext_host_install
-

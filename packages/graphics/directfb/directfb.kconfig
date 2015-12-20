@@ -26,7 +26,7 @@
 config EMBTK_HAVE_DIRECTFB
 	bool "Have DirectFB"
 	select EMBTK_HAVE_LIBPNG
-	select EMBTK_HAVE_LIBJPEG
+	select EMBTK_HAVE_LIBJPEG-TURBO
 	select EMBTK_HAVE_FREETYPE
 	help
 		DirectFB is a graphics library which was designed with embedded
@@ -51,9 +51,9 @@ endchoice
 menu "DirectFB Configuration"
 depends on EMBTK_HAVE_DIRECTFB
 
-comment "----------------------"
+#comment "----------------------"
 comment "DirectFB Graphic drivers"
-comment "----------------------"
+#comment "----------------------"
 	config EMBTK_DIRECTFB_GRAPHIC_ATI128
 		bool "Build DirectFB ATI Rage 128 graphic driver"
 
@@ -119,9 +119,9 @@ comment "----------------------"
 
 	config EMBTK_DIRECTFB_GRAPHIC_VMWARE
 		bool "Build DirectFB vmware graphic driver"
-comment "----------------------"
+#comment "----------------------"
 comment "DirectFB Input drivers"
-comment "----------------------"
+#comment "----------------------"
 	config EMBTK_DIRECTFB_INPUT_DBOX2REMOTE
 		bool "DBox2 Remote"
 	config EMBTK_DIRECTFB_INPUT_DBOXREMOTE

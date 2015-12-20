@@ -25,6 +25,9 @@
 
 config EMBTK_HAVE_CURL
 	bool "Have curl"
+	select EMBTK_HAVE_ZLIB
+	select EMBTK_HAVE_OPENSSL
+	select EMBTK_HAVE_LIBSSH
 	help
 		curl is a command line tool for transferring data with URL syntax, 
 		supporting DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, 

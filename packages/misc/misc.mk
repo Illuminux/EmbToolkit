@@ -38,6 +38,9 @@ $(call embtk_include_hostpkg,intltool_host)
 # libffi
 $(call embtk_include_pkg,libffi)
 
+# libical
+$(call embtk_include_pkg,libical)
+
 # ncurses
 $(call embtk_include_pkg,ncurses)
 

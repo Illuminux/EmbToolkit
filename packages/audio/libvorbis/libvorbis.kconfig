@@ -25,6 +25,7 @@
 
 config EMBTK_HAVE_LIBVORBIS
 	bool "Have libvorbis"
+	select EMBTK_HAVE_OGG
 	help
 		Ogg Vorbis is a fully open, non-proprietary, patent-and-royalty-free, 
 		general-purpose compressed audio format for audio and music at fixed and 

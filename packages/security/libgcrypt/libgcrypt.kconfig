@@ -25,6 +25,7 @@
 
 config EMBTK_HAVE_LIBGCRYPT
 	bool "Have libgcrypt"
+	select EMBTK_HAVE_LIBGPG-ERROR
 	help
 		libgcrypt description
 choice

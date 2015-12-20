@@ -25,6 +25,8 @@
 
 config EMBTK_HAVE_LIBSSH
 	bool "Have libssh"
+	select EMBTK_HAVE_ZLIB
+	select EMBTK_HAVE_LIBGCRYPT
 	help
 		libssh2 is a client-side C library implementing the SSH2 protocol. It 
 		supports regular terminal, SCP and SFTP (v1-v5) sessions; port 

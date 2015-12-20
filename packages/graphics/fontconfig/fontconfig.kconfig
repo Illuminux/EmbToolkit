@@ -25,6 +25,8 @@
 config EMBTK_HAVE_FONTCONFIG
 	bool "Have fontconfig"
 	select EMBTK_HAVE_LIBXML2
+	select EMBTK_HAVE_EXPAT
+	select EMBTK_HAVE_FREETYPE
 	help
 		Fontconfig is a library for font customization and
 		configuration.

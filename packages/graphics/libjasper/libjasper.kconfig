@@ -25,6 +25,7 @@
 
 config EMBTK_HAVE_LIBJASPER
 	bool "Have libjasper"
+	select EMBTK_HAVE_LIBJPEG-TURBO
 	help
 		JasPer is a collection of software (i.e., a library and application 
 		programs) for the coding and manipulation of images. This software can 
