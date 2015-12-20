@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2014 GAYE Abdoulaye Walsimou.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,29 +17,34 @@
 #
 ################################################################################
 #
-# \file         textproc.kconfig
-# \brief	text processing packages and libraries
-# \author       GAYE Abdoulaye Walsimou, <walsimou@walsimou.com>
-# \date         July 2014
+# \file         libical.kconfig
+# \brief		libical.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         December 2015
 ################################################################################
 
-# json-glib
-source packages/textproc/json-glib/json-glib.kconfig
+config EMBTK_HAVE_LIBICAL
+	bool "Have libical"
+	help
+		iCalendar library implementation in C 
+choice
+	prompt "libical version you wish"
+	depends on EMBTK_HAVE_LIBICAL
+	help
+	 Here you can choose which version of libical you want to use.
 
-# libconfig
-source packages/textproc/libconfig/libconfig.kconfig
+	config  EMBTK_LIBICAL_VERSION_1_0
+		bool "libical-1.0 (jessie)"
+	config  EMBTK_LIBICAL_VERSION_0_48
+		bool "libical-0.48 (wheezy)"
+endchoice
 
-# libsoup
-source packages/textproc/libsoup/libsoup.kconfig
+config EMBTK_LIBICAL_VERSION_STRING
+	string
+	default "1.0"	if EMBTK_LIBICAL_VERSION_1_0
+	default "0.48"	if EMBTK_LIBICAL_VERSION_0_48
 
-# libxml2
-source packages/textproc/libxml2/libxml2.kconfig
-
-# lrdf
-source packages/textproc/lrdf/lrdf.kconfig
-
-# raptor
-source packages/textproc/raptor/raptor.kconfig
-
-# readline
-source packages/textproc/readline/readline.kconfig
+config EMBTK_LIBICAL_NEED_PATCH
+	bool
+config EMBTK_LIBICAL_NEED_AUTORECONF
+	bool

@@ -28,6 +28,9 @@ embtk_pkgincdir := packages/development
 # atf
 $(call embtk_include_pkg,atf)
 
+# bluez
+$(call embtk_include_pkg,bluez)
+
 # boost
 $(call embtk_include_pkg,boost)
 

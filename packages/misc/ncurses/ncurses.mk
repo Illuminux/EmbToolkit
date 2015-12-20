@@ -38,16 +38,18 @@ NCURSES_INCLUDES	+= menu.h ncurses_dll.h panel.h term_entry.h tic.h
 NCURSES_INCLUDES	+= cursesf.h cursesm.h cursesw.h eti.h form.h nc_tparm.h
 NCURSES_INCLUDES	+= ncurses.h termcap.h term.h unctrl.h
 
-NCURSES_LIBS		:= libcurses.a libform.a libform_g.a libmenu.a
-NCURSES_LIBS		+= libmenu_g.a libncurses.a libncurses++.a
-NCURSES_LIBS		+= libncurses_g.a libpanel.a libpanel_g.a terminfo
+NCURSES_LIBS		:= libcurses.* libform.* libform_g.* libmenu.*
+NCURSES_LIBS		+= libmenu_g.* libncurses.* libncurses++.*
+NCURSES_LIBS		+= libncurses_g.* libpanel.* libpanel_g.* terminfo
 
-NCURSES_CFLAGS		:= -fPIC
-NCURSES_CONFIGURE_ENV	:= ac_cv_header_locale_h=no
+NCURSES_PKGCONFIGS  := form.pc menu.pc ncurses++.pc ncurses.pc panel.pc
+
+#NCURSES_CFLAGS		:= -fPIC
+#NCURSES_CONFIGURE_ENV	:= ac_cv_header_locale_h=no
 
 NCURSES_CONFIGURE_OPTS	:= --disable-rpath --without-cxx-binding --without-ada
 NCURSES_CONFIGURE_OPTS	+= --disable-database --enable-termcap --without-progs
-NCURSES_CONFIGURE_OPTS	+= --program-prefix="" --without-tests
+NCURSES_CONFIGURE_OPTS	+= --program-prefix="" --without-tests --with-shared
 
 define embtk_postinstall_ncurses
 	$(Q)mkdir -p $(embtk_rootfs)/usr/share

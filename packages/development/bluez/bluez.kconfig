@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2014 GAYE Abdoulaye Walsimou.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,29 +17,37 @@
 #
 ################################################################################
 #
-# \file         textproc.kconfig
-# \brief	text processing packages and libraries
-# \author       GAYE Abdoulaye Walsimou, <walsimou@walsimou.com>
-# \date         July 2014
+# \file         bluez.kconfig
+# \brief		bluez.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         December 2015
 ################################################################################
 
-# json-glib
-source packages/textproc/json-glib/json-glib.kconfig
+config EMBTK_HAVE_BLUEZ
+	bool "Have bluez"
+	select EMBTK_HAVE_LIBICAL
+	select EMBTK_HAVE_DBUS
+	select EMBTK_HAVE_READLINE
+	help
+		bluez description
+choice
+	prompt "bluez version you wish"
+	depends on EMBTK_HAVE_BLUEZ
+	help
+	 Here you can choose which version of bluez you want to use.
 
-# libconfig
-source packages/textproc/libconfig/libconfig.kconfig
+	config  EMBTK_BLUEZ_VERSION_5_23
+		bool "bluez-5.23 (jessie)"
+	config  EMBTK_BLUEZ_VERSION_4_99
+		bool "bluez-4.99 (wheezy)"
+endchoice
 
-# libsoup
-source packages/textproc/libsoup/libsoup.kconfig
+config EMBTK_BLUEZ_VERSION_STRING
+	string
+	default "5.23"	if EMBTK_BLUEZ_VERSION_5_23
+	default "4.99"	if EMBTK_BLUEZ_VERSION_4_99
 
-# libxml2
-source packages/textproc/libxml2/libxml2.kconfig
-
-# lrdf
-source packages/textproc/lrdf/lrdf.kconfig
-
-# raptor
-source packages/textproc/raptor/raptor.kconfig
-
-# readline
-source packages/textproc/readline/readline.kconfig
+config EMBTK_BLUEZ_NEED_PATCH
+	bool
+config EMBTK_BLUEZ_NEED_AUTORECONF
+	bool

@@ -40,5 +40,5 @@ $(call embtk_include_pkg,libxml2)
 # lrdf
 $(call embtk_include_pkg,lrdf)
 
-# raptor
-$(call embtk_include_pkg,raptor)
+# readline
+$(call embtk_include_pkg,readline)

@@ -18,13 +18,16 @@
 ################################################################################
 #
 # \file         development.kconfig
-# \brief	development.kconfig of Embtoolkit
-# \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         October 2009
+# \brief		development.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         December 2015
 ################################################################################
 
 # atf
 source packages/development/atf/atf.kconfig
+
+# bluez
+source packages/development/bluez/bluez.kconfig
 
 # boost
 source packages/development/boost/boost.kconfig

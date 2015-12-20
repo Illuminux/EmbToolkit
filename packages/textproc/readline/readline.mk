@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2014 GAYE Abdoulaye Walsimou.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,29 +17,26 @@
 #
 ################################################################################
 #
-# \file         textproc.kconfig
-# \brief	text processing packages and libraries
-# \author       GAYE Abdoulaye Walsimou, <walsimou@walsimou.com>
-# \date         July 2014
+# \file         readline.mk
+# \brief		readline.mk of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         December 2015
 ################################################################################
 
-# json-glib
-source packages/textproc/json-glib/json-glib.kconfig
+READLINE_NAME			:= readline
+READLINE_VERSION		:= $(call embtk_get_pkgversion,readline)
+READLINE_SITE			:= http://ftp.gnu.org/pub/gnu/readline
+READLINE_PACKAGE		:= readline-$(READLINE_VERSION).tar.gz
+READLINE_SRC_DIR		:= $(embtk_pkgb)/readline-$(READLINE_VERSION)
+READLINE_BUILD_DIR		:= $(embtk_pkgb)/readline-$(READLINE_VERSION)-build
 
-# libconfig
-source packages/textproc/libconfig/libconfig.kconfig
+READLINE_INCLUDES		:= readline/*
+READLINE_LIBS			:= libhistory.* libreadline.*
+READLINE_CONFIGURE_OPTS	:= --disable-largefile \
+						   --with-curses \
+						   bash_cv_wcwidth_broken=yes
 
-# libsoup
-source packages/textproc/libsoup/libsoup.kconfig
+READLINE_MAKE_OPTS		:= SHLIB_LIBS=-lncurses
 
-# libxml2
-source packages/textproc/libxml2/libxml2.kconfig
+READLINE_DEPS			:= ncurses_install
 
-# lrdf
-source packages/textproc/lrdf/lrdf.kconfig
-
-# raptor
-source packages/textproc/raptor/raptor.kconfig
-
-# readline
-source packages/textproc/readline/readline.kconfig

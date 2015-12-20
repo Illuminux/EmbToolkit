@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2014 GAYE Abdoulaye Walsimou.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,29 +17,35 @@
 #
 ################################################################################
 #
-# \file         textproc.kconfig
-# \brief	text processing packages and libraries
-# \author       GAYE Abdoulaye Walsimou, <walsimou@walsimou.com>
-# \date         July 2014
+# \file         readline.kconfig
+# \brief		readline.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         December 2015
 ################################################################################
 
-# json-glib
-source packages/textproc/json-glib/json-glib.kconfig
+config EMBTK_HAVE_READLINE
+	bool "Have readline"
+	help
+		The GNU readline library aids in the consistency of user interface 
+		across discrete programs that need to provide a command line interface
+choice
+	prompt "readline version you wish"
+	depends on EMBTK_HAVE_READLINE
+	help
+	 Here you can choose which version of readline you want to use.
 
-# libconfig
-source packages/textproc/libconfig/libconfig.kconfig
+	config  EMBTK_READLINE_VERSION_6_3
+		bool "readline-6.3 (jessie)"
+	config  EMBTK_READLINE_VERSION_6_2
+		bool "readline-6.2 (wheezy)"
+endchoice
 
-# libsoup
-source packages/textproc/libsoup/libsoup.kconfig
+config EMBTK_READLINE_VERSION_STRING
+	string
+	default "6.3"	if EMBTK_READLINE_VERSION_6_3
+	default "6.2"	if EMBTK_READLINE_VERSION_6_2
 
-# libxml2
-source packages/textproc/libxml2/libxml2.kconfig
-
-# lrdf
-source packages/textproc/lrdf/lrdf.kconfig
-
-# raptor
-source packages/textproc/raptor/raptor.kconfig
-
-# readline
-source packages/textproc/readline/readline.kconfig
+config readline
+	bool
+config EMBTK_READLINE_NEED_AUTORECONF
+	bool
