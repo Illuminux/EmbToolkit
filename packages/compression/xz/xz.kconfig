@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 Abdoulaye Walsimou GAYE.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,20 +17,31 @@
 #
 ################################################################################
 #
-# \file         compression.kconfig
-# \brief	compression.kconfig of Embtoolkit.
-# \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         August 2010
+# \file         xz.kconfig
+# \brief		xz.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         November 2015
 ################################################################################
 
-# bzip2
-source packages/compression/bzip2/bzip2.kconfig
+config EMBTK_HAVE_XZ
+	bool "Have xz"
+	help
+		XZ-format compression library
+choice
+	prompt "xz version you wish"
+	depends on EMBTK_HAVE_XZ
+	help
+	 Here you can choose which version of foo you want to use.
 
-# lzo
-source packages/compression/lzo/lzo.kconfig
+	config  EMBTK_XZ_VERSION_5_2_2
+		bool "xz-5.2.2"
+endchoice
 
-# zlib
-source packages/compression/zlib/zlib.kconfig
+config EMBTK_XZ_VERSION_STRING
+	string
+	default "5.2.2"	if EMBTK_XZ_VERSION_5_2_2
 
-# xz
-source packages/compression/xz/xz.kconfig
+config EMBTK_XZ_NEED_PATCH
+	bool
+config EMBTK_XZ_NEED_AUTORECONF
+	bool

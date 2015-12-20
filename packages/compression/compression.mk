@@ -34,3 +34,6 @@ $(call embtk_include_hostpkg,lzo_host)
 
 # zlib for target
 $(call embtk_include_pkg,zlib)
+
+# xz for target
+$(call embtk_include_pkg,xz)

@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 Abdoulaye Walsimou GAYE.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,20 +17,20 @@
 #
 ################################################################################
 #
-# \file         compression.kconfig
-# \brief	compression.kconfig of Embtoolkit.
+# \file         xz.mk
+# \brief	xz.mk of Embtoolkit
 # \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         August 2010
+# \date         December 2009
 ################################################################################
 
-# bzip2
-source packages/compression/bzip2/bzip2.kconfig
+XZ_NAME			:= xz
+XZ_VERSION		:= $(call embtk_get_pkgversion,xz)
+XZ_SITE			:= http://tukaani.org/xz
+XZ_PACKAGE		:= xz-$(XZ_VERSION).tar.gz
+XZ_SRC_DIR		:= $(embtk_pkgb)/xz-$(XZ_VERSION)
+XZ_BUILD_DIR	:= $(embtk_pkgb)/xz-$(XZ_VERSION)
 
-# lzo
-source packages/compression/lzo/lzo.kconfig
-
-# zlib
-source packages/compression/zlib/zlib.kconfig
-
-# xz
-source packages/compression/xz/xz.kconfig
+XZ_BINS			:= lzmainfo unxz xz xzcat xzcmp xzdiff xzegrep xzfgrep xzgrep xzless xzmore
+XZ_INCLUDES		:= lzma.h lzma/*
+XZ_LIBS			:= liblzma.*
+XZ_PKGCONFIGS	:= liblzma.pc
