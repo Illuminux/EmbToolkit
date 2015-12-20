@@ -71,6 +71,9 @@ source packages/development/libsigsegv/libsigsegv.kconfig
 # libunwind
 source packages/development/libunwind/libunwind.kconfig
 
+# libusb
+source packages/development/libusb/libusb.kconfig
+
 # libuuid
 source packages/development/e2fsprogs-libuuid/e2fsprogs-libuuid.kconfig
 
