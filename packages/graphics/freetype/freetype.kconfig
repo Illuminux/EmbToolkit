@@ -48,7 +48,7 @@ choice
 	config  EMBTK_FREETYPE_VERSION_2_5_2
 		bool "FreeType-2.5.2 (jessie)"
 	config  EMBTK_FREETYPE_VERSION_2_4_9
-		bool "FreeType-2.4.9"
+		bool "FreeType-2.4.9 (wheezy)"
 	config  EMBTK_FREETYPE_VERSION_2_4_6
 		bool "FreeType-2.4.6"
 	config  EMBTK_FREETYPE_VERSION_2_4_4
