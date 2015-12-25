@@ -53,7 +53,7 @@ define embtk_configure_libical
 	OBJCOPY=$(TARGETOBJCOPY)						\
 	cmake -DCMAKE_SYSTEM_NAME='Linux' 				\
 		  -DCMAKE_SYSTEM_VERSION=1					\
-		  -DCMAKE_SYSTEM_PROCESSOR='arm'			\
+		  -DCMAKE_SYSTEM_PROCESSOR='$(LINUX_ARCH)'	\
 		  -DCMAKE_C_COMPILER='$(TARGETCC)'			\
 		  -DCMAKE_CXX_COMPILER='$(TARGETCXX)' 		\
 		  -DCMAKE_CROSSCOMPILING=True				\

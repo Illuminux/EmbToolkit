@@ -45,7 +45,7 @@ OPENSSL_CONFIGURE_OPTS	:= linux-generic32 \
 						   --openssldir=$(embtk_sysroot)/usr
 OPENSSL_MAKE_ENV	:=
 OPENSSL_MAKE_OPTS	:= CROSS_COMPILE=$(CROSS_COMPILE) \
-					   ARCH="arm"
+					   ARCH="$(LINUX_ARCH)"
 
 define embtk_install_openssl
 	$(embtk_configure_openssl)
