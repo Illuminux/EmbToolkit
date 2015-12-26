@@ -48,8 +48,9 @@ LIBX11_CONFIGURE_OPTS := --disable-composecache \
 						 --disable-loadable-xcursor \
 						 --without-util
 
-LIBX11_DEPS	= utilmacros_install inputproto_install kbproto_install		\
-		xextproto_install xproto_install libxcb_install xtrans_install
+LIBX11_DEPS	= libpthreadstubs_install utilmacros_install inputproto_install \
+			  kbproto_install xextproto_install xproto_install libxcb_install \
+			  xtrans_install
 
 #define embtk_beforeinstall_libx11
 #	$(Q)cd $(LIBX11_BUILD_DIR)/src/util; \
