@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 Abdoulaye Walsimou GAYE.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,23 +17,24 @@
 #
 ################################################################################
 #
-# \file         system.mk
-# \brief	system.mk of Embtoolkit
-# \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         July 2010
+# \file         libftdi.mk
+# \brief		libftdi.mk of Embtoolkit
+# \author       Knut Welzel <knut.welzel@t-online.de>
+# \date         December 2015
 ################################################################################
 
-# DBUS
-source packages/system/dbus/dbus.kconfig
+LIBFTDI_NAME		:= libftdi
+LIBFTDI_VERSION		:= $(call embtk_get_pkgversion,libftdi)
+LIBFTDI_SITE		:= http://www.intra2net.com/en/developer/libftdi/download
+LIBFTDI_PACKAGE		:= libftdi-$(LIBFTDI_VERSION).tar.gz
+LIBFTDI_SRC_DIR		:= $(embtk_pkgb)/libftdi-$(LIBFTDI_VERSION)
+LIBFTDI_BUILD_DIR	:= $(embtk_pkgb)/libftdi-$(LIBFTDI_VERSION)
 
-# libftdi
-source packages/system/libftdi/libftdi.kconfig
+LIBFTDI_BINS		:= libftdi-config
+LIBFTDI_INCLUDES	:= ftdi.h
+LIBFTDI_LIBS		:= libftdi.*
+LIBFTDI_PKGCONFIGS	:= libftdi.pc
 
-# libgpg-error
-source packages/system/libgpg-error/libgpg-error.kconfig
+LIBFTDI_OPTS		:= --without-docs
 
-# OpenRC
-source packages/system/openrc/openrc.kconfig
-
-# InitNG
-source packages/system/initng/initng.kconfig
+LIBFTDI_DEPS		:= libusb_install

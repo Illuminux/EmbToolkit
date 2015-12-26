@@ -28,6 +28,9 @@ embtk_pkgincdir := packages/system
 # dbus
 $(call embtk_include_pkg,dbus)
 
+# libftdi
+$(call embtk_include_pkg,libftdi)
+
 # libgpg-error
 $(call embtk_include_pkg,libgpg-error)
 

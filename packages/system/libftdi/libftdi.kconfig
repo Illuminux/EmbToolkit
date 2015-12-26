@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 Abdoulaye Walsimou GAYE.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,23 +17,32 @@
 #
 ################################################################################
 #
-# \file         system.mk
-# \brief	system.mk of Embtoolkit
-# \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         July 2010
+# \file         libftdi.kconfig
+# \brief		libftdi.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@t-online.de>
+# \date         December 2015
 ################################################################################
 
-# DBUS
-source packages/system/dbus/dbus.kconfig
+config EMBTK_HAVE_LIBFTDI
+	bool "Have libftdi"
+	select EMBTK_HAVE_LIBUSB
+	help
+		Library to control and program the FTDI USB controller
+choice
+	prompt "libftdi version you wish"
+	depends on EMBTK_HAVE_LIBFTDI
+	help
+	 Here you can choose which version of libftdi you want to use.
 
-# libftdi
-source packages/system/libftdi/libftdi.kconfig
+	config  EMBTK_LIBFTDI_VERSION_0_20
+		bool "libftdi-0.20 (wheezy/jessie)"
+endchoice
 
-# libgpg-error
-source packages/system/libgpg-error/libgpg-error.kconfig
+config EMBTK_LIBFTDI_VERSION_STRING
+	string
+	default "0.20"	if EMBTK_LIBFTDI_VERSION_0_20
 
-# OpenRC
-source packages/system/openrc/openrc.kconfig
-
-# InitNG
-source packages/system/initng/initng.kconfig
+config EMBTK_LIBFTDI_NEED_PATCH
+	bool
+config EMBTK_LIBFTDI_NEED_AUTORECONF
+	bool
