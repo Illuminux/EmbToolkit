@@ -84,6 +84,9 @@ $(call embtk_include_pkg,xcmiscproto)
 # xextcproto
 $(call embtk_include_pkg,xextproto)
 
+# xineramaproto
+$(call embtk_include_pkg,xineramaproto)
+
 # xproto
 $(call embtk_include_pkg,xproto)
 
@@ -108,6 +111,9 @@ $(call embtk_include_pkg,libxau)
 
 # libxi
 $(call embtk_include_pkg,libxi)
+
+# libxinerama
+$(call embtk_include_pkg,libxinerama)
 
 # libxcb
 $(call embtk_include_pkg,libxcb)
