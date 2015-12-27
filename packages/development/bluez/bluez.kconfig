@@ -26,6 +26,7 @@
 config EMBTK_HAVE_BLUEZ
 	bool "Have bluez"
 	select EMBTK_HAVE_LIBICAL
+	select EMBTK_HAVE_GLIB
 	select EMBTK_HAVE_DBUS
 	select EMBTK_HAVE_READLINE
 	help

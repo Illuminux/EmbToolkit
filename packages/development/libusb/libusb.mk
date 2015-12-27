@@ -25,8 +25,8 @@
 
 LIBUSB_NAME			:= libusb
 LIBUSB_VERSION		:= $(call embtk_get_pkgversion,libusb)
-LIBUSB_SITE			:= http://downloads.sourceforge.net/project/libusb/libusb-1.0/libusb-$(LIBUSB_VERSION)
-LIBUSB_PACKAGE		:= libusb-$(LIBUSB_VERSION).tar.bz2
+LIBUSB_SITE		:= http://http.debian.net/debian/pool/main/libu/libusb
+LIBUSB_PACKAGE		:= libusb_$(LIBUSB_VERSION).orig.tar.gz
 LIBUSB_SRC_DIR		:= $(embtk_pkgb)/libusb-$(LIBUSB_VERSION)
 LIBUSB_BUILD_DIR		:= $(embtk_pkgb)/libusb-$(LIBUSB_VERSION)
 

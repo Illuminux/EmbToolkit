@@ -44,4 +44,4 @@ BLUEZ_CONFIGURE_OPTS	:= --enable-threads \
 						   
 BLUEZ_CONFIGURE_ENV		:= LIBS='-lncurses -lreadline'
 						   
-BLUEZ_DEPS		:= dbus_install libical_install readline_install
+BLUEZ_DEPS		:= dbus_install libical_install readline_install glib_install

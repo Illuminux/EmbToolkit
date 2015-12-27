@@ -34,16 +34,13 @@ choice
 	 Library for programming USB applications without the knowledge of Linux 
 	 kernel internals.
 
-	config  EMBTK_LIBUSB_VERSION_1_0_19
-		bool "libusb-1.0.19 (jessie)"
-	config  EMBTK_LIBUSB_VERSION_1_0_11
-		bool "libusb-1.0.11 (wheezy)"
+	config  EMBTK_LIBUSB_VERSION_0_1_12
+		bool "libusb-0.1.12 (jessie/wheezy)"
 endchoice
 
 config EMBTK_LIBUSB_VERSION_STRING
 	string
-	default "1.0.19"	if EMBTK_LIBUSB_VERSION_1_0_19
-	default "1.0.11"	if EMBTK_LIBUSB_VERSION_1_0_11
+	default "0.1.12"	if EMBTK_LIBUSB_VERSION_0_1_12
 
 config EMBTK_LIBUSB_NEED_PATCH
 	bool
