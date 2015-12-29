@@ -35,6 +35,15 @@ $(call embtk_include_pkg,utilmacros)
 # xcb-util
 $(call embtk_include_pkg,xcbutil)
 
+# xcb-util-wm
+$(call embtk_include_pkg,xcbutil-wm)
+
+# xcb-util-image
+$(call embtk_include_pkg,xcbutil-image)
+
+# xcb-util-image
+$(call embtk_include_pkg,xcbutil-keysyms)
+
 ##############
 # X prototypes
 ##############

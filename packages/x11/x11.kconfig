@@ -26,6 +26,9 @@
 menu "X windowing system tools"
 source packages/x11/utilmacros/utilmacros.kconfig
 source packages/x11/xcbutil/xcbutil.kconfig
+source packages/x11/xcbutil-wm/xcbutil-wm.kconfig
+source packages/x11/xcbutil-image/xcbutil-image.kconfig
+source packages/x11/xcbutil-keysyms/xcbutil-keysyms.kconfig
 endmenu
 
 menu "X windowing system prototype packages"

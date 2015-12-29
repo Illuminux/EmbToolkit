@@ -25,8 +25,8 @@
 
 LIBX11_NAME			:= libX11
 LIBX11_VERSION		:= $(call embtk_get_pkgversion,libx11)
-LIBX11_SITE			:= http://xorg.freedesktop.org/archive/individual/lib
-LIBX11_SITE_MIRROR3	:= ftp://ftp.embtoolkit.org/embtoolkit.org/packages-mirror
+LIBX11_SITE			:= http://xorg.freedesktop.org/releases/individual/lib
+#LIBX11_SITE_MIRROR3	:= ftp://ftp.embtoolkit.org/embtoolkit.org/packages-mirror
 LIBX11_PACKAGE		:= libX11-$(LIBX11_VERSION).tar.bz2
 LIBX11_SRC_DIR		:= $(embtk_pkgb)/libX11-$(LIBX11_VERSION)
 LIBX11_BUILD_DIR	:= $(embtk_pkgb)/libX11-$(LIBX11_VERSION)
@@ -39,21 +39,23 @@ LIBX11_INCLUDES		= X11/cursorfont.h X11/ImUtil.h X11/Xcms.h X11/XKBlib.h	\
 LIBX11_LIBS			= libX11* X11/Xcms.txt
 LIBX11_PKGCONFIGS	= x11.pc x11-xcb.pc
 
-LIBX11_CONFIGURE_OPTS := --disable-composecache \
+LIBX11_CONFIGURE_OPTS := --prefix=$(embtk_sysroot) \
+						 --libdir=$(embtk_sysroot)/lib \
+						 --includedir=$(embtk_sysroot)/include \
+						 --disable-composecache \
 						 --without-xmlto \
 						 --without-fop \
 						 --without-xsltproc \
 						 --without-launchd \
-						 --disable-malloc0returnsnull \
-						 --disable-loadable-xcursor \
-						 --without-util
+						 --disable-loadable-xcursor 
 
 LIBX11_DEPS	= libpthreadstubs_install utilmacros_install inputproto_install \
 		  kbproto_install xextproto_install xproto_install libxcb_install \
 		  xtrans_install
 
 #define embtk_beforeinstall_libx11
+#	echo $(hostcc_cached);
 #	$(Q)cd $(LIBX11_BUILD_DIR)/src/util; \
-	$(hostcc_cached) makekeys.c -c -o makekeys-makekeys.o -I/usr/local/embtk/sysroot-arm-linux-arm1176jzf-s/usr/include -I../../include -Wno-macro-redefined; \
-	$(hostcc_cached) makekeys.c -o makekeys -I/usr/local/embtk/sysroot-arm-linux-arm1176jzf-s/usr/include -I../../include -Wno-macro-redefined;
+#	$(hostcc_cached) makekeys.c -c -o makekeys-makekeys.o -I../../include -I$(embtk_sysroot)/usr/include; \
+#	$(hostcc_cached) makekeys.c -o makekeys -v -I../../include -I$(embtk_sysroot)/usr/include
 #endef

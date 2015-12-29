@@ -1,0 +1,48 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         xcbutil-wm.kconfig
+# \brief		xcbutil-wm.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@t-online.de>
+# \date         December 2015
+################################################################################
+
+config EMBTK_HAVE_XCBUTIL-WM
+	bool "Have xcbutil-wm"
+	select EMBTK_HAVE_XCBUTIL
+	help
+		xcbutil-wm description
+choice
+	prompt "xcbutil-wm version you wish"
+	depends on EMBTK_HAVE_XCBUTIL-WM
+	help
+	 Here you can choose which version of xcbutil-wm you want to use.
+
+	config  EMBTK_XCBUTIL-WM_VERSION_0_4_1
+		bool "xcbutil-wm-0.4.1"
+endchoice
+
+config EMBTK_XCBUTIL-WM_VERSION_STRING
+	string
+	default "0.4.1"	if EMBTK_XCBUTIL-WM_VERSION_0_4_1
+
+config EMBTK_XCBUTIL-WM_NEED_PATCH
+	bool
+config EMBTK_XCBUTIL-WM_NEED_AUTORECONF
+	bool

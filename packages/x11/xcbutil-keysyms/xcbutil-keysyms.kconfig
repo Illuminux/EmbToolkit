@@ -1,0 +1,48 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         xcbutil-keysyms.kconfig
+# \brief		xcbutil-keysyms.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@t-online.de>
+# \date         December 2015
+################################################################################
+
+config EMBTK_HAVE_XCBUTIL-KEYSYMS
+	bool "Have xcbutil-keysyms"
+	select EMBTK_HAVE_XCBUTIL
+	help
+		xcbutil-keysyms description
+choice
+	prompt "xcbutil-keysyms version you wish"
+	depends on EMBTK_HAVE_XCBUTIL-KEYSYMS
+	help
+	 Here you can choose which version of xcbutil-keysyms you want to use.
+
+	config  EMBTK_XCBUTIL-KEYSYMS_VERSION_0_3_9
+		bool "xcbutil-keysyms-0.3.9"
+endchoice
+
+config EMBTK_XCBUTIL-KEYSYMS_VERSION_STRING
+	string
+	default "0.3.9"	if EMBTK_XCBUTIL-KEYSYMS_VERSION_0_3_9
+
+config EMBTK_XCBUTIL-KEYSYMS_NEED_PATCH
+	bool
+config EMBTK_XCBUTIL-KEYSYMS_NEED_AUTORECONF
+	bool
