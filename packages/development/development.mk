@@ -28,9 +28,6 @@ embtk_pkgincdir := packages/development
 # atf
 $(call embtk_include_pkg,atf)
 
-# bluez
-$(call embtk_include_pkg,bluez)
-
 # boost
 $(call embtk_include_pkg,boost)
 
@@ -73,9 +70,6 @@ $(call embtk_include_pkg,libsigsegv)
 
 # libunwind
 $(call embtk_include_pkg,libunwind)
-
-# libusb
-$(call embtk_include_pkg,libusb)
 
 # libuuid
 $(call embtk_include_pkg,e2fsprogs-libuuid)

@@ -23,6 +23,9 @@
 # \date         July 2010
 ################################################################################
 
+# bluez
+source packages/system/bluez/bluez.kconfig
+
 # DBUS
 source packages/system/dbus/dbus.kconfig
 
@@ -31,6 +34,9 @@ source packages/system/libftdi/libftdi.kconfig
 
 # libgpg-error
 source packages/system/libgpg-error/libgpg-error.kconfig
+
+# libusb
+source packages/system/libusb/libusb.kconfig
 
 # OpenRC
 source packages/system/openrc/openrc.kconfig

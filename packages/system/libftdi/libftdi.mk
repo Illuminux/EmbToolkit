@@ -35,6 +35,7 @@ LIBFTDI_INCLUDES	:= ftdi.h
 LIBFTDI_LIBS		:= libftdi.*
 LIBFTDI_PKGCONFIGS	:= libftdi.pc
 
-LIBFTDI_OPTS		:= --without-docs
+LIBFTDI_CONFIGURE_OPTS	:= --without-docs \
+					   	   HAVELIBUSB=$(embtk_sysroot)/usr/bin/libusb-config
 
 LIBFTDI_DEPS		:= libusb_install

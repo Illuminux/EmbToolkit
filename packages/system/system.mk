@@ -25,6 +25,9 @@
 
 embtk_pkgincdir := packages/system
 
+# bluez
+$(call embtk_include_pkg,bluez)
+
 # dbus
 $(call embtk_include_pkg,dbus)
 
@@ -33,6 +36,9 @@ $(call embtk_include_pkg,libftdi)
 
 # libgpg-error
 $(call embtk_include_pkg,libgpg-error)
+
+# libusb
+$(call embtk_include_pkg,libusb)
 
 # OpenRC
 $(call embtk_include_pkg,openrc)
