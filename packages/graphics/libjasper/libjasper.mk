@@ -36,5 +36,5 @@ LIBJASPER_SBINS			:=
 LIBJASPER_LIBS			:= libjasper*
 LIBJASPER_INCLUDES		:= jasper*
 
-LIBJASPER_DEPS			:= libjpeg-turbo_install
+LIBJASPER_DEPS			:= libjpeg_install
 

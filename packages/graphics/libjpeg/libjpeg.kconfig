@@ -41,23 +41,23 @@ choice
 	help
 		Here you can choose which version of libjpeg you want to use.
 
+	config  EMBTK_LIBJPEG-TURBO_VERSION_1_3_1
+		bool "libjpeg-turbo-1.3.1 (jessie)"
 	config  EMBTK_LIBJPEG_VERSION_V8
 		bool "libjpeg-8 (wheezy)"
-	config  EMBTK_LIBJPEG_VERSION_V7
-		bool "libjpeg-7"
 endchoice
 
 config	EMBTK_LIBJPEG_VERSION_STRING
 	string
-	default "8"		if EMBTK_LIBJPEG_VERSION_V8
-	default "7"		if EMBTK_LIBJPEG_VERSION_V7
+	default "1.3.1"		if EMBTK_LIBJPEG-TURBO_VERSION_1_3_1
+	default "8"			if EMBTK_LIBJPEG_VERSION_V8
 
 config EMBTK_LIBJPEG_NEED_PATCH
 	bool
-	select EMBTK_LIBJPEG_HOST_NEED_PATCH
+#	select EMBTK_LIBJPEG_HOST_NEED_PATCH
 config EMBTK_LIBJPEG_NEED_AUTORECONF
 	bool
-	select EMBTK_LIBJPEG_HOST_NEED_AUTORECONF
+#	select EMBTK_LIBJPEG_HOST_NEED_AUTORECONF
 config EMBTK_LIBJPEG_PKG_IS_TARGZ
 	bool
 config EMBTK_LIBJPEG_PKG_IS_TARBZ2

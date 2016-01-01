@@ -26,7 +26,6 @@
 LIBJPEG-TURBO_NAME			:= libjpeg-turbo
 LIBJPEG-TURBO_VERSION		:= $(call embtk_get_pkgversion,libjpeg-turbo)
 LIBJPEG-TURBO_SITE			:= http://download.sourceforge.net/libjpeg-turbo
-LIBJPEG-TURBO_SITE_MIRROR3	:= ftp://ftp.embtoolkit.org/embtoolkit.org/packages-mirror
 LIBJPEG-TURBO_PACKAGE		:= libjpeg-turbo-$(LIBJPEG-TURBO_VERSION).tar.gz
 LIBJPEG-TURBO_SRC_DIR		:= $(embtk_pkgb)/libjpeg-turbo-$(LIBJPEG-TURBO_VERSION)
 LIBJPEG-TURBO_BUILD_DIR		:= $(embtk_pkgb)/libjpeg-turbo-$(LIBJPEG-TURBO_VERSION)

@@ -59,7 +59,7 @@ $(call embtk_include_pkg,libjasper)
 $(call embtk_include_pkg,libjpeg)
 
 #libjpeg-turbo
-$(call embtk_include_pkg,libjpeg-turbo)
+#$(call embtk_include_pkg,libjpeg-turbo)
 
 # liblcms2
 $(call embtk_include_pkg,liblcms2)

@@ -25,18 +25,30 @@
 
 LIBJPEG_NAME		:= jpeg
 LIBJPEG_VERSION		:= $(call embtk_get_pkgversion,libjpeg)
+
+ifeq ($(LIBJPEG_VERSION),1.3.1)
+LIBJPEG_SITE		:= http://download.sourceforge.net/libjpeg-turbo
+LIBJPEG_PACKAGE		:= libjpeg-turbo-$(LIBJPEG_VERSION).tar.gz
+LIBJPEG_SRC_DIR		:= $(embtk_pkgb)/libjpeg-turbo-$(LIBJPEG_VERSION)
+LIBJPEG_BUILD_DIR	:= $(embtk_pkgb)/libjpeg-turbo-$(LIBJPEG_VERSION)
+else
 LIBJPEG_SITE		:= http://www.ijg.org/files
-LIBJPEG_SITE_MIRROR3	:= ftp://ftp.embtoolkit.org/embtoolkit.org/packages-mirror
 LIBJPEG_PACKAGE		:= jpegsrc.v$(LIBJPEG_VERSION).tar.gz
 LIBJPEG_SRC_DIR		:= $(embtk_pkgb)/jpeg-$(LIBJPEG_VERSION)
 LIBJPEG_BUILD_DIR	:= $(embtk_pkgb)/jpeg-$(LIBJPEG_VERSION)
+endif
 
 LIBJPEG_BINS		:= cjpeg djpeg jpegtran rdjpgcom wrjpgcom
 LIBJPEG_SBINS		:=
 LIBJPEG_LIBS		:= libjpeg*
 LIBJPEG_INCLUDES	:= jconfig.h jerror.h jmorecfg.h jpeglib.h
 
+ifeq ($(LIBJPEG_VERSION),1.3.1)
+LIBJPEG_BINS		+= exifautotran jpegexiforient tjbench
+LIBJPEG_INCLUDES	+= jpegint.h
+else
 LIBJPEG_CONFIGURE_OPTS := --program-suffix=""
+endif
 
 #
 # libjpeg for host development machine
