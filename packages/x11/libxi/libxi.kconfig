@@ -30,6 +30,7 @@ config EMBTK_HAVE_LIBXI
 	select EMBTK_HAVE_INPUTPROTO
 	select EMBTK_HAVE_LIBX11
 	select EMBTK_HAVE_LIBXEXT
+	select EMBTK_HAVE_LIBXFIXES
 	help
 		library for the X Input Extension.
 choice

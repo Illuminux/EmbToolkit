@@ -40,4 +40,4 @@ LIBXI_PKGCONFIGS	= xi.pc
 LIBXI_CONFIGURE_OPTS	:= --disable-malloc0returnsnull
 
 LIBXI_DEPS		:= xproto_install xextproto_install inputproto_install	\
-			libx11_install libxext_install
+			libx11_install libxext_install libxfixes_install
