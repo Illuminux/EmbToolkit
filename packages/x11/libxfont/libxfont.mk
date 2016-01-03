@@ -41,6 +41,4 @@ LIBXFONT_INCLUDES = X11/fonts/bdfint.h X11/fonts/bufio.h X11/fonts/fntfilio.h \
 LIBXFONT_LIBS = libXfont.*
 LIBXFONT_PKGCONFIGS = xfont.pc
 
-LIBXFONT_CONFIGURE_OPTS := --disable-malloc0returnsnull
-
 LIBXFONT_DEPS = libfontenc_install freetype_install
