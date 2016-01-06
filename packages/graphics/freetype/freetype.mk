@@ -45,6 +45,8 @@ FREETYPE_CONFIGURE_ENV	+= LIBPNG_LDFLAGS=`$(PKGCONFIG_BIN) libpng --libs`
 
 # FIX: Fix wrong includedir in freetype2.pc
 define embtk_postinstallonce_freetype
-	sed -i 's;"/usr/include/freetype2";$(embtk_sysroot)/usr/include/freetype2;g' \
-		$(embtk_sysroot)/usr/lib/pkgconfig/freetype2.pc
+	$(Q)mkdir -p $(embtk_sysroot)/usr/share/tabset; \
+	sed \
+	-i 's;"/usr/include/freetype2";$(embtk_sysroot)/usr/include/freetype2;g' \
+	$(embtk_sysroot)/usr/lib/pkgconfig/freetype2.pc; 
 endef
