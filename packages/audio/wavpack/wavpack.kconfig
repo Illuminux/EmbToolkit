@@ -1,0 +1,54 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         wavpack.kconfig
+# \brief	wavpack.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@t-online.de>
+# \date         Januar 2016
+################################################################################
+
+config EMBTK_HAVE_WAVPACK
+	bool "Have wavpack"
+	help
+	  WavPack is a completely open audio compression format providing 
+	  lossless, high-quality lossy, and a unique hybrid compression mode. 
+	  Although the technology is loosely based on previous versions of 
+	  WavPack, the new version 4 format has been designed from the ground 
+	  up to offer unparalleled performance and functionality.
+choice
+	prompt "wavpack version you wish"
+	depends on EMBTK_HAVE_WAVPACK
+	help
+	 Here you can choose which version of wavpack you want to use.
+
+	config  EMBTK_WAVPACK_VERSION_4_70_0
+		bool "wavpack-4.70.0 (jessie)"
+	config  EMBTK_WAVPACK_VERSION_4_60_1
+		bool "wavpack-4.60.1 (wheezy)"
+endchoice
+
+config EMBTK_WAVPACK_VERSION_STRING
+	string
+	default "4.70.0"	if EMBTK_WAVPACK_VERSION_4_70_0
+	default "4.60.1"	if EMBTK_WAVPACK_VERSION_4_60_1
+
+config EMBTK_WAVPACK_NEED_PATCH
+	bool
+config EMBTK_WAVPACK_NEED_AUTORECONF
+	bool

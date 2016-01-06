@@ -1,0 +1,54 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         liborc.kconfig
+# \brief	liborc.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@t-online.de>
+# \date         Januar 2016
+################################################################################
+
+config EMBTK_HAVE_LIBORC
+	bool "Have liborc"
+	help
+	  Orc is a library and set of tools for compiling and executing very 
+	  simple programs that operate on arrays of data. The "language" is a 
+	  generic assembly language that represents many of the features 
+	  available in SIMD architectures, including saturated addition and 
+	  subtraction, and many arithmetic operations.
+choice
+	prompt "liborc version you wish"
+	depends on EMBTK_HAVE_LIBORC
+	help
+	 Here you can choose which version of liborc you want to use.
+
+	config  EMBTK_LIBORC_VERSION_0_4_22
+		bool "liborc-0.4.22 (jessie)"
+	config  EMBTK_LIBORC_VERSION_0_4_16
+		bool "liborc-0.4.16 (wheezy)"
+endchoice
+
+config EMBTK_LIBORC_VERSION_STRING
+	string
+	default "0.4.22" if EMBTK_LIBORC_VERSION_0_4_22
+	default "0.4.16" if EMBTK_LIBORC_VERSION_0_4_16
+
+config EMBTK_LIBORC_NEED_PATCH
+	bool
+config EMBTK_LIBORC_NEED_AUTORECONF
+	bool

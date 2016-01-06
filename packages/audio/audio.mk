@@ -28,17 +28,35 @@ embtk_pkgincdir := packages/audio
 # alsa-lib
 $(call embtk_include_pkg,alsa-lib)
 
+# gstreamer
+$(call embtk_include_pkg,gstreamer)
+
+# gst-base
+$(call embtk_include_pkg,gst-base)
+
+# gst-good
+$(call embtk_include_pkg,gst-good)
+
 # ladspa
 $(call embtk_include_pkg,ladspa)
 
 # lame
 $(call embtk_include_pkg,lame)
 
+#libav
+$(call embtk_include_pkg,libav)
+
 # libsndfile
 $(call embtk_include_pkg,libsndfile)
 
 # libsamplerate
 $(call embtk_include_pkg,libsamplerate)
+
+# libtheora
+$(call embtk_include_pkg,libtheora)
+
+# libvisual
+$(call embtk_include_pkg,libvisual)
 
 # lilv
 $(call embtk_include_pkg,lilv)
@@ -54,3 +72,9 @@ $(call embtk_include_pkg,ogg)
 
 # libvorbis
 $(call embtk_include_pkg,libvorbis)
+
+# wavpack
+$(call embtk_include_pkg,wavpack)
+
+# x264
+$(call embtk_include_pkg,x264)

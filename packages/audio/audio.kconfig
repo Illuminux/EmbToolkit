@@ -26,17 +26,35 @@
 # alsa-lib
 source packages/audio/alsa-lib/alsa-lib.kconfig
 
+# gstreamer
+source packages/audio/gstreamer/gstreamer.kconfig
+
+# gst-base
+source packages/audio/gst-base/gst-base.kconfig
+
+# gst-good
+source packages/audio/gst-good/gst-good.kconfig
+
 # ladspa
 source packages/audio/ladspa/ladspa.kconfig
 
 # lame
 source packages/audio/lame/lame.kconfig
 
+# libav
+source packages/audio/libav/libav.kconfig
+
 # libsndfile
 source packages/audio/libsndfile/libsndfile.kconfig
 
 # libsamplerate
 source packages/audio/libsamplerate/libsamplerate.kconfig
+
+# libtheora
+source packages/audio/libtheora/libtheora.kconfig
+
+# libvisual
+source packages/audio/libvisual/libvisual.kconfig
 
 # lilv
 source packages/audio/lilv/lilv.kconfig
@@ -52,3 +70,9 @@ source packages/audio/ogg/ogg.kconfig
 
 # libvorbis
 source packages/audio/libvorbis/libvorbis.kconfig
+
+# wavpack
+source packages/audio/wavpack/wavpack.kconfig
+
+# x264
+source packages/audio/x264/x264.kconfig

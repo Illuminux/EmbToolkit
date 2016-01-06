@@ -62,6 +62,9 @@ $(call embtk_include_pkg,libevent)
 # libnih
 $(call embtk_include_pkg,libnih)
 
+# liborc
+$(call embtk_include_pkg,liborc)
+
 # libsigc++
 $(call embtk_include_pkg,libsigcpp)
 

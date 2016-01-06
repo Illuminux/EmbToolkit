@@ -1,0 +1,54 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         libvisual.kconfig
+# \brief	libvisual.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@t-online.de>
+# \date         Januar 2016
+################################################################################
+
+config EMBTK_HAVE_LIBVISUAL
+	bool "Have libvisual"
+	help
+	  Libvisual is a generic visualization framework that allows 
+	  applications to easily access and manage visualization plugins. Audio 
+	  visualization is the process of making pretty moving images that are 
+	  correlated in some way to the audio currently being played by a media 
+	  player. Most audio visualization is tied to a specific application or 
+	  media player, making it difficult to share code. Libvisual allows 
+	  applications to use existing visualization plugins written for the 
+	  libvisual framework.
+choice
+	prompt "libvisual version you wish"
+	depends on EMBTK_HAVE_LIBVISUAL
+	help
+	 Here you can choose which version of libvisual you want to use.
+
+	config  EMBTK_LIBVISUAL_VERSION_0_4_0
+		bool "libvisual-0.4.0 (wheezy/jessie)"
+endchoice
+
+config EMBTK_LIBVISUAL_VERSION_STRING
+	string
+	default "0.4.0"	if EMBTK_LIBVISUAL_VERSION_0_4_0
+
+config libvisual
+	bool
+config EMBTK_LIBVISUAL_NEED_AUTORECONF
+	bool

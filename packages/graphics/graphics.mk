@@ -46,17 +46,11 @@ $(call embtk_include_pkg,freetype)
 #gdk-pixbuf
 $(call embtk_include_pkg,gdkpixbuf)
 
-#gstreamer+
-$(call embtk_include_pkg,gstreamer)
-
 #gtk+
 $(call embtk_include_pkg,gtk)
 
 #imlib2
 $(call embtk_include_pkg,imlib2)
-
-#libav
-$(call embtk_include_pkg,libav)
 
 #libjasper
 $(call embtk_include_pkg,libjasper)
@@ -79,11 +73,5 @@ $(call embtk_include_pkg,libtiff)
 #Pango
 $(call embtk_include_pkg,pango)
 
-#libtheora
-$(call embtk_include_pkg,libtheora)
-
 #pixman
 $(call embtk_include_pkg,pixman)
-
-# x264
-$(call embtk_include_pkg,x264)

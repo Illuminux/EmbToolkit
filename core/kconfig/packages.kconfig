@@ -40,7 +40,7 @@ menu "Flash manipulation tools"
 source packages/system/mtdutils/mtdutils.kconfig
 endmenu
 
-menu "Audio packages"
+menu "Audio and Video packages"
 source packages/audio/audio.kconfig
 endmenu
 
