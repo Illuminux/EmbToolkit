@@ -1,0 +1,58 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         gstreamer.kconfig
+# \brief	gstreamer.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@t-online.de>
+# \date         Januar 2016
+################################################################################
+
+config EMBTK_HAVE_GSTREAMER
+	bool "Have gstreamer"
+	select EMBTK_HAVE_GLIB
+	select EMBTK_HAVE_LIBXML2
+	select EMBTK_HAVE_LIBAV
+	help
+	  GStreamer is a streaming media framework, based on graphs of filters 
+	  which operate on media data. Applications using this library can do 
+	  anything from real-time sound processing to playing videos, and just 
+	  about anything else media-related. Its plugin-based architecture 
+	  means that new data types or processing capabilities can be added 
+	  simply by installing new plug-ins.
+choice
+	prompt "gstreamer version you wish"
+	depends on EMBTK_HAVE_GSTREAMER
+	help
+	 Here you can choose which version of gstreamer you want to use.
+
+	config  EMBTK_GSTREAMER_VERSION_0_10_36
+		bool "gstreamer-0.10.36 (wheezy/jessie)"
+	config  EMBTK_GSTREAMER_VERSION_1_4_4
+		bool "gstreamer-0.10.36 (jessie)"
+endchoice
+
+config EMBTK_GSTREAMER_VERSION_STRING
+	string
+	default "0.10.36"	if EMBTK_GSTREAMER_VERSION_0_10_36
+	default "1.4.4"		if EMBTK_GSTREAMER_VERSION_1_4_4
+
+config EMBTK_GSTREAMER_NEED_PATCH
+	bool
+config EMBTK_GSTREAMER_NEED_AUTORECONF
+	bool

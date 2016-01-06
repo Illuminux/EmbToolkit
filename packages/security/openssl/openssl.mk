@@ -18,7 +18,7 @@
 ################################################################################
 #
 # \file         openssl.mk
-# \brief		openssl.mk of Embtoolkit
+# \brief	openssl.mk of Embtoolkit
 # \author       Knut Welzel <knut.welzel@t-online.de>
 # \date         December 2015
 ################################################################################
@@ -38,11 +38,11 @@ OPENSSL_LIBS		:= libcrypto.* libssl.* openssl-1.0.0/* ssl/*
 OPENSSL_PKGCONFIGS	:= libcrypto.pc libssl.pc openssl.pc
 
 OPENSSL_CONFIGURE_OPTS	:= linux-generic32 \
-						   zlib-dynamic \
-						   shared \
-						   no-sse2 \
-						   --prefix=$(embtk_sysroot)/usr \
-						   --openssldir=$(embtk_sysroot)/usr
+			   zlib-dynamic \
+			   shared \
+			   no-sse2 \
+			   --prefix=$(embtk_sysroot)/usr \
+			   --openssldir=$(embtk_sysroot)/usr
 OPENSSL_MAKE_ENV	:=
 OPENSSL_MAKE_OPTS	:= CROSS_COMPILE=$(CROSS_COMPILE) \
 					   ARCH="$(LINUX_ARCH)"

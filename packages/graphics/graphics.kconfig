@@ -29,8 +29,10 @@ source packages/graphics/directfb/directfb.kconfig
 source packages/graphics/fontconfig/fontconfig.kconfig
 source packages/graphics/freetype/freetype.kconfig
 source packages/graphics/gdk-pixbuf/gdk-pixbuf.kconfig
+source packages/graphics/gstreamer/gstreamer.kconfig
 source packages/graphics/gtk/gtk.kconfig
 source packages/graphics/imlib2/imlib2.kconfig
+source packages/graphics/libav/libav.kconfig
 source packages/graphics/libjasper/libjasper.kconfig
 source packages/graphics/libjpeg/libjpeg.kconfig
 #source packages/graphics/libjpeg-turbo/libjpeg-turbo.kconfig
@@ -41,5 +43,6 @@ source packages/graphics/pixman/pixman.kconfig
 source packages/graphics/libtheora/libtheora.kconfig
 source packages/graphics/libtiff/libtiff.kconfig
 comment "Include fonts in the target root filesystem"
+source packages/graphics/x264/x264.kconfig
 #source packages/graphics/freefont/freefont.kconfig
 

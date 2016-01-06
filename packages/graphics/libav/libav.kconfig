@@ -1,0 +1,56 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         libav.kconfig
+# \brief	libav.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@t-online.de>
+# \date         Januar 2016
+################################################################################
+
+config EMBTK_HAVE_LIBAV
+	bool "Have libav"
+	select EMBTK_HAVE_FREETYPE
+	select EMBTK_HAVE_LIBTHEORA
+	select EMBTK_HAVE_LIBVORBIS
+	select EMBTK_HAVE_X264
+	select EMBTK_HAVE_OPENSSL
+	select EMBTK_HAVE_LAME
+	help
+		libav description
+choice
+	prompt "libav version you wish"
+	depends on EMBTK_HAVE_LIBAV
+	help
+	 Here you can choose which version of libav you want to use.
+
+	config  EMBTK_LIBAV_VERSION_11_4
+		bool "libav-11.4"
+	config  EMBTK_LIBAV_VERSION_0_8_17
+		bool "libav-0.8.17"
+endchoice
+
+config EMBTK_LIBAV_VERSION_STRING
+	string
+	default "11.4"		if EMBTK_LIBAV_VERSION_11_4
+	default "0.8.17"	if EMBTK_LIBAV_VERSION_0_8_17
+
+config EMBTK_LIBAV_NEED_PATCH
+	bool
+config EMBTK_LIBAV_NEED_AUTORECONF
+	bool
