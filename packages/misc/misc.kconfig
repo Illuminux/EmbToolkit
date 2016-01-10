@@ -40,6 +40,9 @@ source packages/misc/libffi/libffi.kconfig
 
 # ncurses included in main Kconfig
 
+# Qt
+source packages/misc/qt/qt.kconfig
+
 # serd
 source packages/misc/serd/serd.kconfig
 

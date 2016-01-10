@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 GAYE Abdoulaye Walsimou.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,44 +17,21 @@
 #
 ################################################################################
 #
-# \file         misc.mk
-# \brief	misc.mk of Embtoolkit
-# \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         February 2010
+# \file         qt.mk
+# \brief	qt.mk of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         January 2016
 ################################################################################
 
-embtk_pkgincdir := packages/misc
+QT_NAME		:= qt
+QT_VERSION	:= $(call embtk_get_pkgversion,qt)
 
-# expat
-$(call embtk_include_pkg,expat)
+QT_SRC_DIR	:= $(embtk_pkgb)/qt-everywhere-opensource-src-$(QT_VERSION)
+QT_BUILD_DIR	:= $(embtk_pkgb)/qt-everywhere-opensource-src-$(QT_VERSION)
 
-# glib
-$(call embtk_include_pkg,glib)
-#$(call embtk_include_hostpkg,glib_host)
+ifeq ($(QT_VERSION),5.4.1)
+	include packages/misc/qt/qt5.mk
+else
+	include packages/misc/qt/qt4.mk
+endif
 
-# intltool
-$(call embtk_include_hostpkg,intltool_host)
-
-# libffi
-$(call embtk_include_pkg,libffi)
-
-# libical
-$(call embtk_include_pkg,libical)
-
-# ncurses
-$(call embtk_include_pkg,ncurses)
-
-# Qt
-$(call embtk_include_pkg,qt)
-
-# serd
-$(call embtk_include_pkg,serd)
-
-# sord
-$(call embtk_include_pkg,sord)
-
-# sratom
-$(call embtk_include_pkg,sratom)
-
-# tslib
-$(call embtk_include_pkg,tslib)
