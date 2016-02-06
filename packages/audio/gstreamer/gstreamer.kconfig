@@ -28,6 +28,7 @@ config EMBTK_HAVE_GSTREAMER
 	select EMBTK_HAVE_GLIB
 	select EMBTK_HAVE_LIBXML2
 	select EMBTK_HAVE_LIBAV
+	select EMBTK_HAVE_LIBX11
 	help
 	  GStreamer is a streaming media framework, based on graphs of filters 
 	  which operate on media data. Applications using this library can do 

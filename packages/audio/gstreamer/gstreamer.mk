@@ -50,4 +50,4 @@ GSTREAMER_CONFIGURE_OPTS := --disable-nls \
 			    --disable-gtk-doc \
 			    --disable-parsen
 
-GSTREAMER_DEPS		:= glib_install libxml2_install libav_install
+GSTREAMER_DEPS		:= glib_install libxml2_install libav_install libx11_install
