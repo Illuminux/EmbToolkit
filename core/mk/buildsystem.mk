@@ -32,7 +32,7 @@ J					:= -j$(or $(CONFIG_EMBTK_NUMBER_BUILD_JOBS),1)
 # New version of above variables names. The old names are scheduled for removal
 #
 #embtk_generated     := $(EMBTK_ROOT)/generated
-embtk_generated     := /usr/local/embtk
+embtk_generated     := /opt/embtk
 embtk_sysroot		:= $(embtk_generated)/sysroot-$(GNU_TARGET)-$(EMBTK_MCU_FLAG)
 embtk_tools			:= $(embtk_generated)/tools-$(GNU_TARGET)-$(EMBTK_MCU_FLAG)
 embtk_htools		:= $(embtk_generated)/host-tools-$(EMBTK_MCU_FLAG)
