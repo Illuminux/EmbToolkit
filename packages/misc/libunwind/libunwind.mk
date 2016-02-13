@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 GAYE Abdoulaye Walsimou.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,47 +17,21 @@
 #
 ################################################################################
 #
-# \file         misc.mk
-# \brief	misc.mk of Embtoolkit
+# \file         libunwind.mk
+# \brief	libunwind.mk of Embtoolkit
 # \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         February 2010
+# \date         December 2009
 ################################################################################
 
-embtk_pkgincdir := packages/misc
+LIBUNWIND_NAME		:= libunwind
+LIBUNWIND_VERSION	:= $(call embtk_get_pkgversion,libunwind)
+LIBUNWIND_SITE		:= http://download.savannah.gnu.org/releases/libunwind
+LIBUNWIND_PACKAGE	:= libunwind-$(LIBUNWIND_VERSION).tar.gz
+LIBUNWIND_SRC_DIR	:= $(embtk_pkgb)/libunwind-$(LIBUNWIND_VERSION)
+LIBUNWIND_BUILD_DIR	:= $(embtk_pkgb)/libunwind-$(LIBUNWIND_VERSION)
 
-# expat
-$(call embtk_include_pkg,expat)
-
-# glib
-$(call embtk_include_pkg,glib)
-#$(call embtk_include_hostpkg,glib_host)
-
-# intltool
-$(call embtk_include_hostpkg,intltool_host)
-
-# libffi
-$(call embtk_include_pkg,libffi)
-
-# libical
-$(call embtk_include_pkg,libical)
-
-# ncurses
-$(call embtk_include_pkg,ncurses)
-
-# Qt
-$(call embtk_include_pkg,qt)
-
-# serd
-$(call embtk_include_pkg,serd)
-
-# sord
-$(call embtk_include_pkg,sord)
-
-# sratom
-$(call embtk_include_pkg,sratom)
-
-# tslib
-$(call embtk_include_pkg,tslib)
-
-# libunwind
-$(call embtk_include_pkg,libunwind)
+LIBUNWIND_BINS		:=
+LIBUNWIND_INCLUDES	:= libunwind*
+LIBUNWIND_LIBS		:= libunwind*
+LIBUNWIND_LIBEXECS	:=
+LIBUNWIND_PKGCONFIGS	:=
