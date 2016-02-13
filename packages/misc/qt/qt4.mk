@@ -63,8 +63,7 @@ QT_CONFIGURE_ENV	:= PKG_CONFIG_DIR='' \
 			   PKG_CONFIG_PATH=$(EMBTK_PKG_CONFIG_PATH)
 			   
 QT_CONFIGURE_OPTS	:= -v \
-			   -prefix $(embtk_sysroot)/usr \
-			   -bindir $(embtk_tools)/bin \
+			   -prefix /opt/Qt/Qt4.8.6-arm1176jzf-s \
 			   -opensource \
 			   -embedded $(STRICT_GNU_TARGET) \
 			   -xplatform $(QT_MKSPEC_DIR) \
@@ -128,11 +127,11 @@ define embtk_createmkspec_qt
 	echo "" >> $(QT_MKSPEC_DIR)/qmake.conf; \
 	echo "QMAKE_CC         = $(CROSS_COMPILE)gcc" \
 	     >> $(QT_MKSPEC_DIR)/qmake.conf; \
-	echo "QMAKE_CXX        = $(CROSS_COMPILE)gcc" \
+	echo "QMAKE_CXX        = $(CROSS_COMPILE)g++" \
 	     >> $(QT_MKSPEC_DIR)/qmake.conf; \
-	echo "QMAKE_LINK       = $(CROSS_COMPILE)gcc" \
+	echo "QMAKE_LINK       = $(CROSS_COMPILE)g++" \
 	     >> $(QT_MKSPEC_DIR)/qmake.conf; \
-	echo "QMAKE_LINK_SHLIB = $(CROSS_COMPILE)gcc" \
+	echo "QMAKE_LINK_SHLIB = $(CROSS_COMPILE)g++" \
 	     >> $(QT_MKSPEC_DIR)/qmake.conf; \
 	echo "" >> $(QT_MKSPEC_DIR)/qmake.conf; \
 	echo "QMAKE_AR         = $(CROSS_COMPILE)ar cqs" \
