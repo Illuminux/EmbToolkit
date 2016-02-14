@@ -48,3 +48,12 @@ $(call embtk_include_pkg,mtdutils)
 
 # initng
 $(call embtk_include_pkg, initng)
+
+# libdrm
+$(call embtk_include_pkg, libdrm)
+
+# libdrm
+$(call embtk_include_pkg, mesa)
+
+# sysfsutils
+$(call embtk_include_pkg, sysfsutils)

@@ -99,6 +99,18 @@ $(call embtk_include_pkg,xineramaproto)
 # xproto
 $(call embtk_include_pkg,xproto)
 
+# glproto
+$(call embtk_include_pkg,glproto)
+
+# dri2proto
+$(call embtk_include_pkg,dri2proto)
+
+# dri2proto
+$(call embtk_include_pkg,dri3proto)
+
+# dri2proto
+$(call embtk_include_pkg,presentproto)
+
 #####################################
 # X windowing system library packages
 #####################################
@@ -135,6 +147,12 @@ $(call embtk_include_pkg,libxext)
 
 # libxfixes
 $(call embtk_include_pkg,libxfixes)
+
+# libxdamage
+$(call embtk_include_pkg,libxdamage)
+
+# libxshmfence
+$(call embtk_include_pkg,libxshmfence)
 
 # libxfont
 $(call embtk_include_pkg,libxfont)

@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 Abdoulaye Walsimou GAYE.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,38 +17,18 @@
 #
 ################################################################################
 #
-# \file         system.mk
-# \brief	system.mk of Embtoolkit
-# \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         July 2010
+# \file         dri2proto.mk
+# \brief	dri2proto.mk of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         February 2016
 ################################################################################
 
-# bluez
-source packages/system/bluez/bluez.kconfig
+DRI2PROTO_NAME		:= dri2proto
+DRI2PROTO_VERSION	:= $(call embtk_get_pkgversion,dri2proto)
+DRI2PROTO_SITE		:= http://xorg.freedesktop.org/releases/individual/proto
+DRI2PROTO_PACKAGE	:= dri2proto-$(DRI2PROTO_VERSION).tar.gz
+DRI2PROTO_SRC_DIR	:= $(embtk_pkgb)/dri2proto-$(DRI2PROTO_VERSION)
+DRI2PROTO_BUILD_DIR	:= $(embtk_pkgb)/dri2proto-$(DRI2PROTO_VERSION)
 
-# DBUS
-source packages/system/dbus/dbus.kconfig
-
-# libftdi
-source packages/system/libftdi/libftdi.kconfig
-
-# libgpg-error
-source packages/system/libgpg-error/libgpg-error.kconfig
-
-# libusb
-source packages/system/libusb/libusb.kconfig
-
-# OpenRC
-source packages/system/openrc/openrc.kconfig
-
-# InitNG
-source packages/system/initng/initng.kconfig
-
-# libdrm
-source packages/system/libdrm/libdrm.kconfig
-
-# libdrm
-source packages/system/mesa/mesa.kconfig
-
-# libdrm
-source packages/system/sysfsutils/sysfsutils.kconfig
+DRI2PROTO_INCLUDES	:= extensions/*
+DRI2PROTO_PKGCONFIGS	:= dri2proto.pc

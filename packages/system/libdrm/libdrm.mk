@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 Abdoulaye Walsimou GAYE.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,38 +17,20 @@
 #
 ################################################################################
 #
-# \file         system.mk
-# \brief	system.mk of Embtoolkit
-# \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         July 2010
+# \file         libdrm.mk
+# \brief	libdrm.mk of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         February 2016
 ################################################################################
 
-# bluez
-source packages/system/bluez/bluez.kconfig
+LIBDRM_NAME		:= libdrm
+LIBDRM_VERSION		:= $(call embtk_get_pkgversion,libdrm)
+LIBDRM_SITE		:= https://dri.freedesktop.org/libdrm/
+LIBDRM_PACKAGE		:= libdrm-$(LIBDRM_VERSION).tar.gz
+LIBDRM_SRC_DIR		:= $(embtk_pkgb)/libdrm-$(LIBDRM_VERSION)
+LIBDRM_BUILD_DIR	:= $(embtk_pkgb)/libdrm-$(LIBDRM_VERSION)
 
-# DBUS
-source packages/system/dbus/dbus.kconfig
-
-# libftdi
-source packages/system/libftdi/libftdi.kconfig
-
-# libgpg-error
-source packages/system/libgpg-error/libgpg-error.kconfig
-
-# libusb
-source packages/system/libusb/libusb.kconfig
-
-# OpenRC
-source packages/system/openrc/openrc.kconfig
-
-# InitNG
-source packages/system/initng/initng.kconfig
-
-# libdrm
-source packages/system/libdrm/libdrm.kconfig
-
-# libdrm
-source packages/system/mesa/mesa.kconfig
-
-# libdrm
-source packages/system/sysfsutils/sysfsutils.kconfig
+LIBDRM_BINS		:=
+LIBDRM_INCLUDES		:= libdrm/* omap/* xf86drm.h xf86drmMode.h
+LIBDRM_LIBS		:= libdrm.* libdrm_*
+LIBDRM_PKGCONFIGS	:= libdrm.pc libdrm_exynos.pc libdrm_freedreno.pc libdrm_nouveau.pc libdrm_omap.pc libdrm_radeon.pc

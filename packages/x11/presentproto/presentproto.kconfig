@@ -1,0 +1,52 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         presentproto.kconfig
+# \brief	presentproto.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         February 2016
+################################################################################
+
+config EMBTK_HAVE_PRESENTPROTO
+	bool "Have presentproto"
+	help
+		This package provides development headers describing the wire 
+		protocol for the Present extension, which provides a way for 
+		applications to update their window contents from a pixmap in a 
+		well defined fashion, synchronizing with the display refresh 
+		and potentially using a more efficient mechanism than copying 
+		the contents of the source pixmap.
+choice
+	prompt "presentproto version you wish"
+	depends on EMBTK_HAVE_PRESENTPROTO
+	help
+	 Here you can choose which version of presentproto you want to use.
+
+	config  EMBTK_PRESENTPROTO_VERSION_1_0
+		bool "presentproto-1.0"
+endchoice
+
+config EMBTK_PRESENTPROTO_VERSION_STRING
+	string
+	default "1.0"	if EMBTK_PRESENTPROTO_VERSION_1_0
+
+config EMBTK_PRESENTPROTO_NEED_PATCH
+	bool
+config EMBTK_PRESENTPROTO_NEED_AUTORECONF
+	bool

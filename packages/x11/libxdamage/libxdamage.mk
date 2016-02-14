@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 Abdoulaye Walsimou GAYE.
+# Copyright(C) 2010-2011 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,38 +17,24 @@
 #
 ################################################################################
 #
-# \file         system.mk
-# \brief	system.mk of Embtoolkit
-# \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         July 2010
+# \file         libxdamage.mk
+# \brief	libxdamage.mk of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         February 2016
 ################################################################################
 
-# bluez
-source packages/system/bluez/bluez.kconfig
+LIBXDAMAGE_NAME		:= libxdamage
+LIBXDAMAGE_VERSION	:= $(call embtk_get_pkgversion,libxdamage)
+LIBXDAMAGE_SITE		:= http://xorg.freedesktop.org/releases/individual/lib
+LIBXDAMAGE_SITE_MIRROR3	:= ftp://ftp.embtoolkit.org/embtoolkit.org/packages-mirror
+LIBXDAMAGE_PACKAGE	:= libXdamage-$(LIBXDAMAGE_VERSION).tar.gz
+LIBXDAMAGE_SRC_DIR	:= $(embtk_pkgb)/libXdamage-$(LIBXDAMAGE_VERSION)
+LIBXDAMAGE_BUILD_DIR	:= $(embtk_pkgb)/libXdamage-$(LIBXDAMAGE_VERSION)
 
-# DBUS
-source packages/system/dbus/dbus.kconfig
+LIBXDAMAGE_BINS		=
+LIBXDAMAGE_SBINS	=
+LIBXDAMAGE_INCLUDES	= X11/extensions/*
+LIBXDAMAGE_LIBS		= libXdamage.* libXdamage.*
+LIBXDAMAGE_PKGCONFIGS	= xdamage.pc
 
-# libftdi
-source packages/system/libftdi/libftdi.kconfig
-
-# libgpg-error
-source packages/system/libgpg-error/libgpg-error.kconfig
-
-# libusb
-source packages/system/libusb/libusb.kconfig
-
-# OpenRC
-source packages/system/openrc/openrc.kconfig
-
-# InitNG
-source packages/system/initng/initng.kconfig
-
-# libdrm
-source packages/system/libdrm/libdrm.kconfig
-
-# libdrm
-source packages/system/mesa/mesa.kconfig
-
-# libdrm
-source packages/system/sysfsutils/sysfsutils.kconfig
+LIBXDAMAGE_DEPS		= libxfixes_install

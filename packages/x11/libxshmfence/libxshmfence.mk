@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 Abdoulaye Walsimou GAYE.
+# Copyright(C) 2010-2011 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,38 +17,22 @@
 #
 ################################################################################
 #
-# \file         system.mk
-# \brief	system.mk of Embtoolkit
-# \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         July 2010
+# \file         libxshmfence.mk
+# \brief	libxshmfence.mk of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         February 2016
 ################################################################################
 
-# bluez
-source packages/system/bluez/bluez.kconfig
+LIBXSHMFENCE_NAME		:= libxshmfence
+LIBXSHMFENCE_VERSION		:= $(call embtk_get_pkgversion,libxshmfence)
+LIBXSHMFENCE_SITE		:= http://xorg.freedesktop.org/releases/individual/lib
+LIBXSHMFENCE_SITE_MIRROR3	:= ftp://ftp.embtoolkit.org/embtoolkit.org/packages-mirror
+LIBXSHMFENCE_PACKAGE		:= libxshmfence-$(LIBXSHMFENCE_VERSION).tar.gz
+LIBXSHMFENCE_SRC_DIR		:= $(embtk_pkgb)/libxshmfence-$(LIBXSHMFENCE_VERSION)
+LIBXSHMFENCE_BUILD_DIR		:= $(embtk_pkgb)/libxshmfence-$(LIBXSHMFENCE_VERSION)
 
-# DBUS
-source packages/system/dbus/dbus.kconfig
-
-# libftdi
-source packages/system/libftdi/libftdi.kconfig
-
-# libgpg-error
-source packages/system/libgpg-error/libgpg-error.kconfig
-
-# libusb
-source packages/system/libusb/libusb.kconfig
-
-# OpenRC
-source packages/system/openrc/openrc.kconfig
-
-# InitNG
-source packages/system/initng/initng.kconfig
-
-# libdrm
-source packages/system/libdrm/libdrm.kconfig
-
-# libdrm
-source packages/system/mesa/mesa.kconfig
-
-# libdrm
-source packages/system/sysfsutils/sysfsutils.kconfig
+LIBXSHMFENCE_BINS		=
+LIBXSHMFENCE_SBINS		=
+LIBXSHMFENCE_INCLUDES		= /X11/xshmfence.h
+LIBXSHMFENCE_LIBS		= libxshmfence.* 
+LIBXSHMFENCE_PKGCONFIGS		= xshmfence.pc

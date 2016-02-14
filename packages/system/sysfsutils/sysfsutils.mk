@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 Abdoulaye Walsimou GAYE.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,38 +17,19 @@
 #
 ################################################################################
 #
-# \file         system.mk
-# \brief	system.mk of Embtoolkit
-# \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         July 2010
+# \file         sysfsutils.mk
+# \brief	sysfsutils.mk of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         February 2016
 ################################################################################
 
-# bluez
-source packages/system/bluez/bluez.kconfig
+SYSFSUTILS_NAME		:= sysfsutils
+SYSFSUTILS_VERSION	:= $(call embtk_get_pkgversion,sysfsutils)
+SYSFSUTILS_SITE		:= https://sourceforge.net/projects/linux-diag/files/sysfsutils/2.1.0/
+SYSFSUTILS_PACKAGE	:= sysfsutils-$(SYSFSUTILS_VERSION).tar.gz
+SYSFSUTILS_SRC_DIR	:= $(embtk_pkgb)/sysfsutils-$(SYSFSUTILS_VERSION)
+SYSFSUTILS_BUILD_DIR	:= $(embtk_pkgb)/sysfsutils-$(SYSFSUTILS_VERSION)
 
-# DBUS
-source packages/system/dbus/dbus.kconfig
-
-# libftdi
-source packages/system/libftdi/libftdi.kconfig
-
-# libgpg-error
-source packages/system/libgpg-error/libgpg-error.kconfig
-
-# libusb
-source packages/system/libusb/libusb.kconfig
-
-# OpenRC
-source packages/system/openrc/openrc.kconfig
-
-# InitNG
-source packages/system/initng/initng.kconfig
-
-# libdrm
-source packages/system/libdrm/libdrm.kconfig
-
-# libdrm
-source packages/system/mesa/mesa.kconfig
-
-# libdrm
-source packages/system/sysfsutils/sysfsutils.kconfig
+SYSFSUTILS_BINS		:= dlist_test get_device get_driver get_module systool
+SYSFSUTILS_INCLUDES	:= sysfs/*
+SYSFSUTILS_LIBS		:= libsysfs.*

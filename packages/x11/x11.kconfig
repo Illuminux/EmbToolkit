@@ -49,6 +49,10 @@ source packages/x11/xcmiscproto/xcmiscproto.kconfig
 source packages/x11/xextproto/xextproto.kconfig
 source packages/x11/xineramaproto/xineramaproto.kconfig
 source packages/x11/xproto/xproto.kconfig
+source packages/x11/glproto/glproto.kconfig
+source packages/x11/dri2proto/dri2proto.kconfig
+source packages/x11/dri3proto/dri3proto.kconfig
+source packages/x11/presentproto/presentproto.kconfig
 endmenu
 
 menu "X windowing system library packages"
@@ -68,6 +72,8 @@ source packages/x11/libxft/libxft.kconfig
 source packages/x11/libxkbfile/libxkbfile.kconfig
 source packages/x11/libxrandr/libxrandr.kconfig
 source packages/x11/libxrender/libxrender.kconfig
+source packages/x11/libxdamage/libxdamage.kconfig
+source packages/x11/libxshmfence/libxshmfence.kconfig
 endmenu
 
 menu "X windowing system application packages"

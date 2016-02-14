@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 Abdoulaye Walsimou GAYE.
+# Copyright(C) 2010-2011 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,38 +17,37 @@
 #
 ################################################################################
 #
-# \file         system.mk
-# \brief	system.mk of Embtoolkit
-# \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         July 2010
+# \file         libxshmfence.kconfig
+# \brief	libxshmfence.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         February 2016
 ################################################################################
 
-# bluez
-source packages/system/bluez/bluez.kconfig
+config EMBTK_HAVE_LIBXSHMFENCE
+	bool "Have libxshmfence"
+	select EMBTK_HAVE_LIBXFIXES
+	help
+		libxshmfence description
+choice
+	prompt "libxshmfence version you wish"
+	depends on EMBTK_HAVE_LIBXSHMFENCE
+	help
+	 Here you can choose which version of libxshmfence you want to use.
 
-# DBUS
-source packages/system/dbus/dbus.kconfig
+	config  EMBTK_LIBXSHMFENCE_VERSION_1_1
+		bool "libxshmfence-1.1"
+endchoice
 
-# libftdi
-source packages/system/libftdi/libftdi.kconfig
+config EMBTK_LIBXSHMFENCE_VERSION_STRING
+	string
+	default "1.1"		if EMBTK_LIBXSHMFENCE_VERSION_1_1
 
-# libgpg-error
-source packages/system/libgpg-error/libgpg-error.kconfig
+config EMBTK_LIBXSHMFENCE_NEED_PATCH
+	bool
+config EMBTK_LIBXSHMFENCE_NEED_AUTORECONF
+	bool
+config EMBTK_LIBXSHMFENCE_PKG_IS_TARGZ
+	bool
+config EMBTK_LIBXSHMFENCE_PKG_IS_TARBZ2
+	bool
 
-# libusb
-source packages/system/libusb/libusb.kconfig
-
-# OpenRC
-source packages/system/openrc/openrc.kconfig
-
-# InitNG
-source packages/system/initng/initng.kconfig
-
-# libdrm
-source packages/system/libdrm/libdrm.kconfig
-
-# libdrm
-source packages/system/mesa/mesa.kconfig
-
-# libdrm
-source packages/system/sysfsutils/sysfsutils.kconfig

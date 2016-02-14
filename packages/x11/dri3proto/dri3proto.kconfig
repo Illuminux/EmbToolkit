@@ -1,0 +1,51 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         dri3proto.kconfig
+# \brief	dri3proto.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         February 2016
+################################################################################
+
+config EMBTK_HAVE_DRI3PROTO
+	bool "Have dri3proto"
+	help
+		This package provides development headers describing the wire 
+		protocol for the DRI3 extension, providing mechanisms to 
+		translate between direct rendered buffers and X pixmaps. In 
+		conjunction with the Present extension, they provide a complete 
+		direct rendering solution for OpenGL or other APIs.
+choice
+	prompt "dri3proto version you wish"
+	depends on EMBTK_HAVE_DRI3PROTO
+	help
+	 Here you can choose which version of dri3proto you want to use.
+
+	config  EMBTK_DRI3PROTO_VERSION_1_0
+		bool "dri3proto-1.0"
+endchoice
+
+config EMBTK_DRI3PROTO_VERSION_STRING
+	string
+	default "1.0"	if EMBTK_DRI3PROTO_VERSION_1_0
+
+config EMBTK_DRI3PROTO_NEED_PATCH
+	bool
+config EMBTK_DRI3PROTO_NEED_AUTORECONF
+	bool

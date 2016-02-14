@@ -1,0 +1,56 @@
+################################################################################
+# Embtoolkit
+# Copyright(C) 2010-2011 Abdoulaye Walsimou GAYE.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+################################################################################
+#
+# \file         libxdamage.kconfig
+# \brief	libxdamage.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         February 2016
+################################################################################
+
+config EMBTK_HAVE_LIBXDAMAGE
+	bool "Have libxdamage"
+	select EMBTK_HAVE_LIBXFIXES
+	help
+		libxdamage description
+choice
+	prompt "libxdamage version you wish"
+	depends on EMBTK_HAVE_LIBXDAMAGE
+	help
+	 Here you can choose which version of libxdamage you want to use.
+
+	config  EMBTK_LIBXDAMAGE_VERSION_1_1_4
+		bool "libxdamage-1.1.4 (jessie)"
+	config  EMBTK_LIBXDAMAGE_VERSION_1_1_4
+		bool "libxdamage-1.1.3 (wheezy)"
+endchoice
+
+config EMBTK_LIBXDAMAGE_VERSION_STRING
+	string
+	default "1.1.4"		if EMBTK_LIBXDAMAGE_VERSION_1_1_4
+	default "1.1.3"		if EMBTK_LIBXDAMAGE_VERSION_1_1_3
+
+config EMBTK_LIBXDAMAGE_NEED_PATCH
+	bool
+config EMBTK_LIBXDAMAGE_NEED_AUTORECONF
+	bool
+config EMBTK_LIBXDAMAGE_PKG_IS_TARGZ
+	bool
+config EMBTK_LIBXDAMAGE_PKG_IS_TARBZ2
+	bool
+

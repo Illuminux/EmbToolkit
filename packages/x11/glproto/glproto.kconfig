@@ -1,6 +1,6 @@
 ################################################################################
 # Embtoolkit
-# Copyright(C) 2010-2014 Abdoulaye Walsimou GAYE.
+# Copyright(C) 2009-2012 Abdoulaye Walsimou GAYE.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,38 +17,33 @@
 #
 ################################################################################
 #
-# \file         system.mk
-# \brief	system.mk of Embtoolkit
-# \author       Abdoulaye Walsimou GAYE <awg@embtoolkit.org>
-# \date         July 2010
+# \file         glproto.kconfig
+# \brief	glproto.kconfig of Embtoolkit
+# \author       Knut Welzel <knut.welzel@googlemail.com>
+# \date         February 2016
 ################################################################################
 
-# bluez
-source packages/system/bluez/bluez.kconfig
+config EMBTK_HAVE_GLPROTO
+	bool "Have glproto"
+	help
+		This package provides development headers describing the wire 
+		protocol for OpenGL-related extensions, used to enable the 
+		rendering of applications using OpenGL.
+choice
+	prompt "glproto version you wish"
+	depends on EMBTK_HAVE_GLPROTO
+	help
+	 Here you can choose which version of glproto you want to use.
 
-# DBUS
-source packages/system/dbus/dbus.kconfig
+	config  EMBTK_GLPROTO_VERSION_1_4_17
+		bool "glproto-1.4.17"
+endchoice
 
-# libftdi
-source packages/system/libftdi/libftdi.kconfig
+config EMBTK_GLPROTO_VERSION_STRING
+	string
+	default "1.4.17"	if EMBTK_GLPROTO_VERSION_1_4_17
 
-# libgpg-error
-source packages/system/libgpg-error/libgpg-error.kconfig
-
-# libusb
-source packages/system/libusb/libusb.kconfig
-
-# OpenRC
-source packages/system/openrc/openrc.kconfig
-
-# InitNG
-source packages/system/initng/initng.kconfig
-
-# libdrm
-source packages/system/libdrm/libdrm.kconfig
-
-# libdrm
-source packages/system/mesa/mesa.kconfig
-
-# libdrm
-source packages/system/sysfsutils/sysfsutils.kconfig
+config EMBTK_GLPROTO_NEED_PATCH
+	bool
+config EMBTK_GLPROTO_NEED_AUTORECONF
+	bool
