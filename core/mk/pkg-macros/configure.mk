@@ -116,7 +116,7 @@ define embtk_configure_pkg
 	$(CONFIG_EMBTK_SHELL) $(__embtk_pkg_configurescript)			\
 	--build=$(HOST_BUILD) --host=$(STRICT_GNU_TARGET)			\
 	--target=$(STRICT_GNU_TARGET) --libdir=/usr/$(LIBDIR)			\
-	--prefix=/usr --sysconfdir=/etc --localstatedir=/var --disable-rpath	\
+	--prefix=/usr --sysconfdir=/etc --localstatedir=/var                    \
 	$(__embtk_pkg_configureopts)
 	$(Q)$(call __embtk_setconfigured_pkg,$(1))
 	$(Q)$(call __embtk_kill_lt_rpath,$(__embtk_pkg_builddir))

@@ -35,7 +35,8 @@ LIBAV_INCLUDES		:= libavutil/*
 LIBAV_LIBS		:= libavutil.*
 LIBAV_PKGCONFIGS	:= libavutil.pc
 
-LIBAV_CONFIGURE_OPTS	:= --prefix=$(embtk_sysroot)/usr \
+LIBAV_CONFIGURE_OPTS	:= --enable-cross-compile \
+			   --prefix=/usr \
 			   --cross-prefix=$(CROSS_COMPILE) \
 			   --arch=$(GNU_TARGET_ARCH) \
 			   --sysroot=$(embtk_sysroot) \
@@ -46,7 +47,6 @@ LIBAV_CONFIGURE_OPTS	:= --prefix=$(embtk_sysroot)/usr \
 			   --disable-doc \
 			   --target-os=linux \
 			   --pkg-config=pkg-config \
-			   --enable-cross-compile \
 			   --enable-shared \
 			   --enable-static \
 			   --disable-altivec   \
@@ -62,8 +62,6 @@ LIBAV_CONFIGURE_OPTS	:= --prefix=$(embtk_sysroot)/usr \
 			   --enable-nonfree \
 			   --enable-openssl \
 			   --enable-libmp3lame 
-#			   --enable-libfreetype \
-#			   --enable-libx264 \
 			   
 LIBAV_DEPS		:= freetype_install libtheora_install libvorbis_install \
 			   x264_install openssl_install lame_install

@@ -53,21 +53,21 @@ choice
 	help
 	 Here you can choose which version of foo you want to use.
 
+	config  EMBTK_QT_VERSION_5_5_1
+		bool "qt-5.5.1"
 	config  EMBTK_QT_VERSION_4_8_6
 		bool "qt-4.8.6"
-	config  EMBTK_QT_VERSION_5_4_1
-		bool "qt-5.4.1"
 endchoice
 
 config EMBTK_QT_MAJOR_VERSION_STRING
 	string
+	default "5.5"		if EMBTK_QT_VERSION_5_5_1
 	default "4.8"		if EMBTK_QT_VERSION_4_8_6
-	default "5.4"		if EMBTK_QT_VERSION_5_4_1
 
 config EMBTK_QT_VERSION_STRING
 	string
+	default "5.5.1"	if EMBTK_QT_VERSION_5_5_1
 	default "4.8.6"	if EMBTK_QT_VERSION_4_8_6
-	default "5.4.1"	if EMBTK_QT_VERSION_5_4_1
 
 config EMBTK_QT_NEED_PATCH
 	bool

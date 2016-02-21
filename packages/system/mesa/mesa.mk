@@ -44,7 +44,7 @@ MESA_CXXFLAGS		:=
 MESA_SET_RPATH		:= # Only for host packages
 
 MESA_CONFIGURE_ENV	:=
-MESA_CONFIGURE_OPTS	:= --disable-dri 
+MESA_CONFIGURE_OPTS	:= --disable-dri --disable-dri3 --disable-glx 
 MESA_MAKE_ENV		:=
 MESA_MAKE_OPTS		:=
 MESA_MAKE_DIRS		:=

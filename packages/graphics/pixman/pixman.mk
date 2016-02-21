@@ -36,3 +36,9 @@ PIXMAN_SBINS		=
 PIXMAN_INCLUDES		= pixman-*
 PIXMAN_LIBS		= libpixman-*
 PIXMAN_PKGCONFIGS	= pixman-*.pc
+
+
+
+PIXMAN_CONFIGURE_OPTS	:= --disable-mmx --disable-sse2 --disable-ssse3 \
+                           --disable-vmx --disable-arm-simd --disable-arm-neon \
+			   --disable-arm-iwmmxt --disable-arm-iwmmxt2
